@@ -18,7 +18,7 @@ I would also suggest you install the following:
 
 This will provide you with a fully usable Linux command line environment within Windows, as well as a better interface to it, a package manager, and an enhanced PowerShell. Running the below commands in an admin level PowerShell will install all of the above (search for PowerShell in your start menu, right click, and select Run As Administrator):
 
-```ps
+```powershell
 > Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 > refreshenv
 > #feel free to edit the below to only install the parts you want
