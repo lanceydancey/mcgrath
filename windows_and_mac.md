@@ -61,7 +61,7 @@ foo@bar:~$ brew cask install font-fira-code font-fira-mono font-fira-mono-for-po
 If you are using an M1 based Mac, there is one more step. You need to add `eval "$(/opt/homebrew/bin/brew shellenv)"` to your `~/.zprofile`:
 
 ```console
-foo@bar:~$ # Add Homebrew to your PATH in ~/.zprofile:
+foo@bar:~$ #Add Homebrew to your PATH in ~/.zprofile:
 foo@bar:~$ echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
 ```
 
