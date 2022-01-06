@@ -4,6 +4,11 @@ Often, you might prefer a commercial OS, rather than Linux (for whatever reason)
 
 Nowadays, the situation is quite easy to overcome. See below for instructions for both macOS and Windows.
 
+
+- Linux Tools on non-Linux OSes
+  - Common Linux tools on Windows
+  - Common Linux tools on macOS
+
 ## Common Linux tools on Windows
 
 If you're on Windows, and haven't already done so, I would strongly encourage you to [install Windows Subsystem for Linux (version 2)](https://docs.microsoft.com/en-us/windows/wsl/install-win10), then install Ubuntu (or whatever your preferred distribution is).

@@ -1,3 +1,4 @@
+# Using `git`
 
 - [Quick guide to git](http://rogerdudler.github.io/git-guide/)
 - [Challenge based approach to understanding git](https://try.github.io/levels/1/challenges/1)

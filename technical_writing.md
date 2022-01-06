@@ -1,5 +1,11 @@
 # Technical writing
 
+- Technical writing
+  - LaTeX
+    - Including Source Code in \(\LaTeX\)
+  - Markdown
+    - Including Source Code in `markdown`
+
 In this class, there will be multiple points at which you will be generating written content. While obviously the content is more important than the presentation, it would be disingenuous to claim presentation doesn't matter. While I suppose you probably could use MS Word or Apple Pages to generate all the written artifacts, the simple truth is neither of those word processors are designed to handle technical or mathematical content. As such, you will be required to make use of one of two alternatives: LaTeX or Markdown.
 
 LaTeX is much more complete, has immense support for a variety of technical notation (from music to chess matches to advanced mathematics and theoretical physics), and is the lingua franca of the scientific writing community. Odds are good most textbooks you've owned were typeset via LaTeX.
