@@ -14,9 +14,8 @@ When we get to the VScode discussion, I will explain how to use the ssh config f
 
 ---
 ## SSH key generation
----
-> 
-   If you don't already have an SSH key, please see the below links for how to generate and distribute the key files. These are links to the MS documentation, but the instructions are the same on every OS -- these are standard tools.
+
+If you don't already have an SSH key, please see the below links for how to generate and distribute the key files. These are links to the MS documentation, but the instructions are the same on every OS -- these are standard tools.
 
 ### [User key generation](https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_keymanagement#user-key-generation)
 ---
