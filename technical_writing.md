@@ -1,10 +1,7 @@
 # Technical writing
 
-- Technical writing
-  - LaTeX
-    - Including Source Code in \(\LaTeX\)
-  - Markdown
-    - Including Source Code in `markdown`
+* auto-gen TOC:
+{:toc}
 
 In this class, there will be multiple points at which you will be generating written content. While obviously the content is more important than the presentation, it would be disingenuous to claim presentation doesn't matter. While I suppose you probably could use MS Word or Apple Pages to generate all the written artifacts, the simple truth is neither of those word processors are designed to handle technical or mathematical content. As such, you will be required to make use of one of two alternatives: LaTeX or Markdown.
 
