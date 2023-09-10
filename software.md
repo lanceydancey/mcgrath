@@ -1,4 +1,7 @@
-# Host Configuration
+# Software configuration that might be useful
+
+* auto-gen TOC:
+{:toc}
 
 ***AR: ensure you can connect to the server!***
 
@@ -224,17 +227,26 @@ Click the above will show this menu:
 
 You want the first option, the config file in your home directory (this is true regardless of platform). Please ensure the contents below are added to this file:
 
-```ssh
+```ini
 Host ada 
     Hostname linux.cs.pdx.edu 
 
 Host *
+    #don't require calling ssh-add to use the agent
     AddKeysToAgent yes
+    #macOS has a UseKeychain option, but not every OS does
     IgnoreUnknown UseKeychain
     UseKeychain yes
+    #default to forwarding X11
     ForwardX11Trusted yes
+    #set default username -- ***CHANGE THIS TO YOUR USERNAME***
     User your_user_name_here
+    #This assumes you followed the instructions above
     IdentityFile ~.ssh/id_ed25519
+    #keep connection alive every 30 seconds
+    ServerAliveInterval 30
+    #don't allow for more than 3 consecutive missed keepalives
+    ServerAliveCountMax 3
 ``` 
 
 VScode Extensions
@@ -242,21 +254,21 @@ Ultimately, which extensions you find useful will be a very personal decision. T
 
 |---|---|---|
 | Extension name | Use | Install Command|
-| Remote-ssh|Remote editing on server|code --install-extension ms-vscode-remote.remote-ssh|
-C/C++ Extension Pack|Recommended tools for C/C++ programming|code --install-extension ms-vscode.cpptools-extension-pack
-C/C++ Themes|Better syntax highlighting|code --install-extension ms-vscode.cpptools-themes
-Code Spell Checker|Code-aware spell checking|code --install-extension streetsidesoftware.code-spell-checker
-GitHub Codespaces|Remote editing directly within GitHub repo|code --install-extension github.codespaces
-GitHub Copilot|AI pair programming buddy (requires license) |code --install-extension github.copilot
-GitLens|Git helper|code --install-extension eamodio.gitlens
-LiveShare|Remote collaborative programming|code --install-extension ms-vsliveshare.vsliveshare
-ASM Code Lens|Multi-arch ASM syntax highlighting| code --install-extension maziac.asm-code-lens
-Workshop|LaTeX support for VScode| code --install-extension james-yu.latex-workshop
-Utilities|Add-ons for  Workshop| code --install-extension tecosaur.latex-utilities
-Markdown All in One|Markdown additions for VScode| code --install-extension yzhang.markdown-all-in-one
+| Remote-ssh|Remote editing on server|`code --install-extension ms-vscode-remote.remote-ssh`
+C/C++ Extension Pack|Recommended tools for C/C++ programming|`code --install-extension ms-vscode.cpptools-extension-pack`
+C/C++ Themes|Better syntax highlighting|`code --install-extension ms-vscode.cpptools-themes`
+Code Spell Checker|Code-aware spell checking|`code --install-extension streetsidesoftware.code-spell-checker`
+GitHub Codespaces|Remote editing directly within GitHub repo|`code --install-extension github.codespaces`
+GitHub Copilot|AI pair programming buddy (requires license) |`code --install-extension github.copilot`
+GitLens|Git helper|`code --install-extension eamodio.gitlens`
+LiveShare|Remote collaborative programming|`code --install-extension ms-vsliveshare.vsliveshare`
+The Netwide Assembler (NASM) |nasm syntax highlighting| `code --install-extension rights.nas-vscode`
+Workshop|LaTeX support for VScode| `code --install-extension james-yu.latex-workshop`
+Utilities|Add-ons for  Workshop| `code --install-extension tecosaur.latex-utilities`
+Markdown All in One|Markdown additions for VScode| `code --install-extension yzhang.markdown-all-in-one`
  | | |
  
-Not all of these are necessary. I have limited the above list to only those extensions that directly pertain to this class -- there are also many themes, support for myriad languages, and a whole host of other utilities.
+Not all of these are necessary. I have limited the above list to only those extensions that probably pertain to this class -- there are also many themes, support for myriad languages, and a whole host of other utilities. The last 3 on the list are only if you use `Markdown` or `LaTeX`.
 
 ---
 ## Using tmux
