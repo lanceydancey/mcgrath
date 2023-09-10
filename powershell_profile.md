@@ -720,7 +720,10 @@ Set-PSReadLineKeyHandler -Key Alt+a `
 
 Import-Module Posh-Git
 Import-Module PowerColorLS
-Import-Module Pscx
+Import-Module Pscx -arg "$(Split-Path $profile -parent)\Pscx.UserPreferences.ps1"
+Import-Module Pansies
+Import-Module ImportExcel
+
 Set-Alias -Name ls -Value PowerColorLS -Option AllScope
 Set-Alias -Name less -Value bat -Option AllScope
 ```
