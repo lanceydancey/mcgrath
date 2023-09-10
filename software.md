@@ -227,7 +227,7 @@ Click the above will show this menu:
 
 You want the first option, the config file in your home directory (this is true regardless of platform). Please ensure the contents below are added to this file:
 
-```ini
+```sh
 Host ada 
     Hostname linux.cs.pdx.edu 
 
@@ -303,6 +303,11 @@ So how might you use this? Well, one way would be to have one session that maint
 Some more good info on `tmux` can be found [here](https://thevaluable.dev/tmux-config-mouseless/).
 
 I have a fairly extensive `tmux` configuration that you're welcome to steal, should you so desire. The contents of my [`.tmux.conf` file](.tmux.conf.md).
+
+Additional help on tmux: 
+
+- [tmux cheatsheet](https://tmuxcheatsheet.com/)
+- [Linux Handbook on tmux](https://linuxhandbook.com/tmux/)
 
 ---
 ## Setting up zsh on ada (and likewise WSL/macOS)

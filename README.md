@@ -9,7 +9,7 @@ Repo of useful documentation and tools I find useful.
 - [tmux config](.tmux.conf.md) 
 - [Technical Writing](technical_writing.md) 
 
-## New VM setup without sudo privs
+## Shell setup without sudo privs
 
 ```bash
 #!/usr/bin/env zsh
