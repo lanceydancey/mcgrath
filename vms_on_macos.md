@@ -18,7 +18,7 @@ Or, you can go full masochist and use `qemu` directly. I'm not going to cover th
 
 ## Running on Intel
 
-If you're using an Intel Mac, you're in luck. You can take the easy road for the virtual network setup. Well, mostly easy. You could use [pfSense](https://www.pfsense.org/) directly, rather than using FreeBSD and then setting up tools yourself. But, that just isn't nearly as much fun. So read the next section and do it that way. Yes, I'm serious. You had to actually learn math before you got to use the calculator, right? Same thing here. And if that wasn't the case for you, just smile, nod, and pretend it was.
+If you're using an Intel Mac, you're in luck. You could take the easy road for the virtual network setup. Well, mostly easy. You could use [pfSense](https://www.pfsense.org/) directly, rather than using FreeBSD and then setting up tools yourself. But, that just isn't nearly as much fun. So read the next section and do it that way. Yes, I'm serious. You had to actually learn math before you got to use the calculator, right? Same thing here. And if that wasn't the case for you, just smile, nod, and pretend it was.
 
 ## Running on Apple Silicon (M1+)
 
@@ -26,11 +26,74 @@ Alas, you don't get to take the easy road, because for reasons that escape me, N
 
 So, instead of installing pfSense, just install [FreeBSD](https://download.freebsd.org/ftp/releases/ISO-IMAGES/13.2/FreeBSD-13.2-RELEASE-arm64-aarch64-dvd1.iso.xz), which is what pfSense runs on anyway. This is actually better, because we get to run on a more up-to-date platform, and we aren't missing a bunch of useful tools like the pfSense folks. Plus, we get to learn how to do things the hard way, which is always fun, right?
 
-Once you have the freeBSD machine up and running, you can use [this script](freebsd_setup.sh) to do most of what we get from pfSense. You didn't think I was actually going to make you do all of this by hand, did you? That's just cruel. And part of what you get to do if you take my network security class. So, you know, you can do it then. But not now. Now, you get to use the script. And you'll be happy about it.
+## VM Installation, Step by Step
 
-## Virtual Network Setup
+OK, you have UTM installed, and you're ready to create your VM. How? Time for a little show and tell! Please only use the line appropriate for your architecture.
 
-In either case, once you have the basic VMs, you still need networking setup. Since we want to use the BSD machine as a virtual router/switch/firewall, we need to make sure other VMs can see it, and only try to connect through it. To do this, we need to create a virtual network adapter. This is done by clicking on the "Network" tab in UTM, and then clicking the "+" button in the bottom left corner. This will create a new network interface, which we can then configure. We'll want to set the "Network Mode" to "Host Only".
+1. Download your image:
 
-At this point, you should have two network interfaces: one for the WAN, and one for the LAN. The WAN interface should be configured as a "Shared Network" for "Network Mode" -- unless you have multiple Wireless NICs, in which case you can totally go "Bridged (Advanced)," but that's not too likely on laptop hardware. I would recommend the first network device be you WAN, and the second be your LAN, which should be the one you just created.
+   ```sh
+   ❯ curl -LO https://download.freebsd.org/ftp/releases/ISO-IMAGES/13.2/FreeBSD-13.2-RELEASE-arm64-aarch64-dvd1.iso.xz
+   ❯ curl -LO https://download.freebsd.org/ftp/releases/ISO-IMAGES/13.2/FreeBSD-13.2-RELEASE-amd64-dvd1.iso.xz
+   ```
+1. Uncompress your image:
 
+   ```sh
+   ❯ xz --decompress --verbose FreeBSD-13.2-RELEASE-arm64-aarch64-dvd1.iso.xz
+   ❯ xz --decompress --verbose FreeBSD-13.2-RELEASE-amd64-dvd1.iso.xz
+   ```
+
+1. Checksum your image:
+
+   ```sh
+   ❯ sha512sum --tag FreeBSD-13.2-RELEASE-arm64-aarch64-dvd1.iso
+   SHA512 (FreeBSD-13.2-RELEASE-arm64-aarch64-dvd1.iso) = 21b348e9a38b5bf98995018484af542df84c3a582ccbcfcd09fae16fdf1e77bf2854f4d2386f83cc7f8024c7a7b01aa15bf6b1133875dec2edc8f60a50d95e56
+   ❯ sha512sum --tag FreeBSD-13.2-RELEASE-amd64-dvd1.iso
+   SHA512 (FreeBSD-13.2-RELEASE-amd64-dvd1.iso) = 7c5473b9bbc5cb235329b8fa17ffb690abbae67fe5e4bb30260baa034501d3f23eba82679a9871af2f42e9600aff7e9e810a0b03005afc24962ed03945171ae1
+   ```
+
+    If you don't have `sha512sum` installed, you can use `shasum -a 512` instead, though it's a perl script, so takes a bit longer.
+
+1. Create a new VM in UTM:
+
+   1. We can create a new VM by clicking the `+` button on the top of the UTM window. This one:
+
+      ![add_vm_buttom](img/UTM1.png)
+
+   1. We want to virtualize, regardless of which underlying architecture we are using.
+
+      ![virtualize_not_emulate](img/UTM2.png)
+
+   1. We aren't installing macOS, Windows, or Linux, so select other:
+
+      ![other_os](img/UTM3.png)
+
+   1. Browse to wherever you downloaded the image, and select the ISO that you uncompressed.
+    
+      ![select_iso](img/UTM4.png)
+
+      Click continue.
+
+   1. I would suggest you give your VM at least 4GB of memory, since it's going to be the primary external interface to your work environment for this class. As for the cores, leaving it at `default` is fine, unless you want to limit it to a specific number of cores (at least 2!). Click continue.
+
+   1. For storage, 64GB should be plenty. We can resize later as needed. Click continue.
+
+   1. We won't be using a shared directory, so just click continue.
+
+   1. On the summary page, ensure that "Open VM Settings" is checked. Give your VM a descriptive name -- I called my VM freebsd. Click "Create VM".
+
+      ![select_iso](img/UTM8.png)
+
+   1. On the settings window, click on the "New..." button and select "Network".
+
+      ![add new network](img/UTM9.png)
+
+   1. Click on the newly created network device, and change the "Network Mode" to "Host Only". Click Save.
+
+      ![set networking mode](img/UTM10.png)
+   
+   1. Start your VM and proceed through the installation of the operating system. Unless you decide otherwise, the defaults work for almost everything. Don't bother to configure `vtnet1` (the second network interface) during the installation. We'll do that later. Make sure `vtnet0` is configured with DHCP, though.
+   
+Once you have the freeBSD machine up and running, you can use [this script](freebsd_setup.sh) to do most of what we get from pfSense. You didn't think I was actually going to make you do all of that by hand, did you? That's just cruel. And part of what you get to do if you take my network security class. So, you know, you can do it then. But not now. Now, you get to use the script. And you'll be happy about it.
+
+There's one caveat to the above. If you _really_ don't want to use NAT on the VM, you could instead set the networking mode of the first networking device to "Bridged (Advanced)" and bridge it to a physical NIC on your Mac. This is useful in situations where you want the VM to be a networking peer to your host system, but since you likely don't have multiple physical NICs on your laptop, we aren't really going to cover this much in practice. I will be talking about it in class, though.
