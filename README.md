@@ -1,6 +1,4 @@
 
-* auto-gen TOC:
-{:toc}
 ## Pages
 
 - [Software configuration](software.md) 
