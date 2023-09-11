@@ -1,4 +1,4 @@
-# VM Setup on macOS without paying for virtualization software
+VM Setup on macOS without paying for virtualization software
 
 * auto-gen TOC:
 {:toc}

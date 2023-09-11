@@ -1,5 +1,3 @@
-# Technical writing
-
 * auto-gen TOC:
 {:toc}
 
