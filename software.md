@@ -1,4 +1,4 @@
-# Software configuration that might be useful
+Software configuration that might be useful.
 
 * auto-gen TOC:
 {:toc}
