@@ -1,3 +1,4 @@
+{::options parse_block_html="true" /}
 VM Setup on Windows without paying for virtualization software
 
 * auto-gen TOC:
