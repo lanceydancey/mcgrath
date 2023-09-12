@@ -132,12 +132,17 @@ This will provide you with a package manager and an enhanced PowerShell. Running
 ❯ # This may or may not work on the version of windows you have installed:
 ❯ winget install JanDeDobbeleer.OhMyPosh 
 ❯ # if the above failed, install https://www.microsoft.com/en-us/p/app-installer/9nblggh4nns1?rtc=1&activetab=pivot:overviewtab and try again
+❯ if (!((Get-WindowsOptionalFeature -online -FeatureName Microsoft-Hyper-V).State -eq 'Enabled')) {
+  Enable-WindowsOptionalFeature -online -FeatureName Microsoft-Hyper-V -All -NoRestart
+}
+❯ if (!((Get-WindowsOptionalFeature -online -FeatureName VirtualMachinePlatform).State -eq 'Enabled')) {
+  Enable-WindowsOptionalFeature -online -FeatureName VirtualMachinePlatform -All -NoRestart
+}
+❯ if (!((Get-WindowsOptionalFeature -online -FeatureName HypervisorPlatform).State -eq 'Enabled')) {
+  Enable-WindowsOptionalFeature -online -FeatureName HypervisorPlatform -All -NoRestart
+}
 
-
-❯ # The above commands will enable powershell, while the below commands will set up and configure WSL. Only pick the WSL option if you have an active interest
-
-
-❯ # in using WSL for your development. If you don't know what WSL is, you probably don't want to use it.
+❯ # If you don't know what WSL is, you probably don't want to use it.
 ❯ Write-Host "Enabling WSL features..."
 ❯ if (!((Get-WindowsOptionalFeature -online -FeatureName Microsoft-Windows-Subsystem-Linux).State -eq 'Enabled')) {
     Enable-WindowsOptionalFeature -online -FeatureName Microsoft-Windows-Subsystem-Linux -All -NoRestart

@@ -1,3 +1,4 @@
+```sh
 #!/bin/sh
 ##
 #The following features are added:
@@ -75,3 +76,4 @@ service pf start
 
 # Load PF rules
 pfctl -f /etc/pf.conf
+```

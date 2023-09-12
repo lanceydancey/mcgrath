@@ -6,6 +6,7 @@
 - [tmux config](.tmux.conf.md) 
 - [Technical Writing](technical_writing.md) 
 - [VM Setup on macOS](vms_on_macos.md) 
+- [VM Setup on Windows](hyper-v.md)
 
 ## Useful links for learning:
 

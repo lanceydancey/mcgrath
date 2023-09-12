@@ -97,6 +97,13 @@ OK, you have UTM installed, and you're ready to create your VM. How? Time for a 
    
    1. Start your VM and proceed through the installation of the operating system. Unless you decide otherwise, the defaults work for almost everything. Don't bother to configure `vtnet1` (the second network interface) during the installation. We'll do that later. Make sure `vtnet0` is configured with DHCP, though.
    
-Once you have the freeBSD machine up and running, you can use [this script](freebsd_setup.sh) to do most of what we get from pfSense. You didn't think I was actually going to make you do all of that by hand, did you? That's just cruel. And part of what you get to do if you take my network security class. So, you know, you can do it then. But not now. Now, you get to use the script. And you'll be happy about it.
+Once you have the freeBSD machine up and running, you can use [this script](freebsd_setup.sh.md) to do most of what we get from pfSense. Before running it, execute the below commands:
+
+```sh
+$ sed -i '' 's/WAN="hn0"/WAN="vtnet0"/g' freebsd_setup.sh
+$ sed -i '' 's/LAN="hn1"/LAN="vtnet1"/g' freebsd_setup.sh
+```
+
+You didn't think I was actually going to make you do all of that by hand, did you? That's just cruel. And part of what you get to do if you take my network security class. So, you know, you can do it then. But not now. Now, you get to use the script. And you'll be happy about it.
 
 There's one caveat to the above. If you _really_ don't want to use NAT on the VM, you could instead set the networking mode of the first networking device to "Bridged (Advanced)" and bridge it to a physical NIC on your Mac. This is useful in situations where you want the VM to be a networking peer to your host system, but since you likely don't have multiple physical NICs on your laptop, we aren't really going to cover this much in practice. I will be talking about it in class, though.
