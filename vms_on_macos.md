@@ -96,7 +96,7 @@ OK, you have UTM installed, and you're ready to create your VM. How? Time for a 
 
       ![set networking mode](img/UTM10.png)
 
-   1.Once the VM boots, you'll be presented with a menu. Just hit enter. Most of the defaults are what you want them to be. Some specific things to look out for:
+   1. Once the VM boots, you'll be presented with a menu. Just hit enter. Most of the defaults are what you want them to be. Some specific things to look out for:
 
    * The default keyboard layout is US. If you want something else, you'll need to select it.
    * Pick a hostname that you can live with.
