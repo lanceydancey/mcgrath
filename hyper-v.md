@@ -133,12 +133,7 @@ Give your switch a name, then hit "OK." You now have your internal network switc
    * Setup "hn0" to use DHCP. IPv6 isn't necessary.
    * For Timezone selection, you want option 2, then option 49 (hit 5 twice then up arrow), then option 21 (hit 2 twice then down arrow). This assumes you want to use US Pacific Time. If you want something else, you'll need to figure out the appropriate option.
 
-Once you have the freeBSD machine up and running, you can use [this script](freebsd_setup.sh.md) to do most of what we get from pfSense. Before running it, execute the below commands:
-
-```sh
-$ sed -i '' 's/WAN="hn0"/WAN="vtnet0"/g' freebsd_setup.sh
-$ sed -i '' 's/LAN="hn1"/LAN="vtnet1"/g' freebsd_setup.sh
-```
+Once you have the freeBSD machine up and running, you can use [this script](freebsd_setup.sh.md) to do most of what we get from pfSense.
 
 You didn't think I was actually going to make you do all of that by hand, did you? That's just cruel. And part of what you get to do if you take my network security class. So, you know, you can do it then. But not now. Now, you get to use the script. And you'll be happy about it.
 
