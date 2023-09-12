@@ -29,7 +29,7 @@ Alas, you don't get to take the easy road, because for reasons that escape me, N
 
 So, instead of installing pfSense, just install [FreeBSD](https://download.freebsd.org/ftp/releases/ISO-IMAGES/13.2/FreeBSD-13.2-RELEASE-arm64-aarch64-dvd1.iso.xz), which is what pfSense runs on anyway. This is actually better, because we get to run on a more up-to-date platform, and we aren't missing a bunch of useful tools like the pfSense folks. Plus, we get to learn how to do things the hard way, which is always fun, right?
 
-## VM Installation, Step by Step
+## FreeBSD VM Installation, Step by Step
 
 OK, you have UTM installed, and you're ready to create your VM. How? Time for a little show and tell! Please only use the line appropriate for your architecture.
 
@@ -117,3 +117,11 @@ $ sed -i '' 's/LAN="hn1"/LAN="vtnet1"/g' freebsd_setup.sh
 You didn't think I was actually going to make you do all of that by hand, did you? That's just cruel. And part of what you get to do if you take my network security class. So, you know, you can do it then. But not now. Now, you get to use the script. And you'll be happy about it.
 
 There's one caveat to the above. If you *really* don't want to use NAT on the VM, you could instead set the networking mode of the first networking device to "Bridged (Advanced)" and bridge it to a physical NIC on your Mac. This is useful in situations where you want the VM to be a networking peer to your host system, but since you likely don't have multiple physical NICs on your laptop, we aren't really going to cover this much in practice. I will be talking about it in class, though.
+
+## Ubuntu 22.04 VM Installation
+
+With the above VM instructions, you should be able to install any additional VMs that you need. In our case, we want to use an Ubuntu 22.04 VM to run our tools and services. So, let's do that.
+
+For Apple Silicon Macs, use [Ubuntu Server for ARM](https://cdimage.ubuntu.com/releases/22.04/release/ubuntu-22.04.3-live-server-arm64.iso). For Intel Macs, use [Ubuntu Server for AMD64](https://cdimage.ubuntu.com/releases/22.04/release/ubuntu-22.04.3-live-server-amd64.iso). Make sure to verify the checksums!
+
+Once you have the ISO downloaded, create a new VM and install Ubuntu. The only setting within the VM configuration you need to worry about is to change the Network Mode to "Host Only" on the single NIC you need for this VM. This will allow the Ubuntu VM to use the FreeBSD VM as its gateway to the outside world. You can then use the FreeBSD VM as a bastion host to access the Ubuntu VM.
