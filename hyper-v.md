@@ -17,7 +17,9 @@ The commands below will install some useful tooling and then enable the Hyper-V 
 
 
 <details><summary markdown=span>Setup powershell and enable Hyper-V... (click to expand)</summary>
+
 {::options parse_block_html="true" /}
+
 ```powershell
 ❯ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 ❯ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
