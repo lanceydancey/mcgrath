@@ -36,23 +36,23 @@ OK, you have UTM installed, and you're ready to create your VM. How? Time for a 
 1. Download your image:
 
    ```sh
-   ❯ curl -LO https://download.freebsd.org/ftp/releases/ISO-IMAGES/13.2/FreeBSD-13.2-RELEASE-arm64-aarch64-dvd1.iso.xz
-   ❯ curl -LO https://download.freebsd.org/ftp/releases/ISO-IMAGES/13.2/FreeBSD-13.2-RELEASE-amd64-dvd1.iso.xz
+   $ curl -LO https://download.freebsd.org/ftp/releases/ISO-IMAGES/13.2/FreeBSD-13.2-RELEASE-arm64-aarch64-dvd1.iso.xz
+   $ curl -LO https://download.freebsd.org/ftp/releases/ISO-IMAGES/13.2/FreeBSD-13.2-RELEASE-amd64-dvd1.iso.xz
    ```
 
 1. Uncompress your image:
 
    ```sh
-   ❯ xz --decompress --verbose FreeBSD-13.2-RELEASE-arm64-aarch64-dvd1.iso.xz
-   ❯ xz --decompress --verbose FreeBSD-13.2-RELEASE-amd64-dvd1.iso.xz
+   $ xz --decompress --verbose FreeBSD-13.2-RELEASE-arm64-aarch64-dvd1.iso.xz
+   $ xz --decompress --verbose FreeBSD-13.2-RELEASE-amd64-dvd1.iso.xz
    ```
 
 1. Checksum your image:
 
    ```sh
-   ❯ sha512sum --tag FreeBSD-13.2-RELEASE-arm64-aarch64-dvd1.iso
+   $ sha512sum --tag FreeBSD-13.2-RELEASE-arm64-aarch64-dvd1.iso
    SHA512 (FreeBSD-13.2-RELEASE-arm64-aarch64-dvd1.iso) = 21b348e9a38b5bf98995018484af542df84c3a582ccbcfcd09fae16fdf1e77bf2854f4d2386f83cc7f8024c7a7b01aa15bf6b1133875dec2edc8f60a50d95e56
-   ❯ sha512sum --tag FreeBSD-13.2-RELEASE-amd64-dvd1.iso
+   $ sha512sum --tag FreeBSD-13.2-RELEASE-amd64-dvd1.iso
    SHA512 (FreeBSD-13.2-RELEASE-amd64-dvd1.iso) = 7c5473b9bbc5cb235329b8fa17ffb690abbae67fe5e4bb30260baa034501d3f23eba82679a9871af2f42e9600aff7e9e810a0b03005afc24962ed03945171ae1
    ```
 
