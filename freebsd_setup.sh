@@ -1,13 +1,15 @@
 #!/bin/sh
-##
+#
+# To download this script directly from freeBSD:
+# $ pkg install curl
+# $ curl -LO https://raw.githubusercontent.com/dkmcgrath/Tools-and-Tips/main/freebsd_setup.sh
+#
 #The following features are added:
 # - switching (internal to the network) via FreeBSD pf
 # - DHCP server, DNS server via dnsmasq
 # - firewall via FreeBSD pf
 # - NAT layer via FreeBSD pf
 #
-# NOTE: this script does not do much other than install and configure
-#       the basic needed utilities and configuration to act as a router
 
 # Set your network interfaces names; set these as they appear in ifconfig
 # they will not be renamed during the course of installation

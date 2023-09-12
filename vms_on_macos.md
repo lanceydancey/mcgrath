@@ -15,7 +15,7 @@ Alternatively, if you're a brew user, you can use
 $ brew install --cask utm
 ```
 
-to get UTM installed. If you're really feeling like you want to do things "The Linux Way", you can install `libvirt` and `virt-manager` via brew, and use that to manage your VMs. I'm not going to cover that here, but it's an option. 
+to get UTM installed. If you're really feeling like you want to do things "The Linux Way", you can install `libvirt` and `virt-manager` via brew, and use that to manage your VMs. I'm not going to cover that here, but it's an option.
 
 Or, you can go full masochist and use `qemu` directly. I'm not going to cover that here, either. And if you think it makes sense, why are you here? Go away. Or better yet, talk to me about becoming a TA.
 
@@ -39,6 +39,7 @@ OK, you have UTM installed, and you're ready to create your VM. How? Time for a 
    ❯ curl -LO https://download.freebsd.org/ftp/releases/ISO-IMAGES/13.2/FreeBSD-13.2-RELEASE-arm64-aarch64-dvd1.iso.xz
    ❯ curl -LO https://download.freebsd.org/ftp/releases/ISO-IMAGES/13.2/FreeBSD-13.2-RELEASE-amd64-dvd1.iso.xz
    ```
+
 1. Uncompress your image:
 
    ```sh
@@ -72,7 +73,7 @@ OK, you have UTM installed, and you're ready to create your VM. How? Time for a 
       ![other_os](img/UTM3.png)
 
    1. Browse to wherever you downloaded the image, and select the ISO that you uncompressed.
-    
+
       ![select_iso](img/UTM4.png)
 
       Click continue.
@@ -94,9 +95,18 @@ OK, you have UTM installed, and you're ready to create your VM. How? Time for a 
    1. Click on the newly created network device, and change the "Network Mode" to "Host Only". Click Save.
 
       ![set networking mode](img/UTM10.png)
-   
-   1. Start your VM and proceed through the installation of the operating system. Unless you decide otherwise, the defaults work for almost everything. Don't bother to configure `vtnet1` (the second network interface) during the installation. We'll do that later. Make sure `vtnet0` is configured with DHCP, though.
-   
+
+   1.Once the VM boots, you'll be presented with a menu. Just hit enter. Most of the defaults are what you want them to be. Some specific things to look out for:
+
+   * The default keyboard layout is US. If you want something else, you'll need to select it.
+   * Pick a hostname that you can live with.
+   * You want to use Auto (ZFS) Guided Root-on-ZFS for your disk configuration.
+     * On the next screen, hit T, then Enter to select your disks. You want Stripe, so hit Enter again. Hit spacebar to select the disks, then Enter to continue.
+     * Hit the up arrow to select ">>> Install", then hit Enter.
+   * Enter a root password ***and remember it!*** Store it securely, preferably in a password manager.
+   * Setup "vtnet0" to use DHCP. IPv6 isn't necessary.
+   * For Timezone selection, you want option 2, then option 49 (hit 5 twice then up arrow), then option 21 (hit 2 twice then down arrow). This assumes you want to use US Pacific Time. If you want something else, you'll need to figure out the appropriate option.
+
 Once you have the freeBSD machine up and running, you can use [this script](freebsd_setup.sh.md) to do most of what we get from pfSense. Before running it, execute the below commands:
 
 ```sh
@@ -106,4 +116,4 @@ $ sed -i '' 's/LAN="hn1"/LAN="vtnet1"/g' freebsd_setup.sh
 
 You didn't think I was actually going to make you do all of that by hand, did you? That's just cruel. And part of what you get to do if you take my network security class. So, you know, you can do it then. But not now. Now, you get to use the script. And you'll be happy about it.
 
-There's one caveat to the above. If you _really_ don't want to use NAT on the VM, you could instead set the networking mode of the first networking device to "Bridged (Advanced)" and bridge it to a physical NIC on your Mac. This is useful in situations where you want the VM to be a networking peer to your host system, but since you likely don't have multiple physical NICs on your laptop, we aren't really going to cover this much in practice. I will be talking about it in class, though.
+There's one caveat to the above. If you *really* don't want to use NAT on the VM, you could instead set the networking mode of the first networking device to "Bridged (Advanced)" and bridge it to a physical NIC on your Mac. This is useful in situations where you want the VM to be a networking peer to your host system, but since you likely don't have multiple physical NICs on your laptop, we aren't really going to cover this much in practice. I will be talking about it in class, though.
