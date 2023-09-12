@@ -1,4 +1,3 @@
-{::options parse_block_html="true" /}
 VM Setup on Windows without paying for virtualization software
 
 * auto-gen TOC:
@@ -16,9 +15,9 @@ I would strongly encourage you to move to Windows 11, but that's ultimately your
 
 The commands below will install some useful tooling and then enable the Hyper-V features you need. You'll need to reboot after running it, but once you do, you'll be ready to go! If you decide to run everything in a single go, make sure to edit the script to remove the `❯` character.
 
-<details>
-    <summary markdown=span>Setup powershell and enable Hyper-V... (click to expand)</summary>
 
+<details><summary markdown=span>Setup powershell and enable Hyper-V... (click to expand)</summary>
+{::options parse_block_html="true" /}
 ```powershell
 ❯ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 ❯ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
@@ -49,6 +48,7 @@ The commands below will install some useful tooling and then enable the Hyper-V 
 ```
 
 </details>
+{::options parse_block_html="false" /}
 
 ## Hyper-V Switch Setup
 
