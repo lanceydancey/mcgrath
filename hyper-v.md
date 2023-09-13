@@ -169,7 +169,7 @@ First, and this should be obvious, you should install a desktop environment on y
 In point of fact, I would suggest installing the following packages:
 
 ```sh
-$ sudo apt install kubuntu-desktop podman docker.io zsh tmux ruby-dev fonts-inconsolata autojump bat emacs build-essential cowsay figlet filters fortunes dos2unix squashfs-tools squashfs-tools-ng xfsprogs containerd
+$ sudo apt install kubuntu-desktop podman docker.io zsh tmux ruby-dev fonts-inconsolata autojump bat emacs build-essential cowsay figlet filters fortunes dos2unix squashfs-tools squashfs-tools-ng xfsprogs containerd python3-pip cargo cmake
 ```
 
 Do you need all of these? Not necessarily. We will be making use of the different container runtimes, so you'll need those, at least (`podman`, `docker.io`, and `containerd`). The rest are just tools that are useful to have and that I like. Edit as you see fit.
