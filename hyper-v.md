@@ -159,3 +159,116 @@ With the above VM instructions, you should be able to install any additional VMs
 Snag the [Ubuntu Server for AMD64](https://cdimage.ubuntu.com/releases/22.04/release/ubuntu-22.04.3-live-server-amd64.iso) ISO. Make sure to verify the checksums!
 
 Once you have the ISO downloaded, create a new VM and install Ubuntu. The only setting within the VM configuration you need to worry about is to change the Network Mode to "Host Only" on the single NIC you need for this VM. This will allow the Ubuntu VM to use the FreeBSD VM as its gateway to the outside world. You can then use the FreeBSD VM as a bastion host to access the Ubuntu VM.
+
+## Hyper-V Enhanced Session Mode for Ubuntu VM
+
+Hyper-V has two modes for interacting with VMs. The default for a Linux guest is the standard console mode, which is what you get when you run a VM. The second is Enhanced Session Mode, which allows you to use RDP to connect to the VM. This is useful if you want to use a GUI on the VM, or if you want to copy/paste between the VM and your host system, or share resources in some other fashion. So how do we enable this on our Ubuntu VM?
+
+First, and this should be obvious, you should install a desktop environment on you VM. Which you choose is entirely up to you, but I use the package `kubuntu-desktop`.
+
+In point of fact, I would suggest installing the following packages:
+
+```sh
+$ sudo apt install kubuntu-desktop podman docker.io zsh tmux ruby-dev fonts-inconsolata autojump bat emacs build-essential cowsay figlet filters fortunes dos2unix squashfs-tools squashfs-tools-ng xfsprogs containerd
+```
+
+Do you need all of these? Not necessarily. We will be making use of the different container runtimes, so you'll need those, at least (`podman`, `docker.io`, and `containerd`). The rest are just tools that are useful to have and that I like. Edit as you see fit.
+
+Once you have a DE in place and running, run the below script to enable Enhanced Session Mode from the VM side. You'll need to reboot the VM after running it.
+
+```sh
+#!/bin/bash
+
+#
+# This script is for Ubuntu 22.04 Jammy Jellyfish to download and install XRDP+XORGXRDP via
+# source.
+#
+# This script originally from Github user Hinara (https://github.com/Hinara/linux-vm-tools/blob/ubuntu20-04/ubuntu/22.04/install.sh)
+
+# tweaked to remove some stuff that wasn't necessary.
+###############################################################################
+# Update our machine to the latest code if we need to.
+#
+
+if [ "$(id -u)" -ne 0 ]; then
+    echo 'This script must be run with root privileges' >&2
+    exit 1
+fi
+
+apt update && apt upgrade -y
+
+if [ -f /var/run/reboot-required ]; then
+    echo "A reboot is required in order to proceed with the install." >&2
+    echo "Please reboot and re-run this script to finish the install." >&2
+    exit 1
+fi
+
+###############################################################################
+# XRDP
+#
+
+# Install hv_kvp utils
+apt install -y linux-tools-virtual${HWE}
+apt install -y linux-cloud-tools-virtual${HWE}
+
+# Install the xrdp service so we have the auto start behavior
+apt install -y xrdp
+
+systemctl stop xrdp
+systemctl stop xrdp-sesman
+
+# Configure the installed XRDP ini files.
+# use vsock transport.
+sed -i_orig -e 's/port=3389/port=vsock:\/\/-1:3389/g' /etc/xrdp/xrdp.ini
+# use rdp security.
+sed -i_orig -e 's/security_layer=negotiate/security_layer=rdp/g' /etc/xrdp/xrdp.ini
+# remove encryption validation.
+sed -i_orig -e 's/crypt_level=high/crypt_level=none/g' /etc/xrdp/xrdp.ini
+# disable bitmap compression since its local its much faster
+sed -i_orig -e 's/bitmap_compression=true/bitmap_compression=false/g' /etc/xrdp/xrdp.ini
+
+# rename the redirected drives to 'shared-drives'
+sed -i -e 's/FuseMountName=thinclient_drives/FuseMountName=shared-drives/g' /etc/xrdp/sesman.ini
+
+# Changed the allowed_users
+sed -i_orig -e 's/allowed_users=console/allowed_users=anybody/g' /etc/X11/Xwrapper.config
+
+# Blacklist the vmw module
+if [ ! -e /etc/modprobe.d/blacklist-vmw_vsock_vmci_transport.conf ]; then
+  echo "blacklist vmw_vsock_vmci_transport" > /etc/modprobe.d/blacklist-vmw_vsock_vmci_transport.conf
+fi
+
+#Ensure hv_sock gets loaded
+if [ ! -e /etc/modules-load.d/hv_sock.conf ]; then
+  echo "hv_sock" > /etc/modules-load.d/hv_sock.conf
+fi
+
+# Configure the policy xrdp session
+cat > /etc/polkit-1/localauthority/50-local.d/45-allow-colord.pkla <<EOF
+[Allow Colord all Users]
+Identity=unix-user:*
+Action=org.freedesktop.color-manager.create-device;org.freedesktop.color-manager.create-profile;org.freedesktop.color-manager.delete-device;org.freedesktop.color-manager.delete-profile;org.freedesktop.color-manager.modify-device;org.freedesktop.color-manager.modify-profile
+ResultAny=no
+ResultInactive=no
+ResultActive=yes
+EOF
+
+# reconfigure the service
+systemctl daemon-reload
+systemctl start xrdp
+
+#
+# End XRDP
+###############################################################################
+
+echo "Install is complete."
+echo "Reboot your machine to begin using XRDP."
+```
+
+After the VM is back up and running, you'll need to enable Enhanced Session Mode on the host side. To do this, open PowerShell as an Administrator and run the following command:
+
+```powershell
+❯ Set-VM -VMName <your_vm_name> -EnhancedSessionTransportType HvSocket
+```
+
+Now, when you connect to your VM from the Hyper-V manager, you'll be able to use Enhanced Session Mode!
