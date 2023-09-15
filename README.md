@@ -7,6 +7,7 @@
 - [Technical Writing](technical_writing.md) 
 - [VM Setup on macOS](vms_on_macos.md) 
 - [VM Setup on Windows](hyper-v.md)
+- [Ubuntu configuration](ubuntu.md)
 
 ## Useful links for learning:
 

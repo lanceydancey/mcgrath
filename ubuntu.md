@@ -56,7 +56,7 @@ $ sudo systemctl start ssh
 
 Now, on your host system, you need to configure your SSH client to make use of the bastion server that is your freeBSD VM. You can do this by adding the something like the following to your `~/.ssh/config` file:
 
-```ini
+```sh
 Host ubuntu-win
     Hostname 192.168.33.133
     ProxyJump 192.168.1.170
