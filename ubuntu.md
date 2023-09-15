@@ -3,13 +3,11 @@ Ubuntu Configuration
 * auto-gen TOC:
 {:toc}
 
-## First things first
-
 At this point, you should have an Ubuntu Server VM running. If you don't, go back and do that. I'll wait. If you do, then you're ready to start configuring it. 
 
-### Connectivity
+## Connectivity
 
-#### Getting an IP address
+### Getting an IP address
 Assuming you followed along in the VM creation instructions ([Windows](hyper-v.md), [macOS](vms_on_macos.md)), you should have 2 VMs. One is a FreeBSD VM with 2 vNICs, and the other is an Ubuntu VM with a single vNIC. The FreeBSD VM is going to be your router, and the Ubuntu VM is going to sit behind that router. So how do we do that?
 
 If you set up the virtual switching correctly, it should all just automagically work. The Ubuntu installer defaults the single vNIC to using DHCP. If you had freeBSD already configured at that point, your Ubuntu VM should have received a DHCP lease to a 192.168.33.0/24 address. If not, then your Ubuntu VM has no connectivity, and you need to go back to your freeBSD and fix that. Then let DHCP work its magic.
@@ -34,7 +32,7 @@ $ ip address show #for the lazy: ip a s
 
 `lo` is your link-local loopback interface. `enp0s1` is your first ethernet interface. In both cases, you can see the characteristics of the interface, including the IP address. If you don't see an IP address, then you need to go back and fix your freeBSD VM. If you do see an IP address, then you're good to go. If you are on Windows, you may have `eth0` rather than `enp0s1`. Different hypervisors use different naming conventions. The important thing is that you have an IP address.
 
-#### Connecting via SSH from your host system
+### Connecting via SSH from your host system
 
 OK, now that we have some connectivity, we need to be able to leverage it! We could use the VM console, but that's not very convenient unless you're doing something GUI related. So let's enable make use of SSH. "But wait!", you say, "The Ubuntu system is behind a NAT!" And yes, you are correct. But why should that stop us?
 
@@ -66,11 +64,11 @@ Host ubuntu-mac
     ProxyJump 192.168.67.8
 ```
 
-You will only need one of the stanzas, since you're unlikely running both host systems. Your IP address may also differ as well. The key ingredient in either case is the use of the `ProxyJump` directive. This tells SSH to use the specified host as the bastion/jump host. Completely transparently after the initial connection.
+You will only need one of the `Host` stanzas, since you're unlikely running both host systems. Your IP address may also differ as well. The key ingredient in either case is the use of the `ProxyJump` directive. This tells SSH to use the specified host as the bastion/jump host. Completely transparently after the initial connection.
 
 As long as you have your SSH keys configured on all 3 systems (host and 2 guests), connecting to your Ubuntu VM is as simple as typing `ssh ubuntu-win` or `ssh ubuntu-mac`. Or, you know, whatever you chose to name your systems.
 
-### System configuration
+## System configuration
 
 First, let's make sure it's up to date:
 
