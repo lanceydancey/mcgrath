@@ -101,9 +101,3 @@ $ sudo apt install podman docker.io zsh tmux ruby-dev fonts-inconsolata autojump
 
 You may have already done this if you are on Windows and configured Enhanced Session Mode for your Ubuntu VM. If not, run the command to get some of the basic tools we'll be using. We'll be adding more later, but this is a good start. If you want to add a desktop environment, go ahead and do that. I recommend `kubuntu-desktop` if you don't have a preference.
 
-```mermaid!
-pie title Pets adopted by volunteers
-  "Dogs" : 386
-  "Cats" : 85
-  "Rats" : 35
-```
