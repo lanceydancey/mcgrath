@@ -64,9 +64,11 @@ Host ubuntu-mac
     ProxyJump 192.168.67.8
 ```
 
-You will only need one of the `Host` stanzas, since you're unlikely running both host systems. Your IP address may also differ as well. The key ingredient in either case is the use of the `ProxyJump` directive. This tells SSH to use the specified host as the bastion/jump host. Completely transparently after the initial connection.
+You will only need one of the `Host` stanzas, since you're unlikely running both host systems. Your IP address may differ, as well. The key ingredient in either case is the use of the `ProxyJump` directive. This tells SSH to use the specified host as the bastion/jump host. Completely transparently after the initial connection.
 
 As long as you have your SSH keys configured on all 3 systems (host and 2 guests), connecting to your Ubuntu VM is as simple as typing `ssh ubuntu-win` or `ssh ubuntu-mac`. Or, you know, whatever you chose to name your systems.
+
+And really, this is how we want to do it right now. We'll get to port forwarding, but it's a major topic of conversation that we'll cover in detail later. For now, just use the bastion host.
 
 ## System configuration
 
@@ -78,4 +80,24 @@ $ sudo apt upgrade -y
 ```
 
 You may have seen these commands before, but if you haven't, here is what's happening. `apt update` pulls down new package index files for any and all repositories that you have defined. If you haven't added any yet, it will just update the default set. `apt upgrade` will then upgrade any packages that have updates available. The `-y` flag tells it to apply the upgrades without awaiting confirmation. This is useful for scripting, but not so much for interactive use. If you want to see what it's going to do before it does it, just leave off the `-y`.
+
+### Expand the filesystem
+
+For reasons that escape me, when you accept the default disk configuration in the Ubuntu installer (which uses LVM), it doesn't use all the physical disk space for the root logical volume. To fix this, run:
+
+```sh
+$ sudo lvextend --extents +100%FREE /dev/ubuntu-vg/ubuntu-lv --resizefs
+```
+
+This will extend the root logical volume to use the entire physical volume space available to it. The `-r` flag tells it to resize the file system as well. If you get an error about the volume not existing, run `sudo lvscan` and use the volume labeled `ACTIVE`.
+
+### Install useful tools
+
+OK, so we're likely still sitting on a barebones Ubuntu Server installation. We should fix that. Let's start with some useful tools:
+
+```sh
+$ sudo apt install podman docker.io zsh tmux ruby-dev fonts-inconsolata autojump bat emacs build-essential cowsay figlet filters fortunes dos2unix containerd python3-pip cargo cmake
+```
+
+You may have already done this if you are on Windows and configured Enhanced Session Mode for your Ubuntu VM. If not, run the command to get some of the basic tools we'll be using. We'll be adding more later, but this is a good start. If you want to add a desktop environment, go ahead and do that. I recommend `kubuntu-desktop` if you don't have a preference.
 
