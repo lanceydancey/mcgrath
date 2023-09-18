@@ -7,7 +7,20 @@
 - [Technical Writing](technical_writing.md) 
 - [VM Setup on macOS](vms_on_macos.md) 
 - [VM Setup on Windows](hyper-v.md)
+- [FreeBSD Setup Script](freebsd_setup.md)
 - [Ubuntu configuration](ubuntu.md)
+- [Windows File Sharing from Linux](samba.md)
+- [Networking Fundamentals](networking.md)
+- [Virtualization](virtualization.md)
+- [Containers](containers.md)
+- [Infrastructure as Code](sdi.md)
+- [Secure C Programming](secure_c.md)
+- [Other Secure Programming languages](secure_other.md)
+- [Automation](automation.md)
+- [Windows Administration](windows_admin.md)
+- [PowerShell](powershell.md)
+- [CI/CD and other Topics](ci_cd.md)
+- [Azure](azure.md)
 
 ## Useful links for learning:
 
