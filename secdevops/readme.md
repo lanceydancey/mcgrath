@@ -1,6 +1,8 @@
 
 ## Pages
+
 Ready:
+
 - [Software configuration](../software.md)
 - [tmux config](../.tmux.conf.md)
 - [Technical Writing](../technical_writing.md)
@@ -11,6 +13,7 @@ Ready:
 - [Powershell profile](../powershell_profile.md)
 
 Unfinished:
+
 - [Automation](../automation.md)
 - [Azure](../azure.md)
 - [CI/CD and other Topics](../ci_cd.md)
@@ -24,8 +27,7 @@ Unfinished:
 - [Windows Administration](../windows_admin.md)
 - [Windows File Sharing from Linux](../samba.md)
 
-
-## Useful links for learning:
+## Useful links for learning
 
 - [tmux cheatsheet](https://tmuxcheatsheet.com/)
 - [Linux Handbook on tmux](https://linuxhandbook.com/tmux/)
