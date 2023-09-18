@@ -6,16 +6,9 @@ Networking Fundamentals needed for System Administration
 ## TCP, UDP, IP, and ICMP
 
 These protocols form the backbone of the modern Internet. But what are they?
-
-### TCP: Transmission Control Protocol
-
-TCP is what is known as a connection-oriented protocol. This means that it is designed to ensure that data is delivered to the destination in the order it was sent, and that the destination acknowledges receipt of the data. TCP is also designed to ensure that data is not corrupted in transit. TCP is used for a large variety of Internet traffic, including web browsing, email, and file transfers. While the *proportional volume* of Internet traffic that is TCP is shrinking, the *absolute volume* of TCP traffic is increasing, as the Internet grows.
-
-Other services that use TCP as their underlying transport protocol include SSH, FTP, SMB/CIFS, and basically most things outside of streaming.
-
-### UDP: User Datagram Protocol
-
 ### IP: Internet Protocol
+
+The internet protocol is the underlying 
 
 * IPv4
     * Classes of IPv4 addresses
@@ -23,12 +16,37 @@ Other services that use TCP as their underlying transport protocol include SSH, 
     * Private IP ranges
 * IPv6
 
-### ICMP: Internet Control Message Protocol
+  ### ICMP: Internet Control Message Protocol
 
-Weird stuff here.
+Weird stuff here. While ICMP is typically considered part of the Internet layer, it's encapsulated within an IP packet...but it isn't really the same type of protocol as TCP or UDP. It's a control protocol rather than a transport protocol, and so is rightfully considered part of the 
+
+### TCP: Transmission Control Protocol
+
+TCP is what is known as a connection-oriented protocol. This means that it is designed to ensure that data is delivered to the destination in the order it was sent, and that the destination acknowledges receipt of the data. TCP is also designed to ensure that data is not corrupted in transit. TCP is used for a large variety of Internet traffic, including web browsing, email, and file transfers. While the *proportional volume* of Internet traffic that is TCP is shrinking, the *absolute volume* of TCP traffic is increasing, as the Internet grows.
+
+Other services that use TCP as their underlying transport protocol include SSH, FTP, SMB/CIFS, and basically most things outside of streaming. 
+
+TCP is protocol number `0x6` in the IP suite.
+
+### UDP: User Datagram Protocol
+
+UDP is a connectionless protocol -- it's very much a fire-and-forget protocol. Pretty much as simple as it gets in terms of transport protocols. UDP is often used for streaming media, where minor packet loss or mis-ordering is acceptable. UDP is also used for DNS, DHCP, and other services where a single packet is often sufficient.
+
+UDP is protocol number `0x11` in the IP suite.
 
 ---
+
 ## Networking Layers
+
+Networking is a complex topic, requiring support across the entire computing stack. From physical hardware to drivers, to how to get packets from point A to point B, and who is listening for what data, there's a lot to cover. Typically, networking is discussed in terms of layers.
+
+```mermaid
+  graph TD;
+      A-->B;
+      A-->C;
+      B-->D;
+      C-->D;
+```
 
 ## Network Hardware
 
