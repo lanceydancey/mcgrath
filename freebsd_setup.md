@@ -3,7 +3,7 @@
 #
 # To download this script directly from freeBSD:
 # $ pkg install curl
-# $ curl -LO https://raw.githubusercontent.com/dkmcgrath/Tools-and-Tips/main/freebsd_setup.sh
+# $ curl -LO https://raw.githubusercontent.com/dkmcgrath/sysadmin/main/freebsd_setup.sh
 #
 #The following features are added:
 # - switching (internal to the network) via FreeBSD pf
