@@ -130,7 +130,7 @@ In the above, you can easily replace the pipeline with some form of network comm
 
 ## Extending wireshark via the Lua scripting interface
 
-Other than mentioning its existence, I won't be saying much about the Lua extension interface. Here you can find the documentation for the APILinks to an external site.
+Other than mentioning its existence, I won't be saying much about the Lua extension interface. You can find the documentation for the API [here](https://www.wireshark.org/docs/wsdg_html_chunked/wsluarm.html).
 
 ## Using wireshark with non-ethernet sources
 
@@ -147,12 +147,8 @@ USB is another place where wireshark can come to the rescue if you ever need to 
 ## Optional Additional Resources
 Some suggested viewing/reading for additional in-depth coverage:
 
-Wireshark TutorialLinks to an external site. by Hackersploit:
-An excellent overview of what Wireshark can do, presented in a very informative way.
-Hak5 on wiresharkLinks to an external site.:
-A more casual, entertaining introduction to Wireshark. Hak5 has some excellent content on a variety of topics, and are always good for some casual hardware/software hacking shenanigans.
-Wireshark User's GuideLinks to an external site.:
-Everything you ever wanted to know about Wireshark (but didn't realize it).
-Wireshark WikiLinks to an external site.:
-Even more Wireshark!
-Wireshark® for Security Professionals: Using Wireshark and the Metasploit® Framework, ISBN 978-1-118-91821-0. Published by John Wiley & Sons, Inc.
+* [Wireshark Tutorial](https://www.youtube.com/playlist?list=PLBf0hzazHTGPgyxeEj_9LBHiqjtNEjsgt) by Hackersploit: An excellent overview of what Wireshark can do, presented in a very informative way.
+* [Hak5 on wireshark](https://www.youtube.com/playlist?list=PLW5y1tjAOzI30OkWG_rhUstdJTk1FgU2W): A more casual, entertaining introduction to Wireshark. Hak5 has some excellent content on a variety of topics, and are always good for some casual hardware/software hacking shenanigans.
+* [Wireshark User's Guide](https://www.wireshark.org/docs/wsug_html_chunked/): Everything you ever wanted to know about Wireshark (but didn't realize it).
+* [Wireshark Wiki](https://wiki.wireshark.org/FrontPage): Even more Wireshark!
+* [_Wireshark® for Security Professionals: Using Wireshark and the Metasploit® Framework_](https://onlinelibrary.wiley.com/doi/book/10.1002/9781119183457), ISBN 978-1-118-91821-0. Published by John Wiley & Sons, Inc.
