@@ -25,128 +25,11 @@ Weird stuff here. While ICMP is typically considered part of the Internet layer,
 
 TCP is what is known as a connection-oriented protocol. This means that it is designed to ensure that data is delivered to the destination in the order it was sent, and that the destination acknowledges receipt of the data. TCP is also designed to ensure that data is not corrupted in transit. TCP is used for a large variety of Internet traffic, including web browsing, email, and file transfers. While the *proportional volume* of Internet traffic that is TCP is shrinking, the *absolute volume* of TCP traffic is increasing, as the Internet grows.
 
-Other services that use TCP as their underlying transport protocol include SSH, FTP, SMB/CIFS, and basically most things outside of streaming. 
+Other services that use TCP as their underlying transport protocol include SSH, FTP, SMB/CIFS, and basically most things outside of streaming.
 
 TCP is protocol number `0x6` in the IP suite.
 
-<table style="margin: 0 auto; text-align:center">
-<caption>TCP segment header
-</caption>
-<tbody><tr>
-<th colspan="2"><i>Offsets</i>
-</th>
-<th colspan="8" style="border-left:1px; text-align:left;">0
-</th>
-<th colspan="8" style="border-left:1px; text-align:left;">1
-</th>
-<th colspan="8" style="border-left:1px; text-align:left;">2
-</th>
-<th colspan="8" style="border-left:1px; text-align:left;">3
-</th></tr>
-<tr>
-<th><a href="/wiki/Octet_(computing)" title="Octet (computing)">Octet</a></th>
-<th><a href="/wiki/Bit" title="Bit">Bit</a>
-</th>
-<th style="text-align:left;">0</th>
-<th>1</th>
-<th>2</th>
-<th>3</th>
-<th>4</th>
-<th>5</th>
-<th>6</th>
-<th>7</th>
-<th>0</th>
-<th>1
-</th>
-<th style="text-align:left;">2</th>
-<th>3</th>
-<th>4</th>
-<th>5</th>
-<th>6</th>
-<th>7</th>
-<th>0</th>
-<th>1</th>
-<th>2</th>
-<th>3
-</th>
-<th style="text-align:left;">4</th>
-<th>5</th>
-<th>6</th>
-<th>7</th>
-<th>0</th>
-<th>1</th>
-<th>2</th>
-<th>3</th>
-<th>4</th>
-<th>5
-</th>
-<th style="text-align:left;">6</th>
-<th>7
-</th></tr>
-<tr>
-<th>0
-</th>
-<th>0
-</th>
-<td colspan="16">Source port</td>
-<td colspan="16">Destination port
-</td></tr>
-<tr>
-<th>4
-</th>
-<th>32
-</th>
-<td colspan="32">Sequence number
-</td></tr>
-<tr>
-<th>8
-</th>
-<th>64
-</th>
-<td colspan="32">Acknowledgment number (if ACK set)
-</td></tr>
-<tr>
-<th>12
-</th>
-<th>96
-</th>
-<td colspan="4">Data offset</td>
-<td colspan="4">Reserved<br><b>0 0 0 0</b></td>
-<td><span style="writing-mode: vertical-lr; text-orientation: upright; letter-spacing: -0.12em; line-height:1em; width:1em;">CWR</span></td>
-<td><span style="writing-mode: vertical-lr; text-orientation: upright; letter-spacing: -0.12em; line-height:1em; width:1em;">ECE</span></td>
-<td><span style="writing-mode: vertical-lr; text-orientation: upright; letter-spacing: -0.12em; line-height:1em; width:1em;">URG</span></td>
-<td><span style="writing-mode: vertical-lr; text-orientation: upright; letter-spacing: -0.12em; line-height:1em; width:1em;">ACK</span></td>
-<td><span style="writing-mode: vertical-lr; text-orientation: upright; letter-spacing: -0.12em; line-height:1em; width:1em;">PSH</span></td>
-<td><span style="writing-mode: vertical-lr; text-orientation: upright; letter-spacing: -0.12em; line-height:1em; width:1em;">RST</span></td>
-<td><span style="writing-mode: vertical-lr; text-orientation: upright; letter-spacing: -0.12em; line-height:1em; width:1em;">SYN</span></td>
-<td><span style="writing-mode: vertical-lr; text-orientation: upright; letter-spacing: -0.12em; line-height:1em; width:1em;">FIN</span></td>
-<td colspan="16">Window Size
-</td></tr>
-<tr>
-<th>16
-</th>
-<th>128
-</th>
-<td colspan="16">Checksum</td>
-<td colspan="16">Urgent pointer (if URG set)
-</td></tr>
-<tr>
-<th>20<br>
-</th>
-<th>160<br>
-</th>
-<td colspan="32" rowspan="3" style="background:#ffd0d0;">Options (if <i>data offset</i> &gt; 5. Padded at the end with "0" bits if necessary.)<br>
-</td></tr>
-<tr>
-<th>⋮
-</th>
-<th>⋮
-</th></tr>
-<tr>
-<th>56
-</th>
-<th>448
-</th></tr></tbody></table>
+
 
 ### UDP: User Datagram Protocol
 
@@ -222,15 +105,15 @@ At least, not how the word "network" is used within the industry.
 
 The TCP/IP model is a 4-layer model, which is much more useful in practice. It is also the model used by the Linux kernel, and is the model we will use for this course. Basically, ignore layers 1, 5, and 6 of the OSI model, and you're good to go.
 
-Because of the way network technology is defined, the physical layer is really just the physical portion of the link layer. Ethernet, as a standard, defines both physical and link layers of the OSI model. So why separate them?
+Because of the way network technology is defined, the physical layer is really just the physical portion of the link layer. Ethernet, as a standard, defines both physical and link layers of the OSI model. So why separate them? The TCP/IP models calls this the **link layer**.
 
-The network layer is basically IP and ICMP. The transport layer is basically TCP and UDP. The application layer is everything layered on top of TCP or UDP.
+The OSI network layer is basically IP and ICMP, and is called the **internet layer** in TCP/IP. Same layer, different name.
+
+The transport layer is basically TCP and UDP. The application layer is everything layered on top of TCP or UDP.
 
 It's worth pointing out here that from a networking perspective, there's no distinction between HTTP, DNS, or SSH. They are just applications running on top of TCP/IP. At the networking level, I don't care if you set up a DNS server or a gitlab instance. I just care what ports they are running on and what transport protocol they are using. Everything else is handled by the application logic.
 
 ## Network Hardware
-
-### Fabric
 
 ### Switches
 
@@ -259,7 +142,7 @@ WAPs aren't typically used within home networks. The added complexity simply isn
 
 Most home routers are combination devices, with the functionality of a router, a switch, and a WAP all-in-one. Easy for the ISP to give to non-technical users, but terrible for anyone who wants to do anything more than the bare minimum.
 
-### Networking PHYs
+### Networking Fabrics
 
 Networks take many forms. Odds are good you interact with at 3, possibly 4, primary network technologies in everyday life:
 
@@ -270,9 +153,13 @@ Networks take many forms. Odds are good you interact with at 3, possibly 4, prim
 
 Each of these technologies uses a different physical layer, each with its own mechanical and electrical properties. Each is standardized by a different standards body, and each has its own quirks, limitations, and advantages. In the case of mobile networks, the business needs drive its distinction from WiFi, despite the fact that they are both based on the same underlying technology (digital RF). Bluetooth differs from WiFi in terms of power, bandwidth, and range, but is otherwise very similar. CAN is a completely different beast, and is used for very different purposes.
 
-Then there are the more "exotic" networks, such as those based on RS-485, RS-232, or other serial protocols. BACnet -- the building automation and control network -- connects industrial systems such as HVAC and access control...and runs over a variety of physical network media.
+Each physical layer used is a different *fabric*, or the physical object that provides interconnection between nodes. It can be fiber optic cabling, copper wire (as in ethernet), coaxial wire, RF waves, etc. Basically, if you can use it for some signaling, you can probably use it for networking in some fashion.
 
-Oh, and then we have mesh networks operating over wireless (not WiFi) signals, such as LoRaWAN, Zigbee, Zwave, Thread, etc. These are typically used for IoT devices, and are often proprietary.
+Then there are the more "exotic" networks, such as those based on RS-485, RS-232, or other serial protocols. BACnet -- the building automation and control network -- connects industrial systems such as HVAC and access control and runs over a variety of physical network media.
+
+Oh, and then we have mesh networks operating over wireless (not WiFi) signals, such as LoRaWAN, Zigbee, Zwave, Thread, etc. These are typically used for IoT devices, and are often proprietary. 
+
+And let's not forget the really unusual stuff, like digital modes over HAM radio. In many cases, these are based on the same precursors as the Internet, but are not the Internet. Some connect to the Internet. Most don't. People often ignore this aspect of networking, but in an emergency, it might be the only thing we have left for area-wide communication.
 
 Yes, we could have an entire term dedicated to this topic. Anyone interested?
 
@@ -349,7 +236,11 @@ LISTEN       0            128                         [::]:ssh                  
 
 ### `tcpdump`
 
+See the [tcpdump](tcpdump.md) page.
+
 ### Wireshark
+
+
 
 ### Other capture tools
 
