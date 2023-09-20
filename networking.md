@@ -29,7 +29,7 @@ Other services that use TCP as their underlying transport protocol include SSH, 
 
 TCP is protocol number `0x6` in the IP suite.
 
-<table class="wikitable" style="margin: 0 auto; text-align:center">
+<table style="margin: 0 auto; text-align:center">
 <caption>TCP segment header
 </caption>
 <tbody><tr>
