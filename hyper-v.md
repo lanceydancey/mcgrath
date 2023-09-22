@@ -194,7 +194,7 @@ Once you have a DE in place and running, run the below script to enable Enhanced
 # This script originally from Github user Hinara (https://github.com/Hinara/linux-vm-tools/blob/ubuntu20-04/ubuntu/22.04/install.sh) with modifications to work for us
 
 # To download from the ubuntu VM:
-# 
+# curl -LO https://raw.githubusercontent.com/dkmcgrath/sysadmin/main/enhanced_session.sh
 
 # tweaked to remove some stuff that wasn't necessary.
 ###############################################################################
