@@ -13,7 +13,11 @@ Go to the [Microsoft Software for Students](https://cat.pdx.edu/services/softwar
 
 I would strongly encourage you to move to Windows 11, but that's ultimately your decision.
 
-The commands below will install some useful tooling and then enable the Hyper-V features you need. You'll need to reboot after running it, but once you do, you'll be ready to go! Copy this script into a file with extension `.ps1` and run it via an Administrator PowerShell prompt.
+The commands below will install some useful tooling and then enable the Hyper-V features you need. You'll need to reboot after running it, but once you do, you'll be ready to go! Copy this script into a file with extension `.ps1` and run it via an Administrator PowerShell prompt. You'll need to change your execution policy in order to do so:
+
+```powershell
+$ Set-ExecutionPolicy Bypass -Scope Process -Force; ./install.ps1
+```
 
 ```powershell
 #install chocolatey
@@ -146,7 +150,7 @@ Give your switch a name, then hit "OK." You now have your internal network switc
    * Setup "hn0" to use DHCP. IPv6 isn't necessary.
    * For Timezone selection, you want option 2, then option 49 (hit 5 twice then up arrow), then option 21 (hit 2 twice then down arrow). This assumes you want to use US Pacific Time. If you want something else, you'll need to figure out the appropriate option.
 
-Once you have the freeBSD machine up and running, you can use [this script](freebsd_setup.sh.md) to do most of what we get from pfSense.
+Once you have the freeBSD machine up and running, you can use [this script](freebsd_setup.md) to do most of what we get from pfSense.
 
 You didn't think I was actually going to make you do all of that by hand, did you? That's just cruel. And part of what you get to do if you take my network security class. So, you know, you can do it then. But not now. Now, you get to use the script. And you'll be happy about it.
 
@@ -156,15 +160,19 @@ There's one caveat to the above. If you *really* don't want to use NAT on the VM
 
 With the above VM instructions, you should be able to install any additional VMs that you need. In our case, we want to use an Ubuntu 22.04 VM to run our tools and services. So, let's do that.
 
-Snag the [Ubuntu Server for AMD64](https://cdimage.ubuntu.com/releases/22.04/release/ubuntu-22.04.3-live-server-amd64.iso) ISO. Make sure to verify the checksums!
+Snag the [Ubuntu Server for AMD64](https://releases.ubuntu.com/22.04.3/) ISO. Make sure to verify the checksums!
 
 Once you have the ISO downloaded, create a new VM and install Ubuntu. The only setting within the VM configuration you need to worry about is to change the Network Mode to "Host Only" on the single NIC you need for this VM. This will allow the Ubuntu VM to use the FreeBSD VM as its gateway to the outside world. You can then use the FreeBSD VM as a bastion host to access the Ubuntu VM.
+
+![VM settings for Ubuntu VM](img/VM_settings.png)
+
+As for the installer itself, you're welcome to just accept the defaults, or change to your liking. Beyond timezone settings, I'd mostly leave it alone. You can always change things later.
 
 ## Hyper-V Enhanced Session Mode for Ubuntu VM
 
 Hyper-V has two modes for interacting with VMs. The default for a Linux guest is the standard console mode, which is what you get when you run a VM. The second is Enhanced Session Mode, which allows you to use RDP to connect to the VM. This is useful if you want to use a GUI on the VM, or if you want to copy/paste between the VM and your host system, or share resources in some other fashion. So how do we enable this on our Ubuntu VM?
 
-First, and this should be obvious, you should install a desktop environment on you VM. Which you choose is entirely up to you, but I use the package `kubuntu-desktop`.
+First, and this should be obvious, you should install a desktop environment on you VM. Which you choose is entirely up to you, but I use the package `kubuntu-desktop`. Other options include `cinnamon-desktop-environment`, `ubuntu-desktop`, `lubuntu-desktop`, `ubuntu-mate-desktop`, `xubuntu-desktop`, and others. There are more DEs than you can shake a stick at!
 
 In point of fact, I would suggest installing the following packages:
 
@@ -183,7 +191,10 @@ Once you have a DE in place and running, run the below script to enable Enhanced
 # This script is for Ubuntu 22.04 Jammy Jellyfish to download and install XRDP+XORGXRDP via
 # source.
 #
-# This script originally from Github user Hinara (https://github.com/Hinara/linux-vm-tools/blob/ubuntu20-04/ubuntu/22.04/install.sh)
+# This script originally from Github user Hinara (https://github.com/Hinara/linux-vm-tools/blob/ubuntu20-04/ubuntu/22.04/install.sh) with modifications to work for us
+
+# To download from the ubuntu VM:
+# 
 
 # tweaked to remove some stuff that wasn't necessary.
 ###############################################################################

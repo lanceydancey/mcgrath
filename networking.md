@@ -199,6 +199,11 @@ Yes, we could have an entire term dedicated to this topic. Anyone interested?
 
 `netstat` is an older tool, but has the benefit of being available on most systems. It can be used to display open sockets, routing tables, link statistics, and more. It is especially useful for determining what processes are listening on what ports.
 
+```sh
+$ #get numeric list of listening TCP and UDP sockets
+$ sudo netstat -tunl
+```
+
 That said, `netstat` is deprecated in favor of `ss`, which is more modern and has more features.
 
 See the `netstat` manpage for what tools replace which pieces of its functionality.
