@@ -45,14 +45,23 @@
 
 #install gef
 bash -c "$(curl -fsSL https://gef.blah.cat/sh)"
-pip3 install --user keystone-engine ropper capstone unicorn requests
+
+if [ -e $(which pip) ]; then
+    pip install --user keystone-engine ropper capstone unicorn requests
+elif [ -e $(which pip3) ]; then
+    pip3 install --user keystone-engine ropper capstone unicorn requests
+fi
 
 mkdir -p $HOME/bin
 mkdir -p $HOME/clones
 
 #install useful additions
 #useful little CLI hex viewer
-cargo install hexyl
+# cargo install hexyl
+
+curl -s -L https://github.com/sharkdp/hexyl/releases/download/v0.13.1/hexyl-v0.13.1-i686-unknown-linux-musl.tar.gz | tar -x -z -C $HOME -f -
+mv hexyl-v0.13.1-i686-unknown-linux-musl/hexyl $HOME/bin/
+rm -rf hexyl-v0.13.1-i686-unknown-linux-musl
 
 #better pager, called bat
 curl -s -L https://github.com/sharkdp/bat/releases/download/v0.23.0/bat-v0.23.0-x86_64-unknown-linux-musl.tar.gz | tar -x -z -C $HOME -f -
@@ -74,9 +83,7 @@ fi
 
 if [ ! -d $HOME/clones/bat-extras ]; then
     git clone https://github.com/eth-p/bat-extras.git $HOME/clones/bat-extras
-    cd $HOME/clones/bat-extras
     cp $HOME/clones/bat-extras/bin/* $HOME/bin/
-    cd $HOME
 fi
 
 if [ ! -d $HOME/clones/tmux-powerline ]; then
@@ -97,12 +104,6 @@ if [ ! -d $HOME/.oh-my-zsh ]; then
 fi
 
 ln -s $HOME/clones/diff-so-fancy $HOME/bin/diff-so-fancy
-
-sed -i 's/alias diff/#alias diff/g' $HOME/.oh_my_zsh/lib/theme-and-appearance.zsh
-cd $HOME/.oh-my-zsh/
-git add lib/theme-and-appearance.zsh
-git commit -m 'unalias diff'
-cd $HOME
 
 git config --global user.name "" #fill me in!
 git config --global user.email "" #fill me in!

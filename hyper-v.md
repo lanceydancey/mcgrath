@@ -162,13 +162,51 @@ With the above VM instructions, you should be able to install any additional VMs
 
 Snag the [Ubuntu Server for AMD64](https://releases.ubuntu.com/22.04.3/) ISO. Make sure to verify the checksums!
 
-Once you have the ISO downloaded, create a new VM and install Ubuntu. The only setting within the VM configuration you need to worry about is to change the Network Mode to "Host Only" on the single NIC you need for this VM. This will allow the Ubuntu VM to use the FreeBSD VM as its gateway to the outside world. You can then use the FreeBSD VM as a bastion host to access the Ubuntu VM.
-
-![VM settings for Ubuntu VM](img/VM_settings.png)
+Once you have the ISO downloaded, create a new VM and install Ubuntu. The only setting within the VM settings you need to worry about is to change the network to use the switch you created previously on the single NIC you need for this VM. This will allow the Ubuntu VM to use the FreeBSD VM as its gateway to the outside world. You can then use the FreeBSD VM as a bastion host to access the Ubuntu VM.
 
 As for the installer itself, you're welcome to just accept the defaults, or change to your liking. Beyond timezone settings, I'd mostly leave it alone. You can always change things later.
 
-## Hyper-V Enhanced Session Mode for Ubuntu VM
+## Quality of life improvements for VMs
+
+### Better interface for freeBSD VM
+
+You may have noticed that the default console window for the freeBSD VM is...subpar. It's not the worst, but it is within hailing distance. So, let's fix that.
+
+To do this, we need a few pieces:
+
+* A terminal emulator that supports serial connections -- putty, MobaXTerm, etc.
+* The name of the VM we want to add the pipe to -- we'll use freebsd
+* The name of the pipe we want to add -- we'll use `\\.\pipe\freebsd`
+* An administrative PowerShell prompt
+
+1. First, we need to create the pipe. To do this, run the following command in an administrative PowerShell prompt:
+
+   ```powershell
+   ❯ Set-VMComPort -VMName freebsd -Number 1 \\.\pipe\freebsd
+   ```
+
+   This example assigns the first COM power (aka serial port) to the pipe `\\.\pipe\freebsd`. You can change the name of the pipe to whatever you want, but you'll need to remember it for the next step.
+
+1. Create the named pipe instance (using [this constructor](https://learn.microsoft.com/en-us/dotnet/api/system.io.pipes.namedpipeserverstream.-ctor?view=net-7.0#system-io-pipes-namedpipeserverstream-ctor(system-string-system-io-pipes-pipedirection-system-int32-system-io-pipes-pipetransmissionmode-system-io-pipes-pipeoptions-system-int32-system-int32))) via the following command in an administrative PowerShell prompt:
+
+   ```powershell
+   ❯ New-Object System.IO.Pipes.NamedPipeServerStream("\\.\pipe\freebsd", "InOut", 100, "Byte", "None", 1024, 1024)
+   ```
+
+   That's the pipe name we used in the first step, bidirectional, at most 100 instances, byte transmission mode, no options, and default in/out buffer sizes.
+
+1. Run putty (or whatever terminal emulator you are using) as Administrator.
+1. Create a new serial connection, and set the serial line to `\\.\pipe\freebsd` (or whatever you named your pipe). Set the speed to 115200. Click "Open".
+
+   ![putty serial connection](img/putty_serial.png)
+
+   I would recommend setting the font to something palatable, and set the window size to a known value. I use 140x40, but you can use whatever you want.
+
+1. Now, run the VM, at the boot menu type 5 until you get to "Dual (Serial Primary)". This will direct the console output to the serial port. Hit enter to continue booting.
+
+1. Now you can interact with the VM via putty! This means copy/paste support, better keyboard mapping, even scrolling support!
+
+### Hyper-V Enhanced Session Mode for Ubuntu VM
 
 Hyper-V has two modes for interacting with VMs. The default for a Linux guest is the standard console mode, which is what you get when you run a VM. The second is Enhanced Session Mode, which allows you to use RDP to connect to the VM. This is useful if you want to use a GUI on the VM, or if you want to copy/paste between the VM and your host system, or share resources in some other fashion. So how do we enable this on our Ubuntu VM?
 
@@ -218,12 +256,14 @@ fi
 # XRDP
 #
 
-# Install hv_kvp utils
-apt install -y linux-tools-virtual${HWE}
-apt install -y linux-cloud-tools-virtual${HWE}
-
+# Install hv_kvp utils for XRDP
 # Install the xrdp service so we have the auto start behavior
-apt install -y xrdp
+if apt install -y xrdp linux-tools-virtual linux-cloud-tools-virtual >/dev/null 2>&1; then
+    echo "Successfully installed xrdp."
+else
+    echo "Failed to install xrdp." >&2
+    exit 1
+fi
 
 systemctl stop xrdp
 systemctl stop xrdp-sesman

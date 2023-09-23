@@ -87,7 +87,7 @@ Probably the least useful but weirdly pervasive models of the network is the 7-l
 
 1. Session
 
-   Something, something, web application something. Supposedly used for something. Ignore it.
+   Something, something, web application, something, something. Supposedly used for something. Ignore it.
 
 1. Presentation
 
@@ -194,6 +194,74 @@ Yes, we could have an entire term dedicated to this topic. Anyone interested?
 ## Monitoring a network
 
 ### `ip`/`ifconfig`
+
+One of the most basic things we need to know about a system on the network is its IP address. Assuming you have access to the host, the simplest way to find the IP address is with one of the following commands:
+
+```sh
+$ ifconfig
+docker0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 172.17.0.1  netmask 255.255.0.0  broadcast 172.17.255.255
+        inet6 fe80::42:82ff:fea4:7efd  prefixlen 64  scopeid 0x20<link>
+        ether 02:42:82:a4:7e:fd  txqueuelen 0  (Ethernet)
+        RX packets 29  bytes 1828 (1.8 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 66  bytes 7787 (7.7 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+enp0s1: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 10.37.129.2  netmask 255.255.255.0  broadcast 10.37.129.255
+        inet6 fe80::746d:65ff:fe10:9ea1  prefixlen 64  scopeid 0x20<link>
+        ether 76:6d:65:10:9e:a1  txqueuelen 1000  (Ethernet)
+        RX packets 766  bytes 394784 (394.7 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 111  bytes 25678 (25.6 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 28672  bytes 2123134 (2.1 MB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 28672  bytes 2123134 (2.1 MB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+veth60197a2: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet6 fe80::d8e9:e3ff:fe07:6b1c  prefixlen 64  scopeid 0x20<link>
+        ether da:e9:e3:07:6b:1c  txqueuelen 0  (Ethernet)
+        RX packets 29  bytes 2234 (2.2 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 101  bytes 11689 (11.6 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+```
+
+```sh
+$ ip address show
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: enp0s1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether 76:6d:65:10:9e:a1 brd ff:ff:ff:ff:ff:ff
+    inet 10.37.129.2/24 metric 100 brd 10.37.129.255 scope global dynamic enp0s1
+       valid_lft 85641sec preferred_lft 85641sec
+    inet6 fe80::746d:65ff:fe10:9ea1/64 scope link 
+       valid_lft forever preferred_lft forever
+3: docker0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default 
+    link/ether 02:42:82:a4:7e:fd brd ff:ff:ff:ff:ff:ff
+    inet 172.17.0.1/16 brd 172.17.255.255 scope global docker0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::42:82ff:fea4:7efd/64 scope link 
+       valid_lft forever preferred_lft forever
+5: veth60197a2@if4: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue master docker0 state UP group default 
+    link/ether da:e9:e3:07:6b:1c brd ff:ff:ff:ff:ff:ff link-netnsid 0
+    inet6 fe80::d8e9:e3ff:fe07:6b1c/64 scope link 
+       valid_lft forever preferred_lft forever
+
+```
 
 ### `netstat`
 
