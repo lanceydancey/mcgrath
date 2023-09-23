@@ -75,30 +75,19 @@ block log all
 pass in on \$ext_if proto tcp to port { ssh } keep state (max-src-conn 15, max-src-conn-rate 3/1, overload <bruteforce> flush global)
 pass out on \$ext_if proto { tcp, udp } to port \$services
 pass out on \$ext_if inet proto icmp icmp-type \$icmp_types
-
 pass in on \$int_if from \$int_if:network to any
 
+pass in quick on \$int_if inet proto udp from any port = bootpc to 255.255.255.255 port = bootps keep state label \"allow access to DHCP server\"
+pass in quick on \$int_if inet proto udp from any port = bootpc to \$int_if:network port = bootps keep state label \"allow access to DHCP server\"
+pass out quick on igb1 inet proto udp from \$int_if:network port = bootps to any port = bootpc keep state label \"allow access to DHCP server\"
 " >> /etc/pf.conf
-
-#Firewall rules go in /etc/pf.blockrules.conf
-#use the quick keyword to drop packet immediately
-#block all icmp from google dns (8.8.8.8) as example
-#int_if is lAN , ext_if is WAN
-
-echo "
-#Usage: pf firewall, use quick keyword here
-#\$int_if
-#\$ext_if
-
-block in quick on \$ext_if proto icmp from 8.8.8.8 to any
-block out quick on \$ext_if proto icmp from any to 8.8.8.8
-" > /etc/pf.blockrules.conf
 
 # Start dnsmasq
 service dnsmasq start
 
 # Enable PF on boot
 sysrc pf_enable="YES"
+sysrc pflog_enable="YES"
 
 # Start PF
 service pf start
