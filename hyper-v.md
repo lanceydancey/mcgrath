@@ -206,6 +206,8 @@ To do this, we need a few pieces:
 
 1. Now you can interact with the VM via putty! This means copy/paste support, better keyboard mapping, even scrolling support!
 
+Some additional thoughts. I would suggest letting the VM know about the size of the terminal window. This can be directly accomplished at the command line with something like `stty rows 40 cols 140` if you used my recommended size above.
+
 ### Hyper-V Enhanced Session Mode for Ubuntu VM
 
 Hyper-V has two modes for interacting with VMs. The default for a Linux guest is the standard console mode, which is what you get when you run a VM. The second is Enhanced Session Mode, which allows you to use RDP to connect to the VM. This is useful if you want to use a GUI on the VM, or if you want to copy/paste between the VM and your host system, or share resources in some other fashion. So how do we enable this on our Ubuntu VM?
