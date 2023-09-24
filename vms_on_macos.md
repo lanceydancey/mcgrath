@@ -107,7 +107,7 @@ OK, you have UTM installed, and you're ready to create your VM. How? Time for a 
    * Setup "vtnet0" to use DHCP. IPv6 isn't necessary.
    * For Timezone selection, you want option 2, then option 49 (hit 5 twice then up arrow), then option 21 (hit 2 twice then down arrow). This assumes you want to use US Pacific Time. If you want something else, you'll need to figure out the appropriate option.
 
-Once you have the freeBSD machine up and running, you can use [this script](freebsd_setup.sh.md) to do most of what we get from pfSense. Before running it, execute the below commands:
+Once you have the freeBSD machine up and running, you can use [this script](freebsd_setup.sh.md)(see script for direct download instructions) to do some of what we get from pfSense. Before running it, execute the below commands:
 
 ```sh
 $ sed -i '' 's/WAN="hn0"/WAN="vtnet0"/g' freebsd_setup.sh
