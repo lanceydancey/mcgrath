@@ -9,13 +9,48 @@ These protocols form the backbone of the modern Internet. But what are they?
 
 ### IP: Internet Protocol
 
-The internet protocol is the underlying 
+The internet protocol is the underlying protocol of the Internet. One of the fun aspects of IP is that it guarantees nothing. It simply provides an identification scheme for nodes on the Internet. It does not guarantee delivery, it does not guarantee order, it does not guarantee anything. It is a best-effort protocol, and that's it.
 
-* IPv4
-    * Classes of IPv4 addresses
-    * CIDR notation
-    * Private IP ranges
-* IPv6
+There are two main variants of IP in use today: IPv4 and IPv6. IPv6 was created to accommodate the rising number of devices on the Internet -- some estimates put the number of interconnected digital devices at well over 10 billion, with Cisco estimating 5.3 billion individual users. IPv4 only allows for 4.3 billion unique addresses, which is clearly insufficient (pigeon hole principle!!!). IPv6 allows for three hundred and forty undecillion, two hundred and eighty-two decillion, three hundred and sixty-six nonillion, nine hundred and twenty octillion, nine hundred and thirty-eight septillion, four hundred and sixty-three sextillion, four hundred and sixty-three quintillion, three hundred and seventy-four quadrillion, six hundred and seven trillion, four hundred and thirty-one billion, seven hundred and sixty-eight million, two hundred and eleven thousand, four hundred and fifty-six unique addresses, which should be enough for a while ($\approx 3.4e^{38}$). IPv4, by contrast, supports *only* 4.3 billion unique addresses ($\approx 4.3e^9$). 
+
+To compare, IPv6 has enough address to give roughly 100 addresses to *each atom on the surface of the Earth*. IPv4 barely has enough addresses to share one address per two people on Earth. IPv6 is a *lot* of addresses.
+
+Assume that someone has invented nanites, small, self-controlled swarm robots on the nanometer scale. This puts them roughly the size of atoms. Next, assume that a swarm can replicate the functionality of arbitrary bacteria, at roughly 50 billion nanites per bacterium. The human body contains on the order of 50 trillion bacteria. There are roughly 8 billion people on Earth. If all the bacteria in all the humans on Earth were replaced by nanites, with each nanite assigned an IPv6 address, it would consume roughly $\frac{1}{10,000}$ of the available IPv6 addresses. In math:
+$$
+\left(\frac{50e12\ \mathrm{bacteria}}{\mathrm{human}}\right) \times \left(\frac{8e9\ \mathrm{humans}}{\mathrm{Earth}}\right) \times \left(\frac{50e9\ \mathrm{nanites}}{\mathrm{bacteria}}\right) \approx \left(\frac{2e^{34}\ \mathrm{nanites}}{\mathrm{Earth}}\right)
+$$
+
+Since $\displaystyle \frac{3.4e^{38}}{2e^{34}}$ is roughly $10e^3$, each nanite could have $10,000$ IPv6 addresses.
+
+While the above is mostly for amusement value, we won't be discussing IPv6 much. While the Internet Society measures IPv6 adoption rate at 46%, the reality is that all of those systems also run IPv4. We will be focusing on IPv4, as it is the primary protocol in use today. IPv4 is also the default on most systems and networks.
+
+### IPv4
+
+IPv4 addresses are 32 bits in length, and are typically represented in dotted decimal notation. Each segment is one octet (8 bits) of the address: $a.b.c.x$. The first three octets are the network address, and the last octet is the host address. The network address is used to identify the network, and the host address is used to identify the host on the network. 
+
+Each subnet, or collection of addresses contained within the network address, can be classified based on size. 
+
+* Class A: addresses of the form $a.x.y.z$, where $a$ is the network address and $x.y.z$ is the host address. Technically $a < 127$, but in practice, any value of $a$ was considered a class A address. These were for large networks, consisting of $2^{24}$ hosts.
+* Class B: addresses of the form $a.b.x.y$, where $a.b$ is the network address. Contains $2^{16}$ hosts.
+* Class C: addresses of the form $a.b.c.x$, where $a.b.c$ is the network address. Contains $2^8$ hosts.
+
+This is great, as far as it goes, but it turned out this was simply too inflexible. Classless inter-domain routing, or CIDR (pronounced like cider), was created to increase flexibility in IP address block purchasing. CIDR notation is of the form $a.b.c.d/y$, where $a.b.c.d$ is the network address and $y$ is the number of bits in the network address. This allows for arbitrary network sizes, and is the standard notation used today. 
+
+How CIDR actually works is by defining a fixed portion (the network address) and a mask. For instance, a common private range in use is 10.0.0.0/8. This means that the first 8 bits of the address are fixed, and the remaining 24 bits are variable. "But wait", you say, "this looks just like a Class A network from above!" And it does. But CIDR is much more flexible than the class system. For instance, another private range is 172.16.0.0/12. This means the first 12 bits are fixed, and all other bits are variable. This is midway between a Class A and a Class B network, containing $2^{20}$ hosts.
+
+Any value of $y$ is valid, from 0 to 32. A value of 32 means that the entire address is fixed, and there are no hosts on the network. A value of 0 means that the entire address is variable, and the network is the Internet. A value of 31 is technically valid, but is not used in practice. A value of 31 would mean that there are only two hosts on the network, which is not enough to be useful. A value of 30 is the smallest useful network, containing 4 hosts. A value of 29 contains 8 hosts, and so on.
+
+The two examples I chose were from the private address space defined in [RFC6890](https://www.rfc-editor.org/rfc/rfc6890). Specifically, those ranges marked for "Private-Use". These ranges are
+
+* 10.0.0.0/8
+* 172.16.0.0/12
+* 192.168.0.0/16
+
+You've likely encountered the first and the third, while the second range, for reasons that are not entirely clear, is not used much in practice.
+
+Now, I know some of you are running a fairly large number of connected devices in your household. And if everyone was doing that, how can we possibly still be running on IPv4? The answer, such as it is, is NAT -- Network Address Translation. Combined with private-use ranges above, NAT allows for a large private network to be behind a single globally routable IP address.
+
+The way NAT works is to translate from the global IP range outside your router to the private IP range on the inside of your router. It does this by rewriting packets as they pass through the router, changing both the source IP address and the source port. It maintains a table of these mappings so that packets returning to the host inside the network can be translated back to the original source IP address and port. This is why you can have multiple devices on your home network all using the same IP address -- the router is rewriting the packets to make it appear as if they are all coming from the same device. This is also why if you purchase a gift for your partner, they often start getting ads for that gift -- since all devices on your private network are a single device outside your network. Ad networks are stupid.
 
 ### ICMP: Internet Control Message Protocol
 
@@ -28,8 +63,6 @@ TCP is what is known as a connection-oriented protocol. This means that it is de
 Other services that use TCP as their underlying transport protocol include SSH, FTP, SMB/CIFS, and basically most things outside of streaming.
 
 TCP is protocol number `0x6` in the IP suite.
-
-
 
 ### UDP: User Datagram Protocol
 
@@ -73,7 +106,7 @@ Probably the least useful but weirdly pervasive models of the network is the 7-l
 
    TCP and UDP are the primary protocols of the transport layer. This layer is concerned with the reliable delivery of data between two nodes on a network. This is the layer where ports come into play. Ports are used to identify services on a node, and are used to multiplex multiple services on a single node. 
 
-   The 4-tuple of *(IP<sub>src</sub>, port<sub>src</sub>, IP<sub>dest</sub>, port<sub>dest</sub>)* is the unique identifier of a network conversation. The ports in question can be either UDP or TCP (both the same), depending on the application in use. Certain applications are so well known that they have defined names (`/etc/services`) that are used interchangeably with the port number. For example, port 80 is the standard HTTP port, and port 443 is the standard HTTPS port. Other services are equally well-defined.
+   The 4-tuple of $(IP_{src}, port_{src}, IP_{dest}, port_{dest})$ is the unique identifier of a network conversation. The ports in question can be either UDP or TCP (both the same), depending on the application in use. Certain applications are so well known that they have defined names (`/etc/services`) that are used interchangeably with the port number. For example, port 80 is the standard HTTP port, and port 443 is the standard HTTPS port. Other services are equally well-defined.
 
    Ports are divided into three ranges:
 
