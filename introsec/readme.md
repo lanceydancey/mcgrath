@@ -20,6 +20,8 @@ https://cat.pdx.edu/users/getting-help/for-new-students/
 |-|-|
 | Attendance	| 5% |
 |Lab notebooks	| 75%| 
+
+
 Final exam	20%Attendance and participation
 Attendance is required and will be taken each class. If you miss class, extra credit will be given back for participation in the Slack channel. You are expected to follow this code of conduct when communicating.Academic misconduct
 Includes allowing another student to copy your work unless specifically allowed by the instructor.
