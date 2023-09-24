@@ -179,7 +179,7 @@ To do this, we need a few pieces:
 * The name of the pipe we want to add -- we'll use `\\.\pipe\freebsd`
 * An administrative PowerShell prompt
 
-1. First, we need to create the pipe. To do this, run the following command in an administrative PowerShell prompt:
+1. First, we need to create the pipe using [`Set-VMComPort`](https://learn.microsoft.com/en-us/powershell/module/hyper-v/set-vmcomport?view=windowsserver2022-ps&viewFallbackFrom=win10-ps). To do this, run the following command in an administrative PowerShell prompt:
 
    ```powershell
    ❯ Set-VMComPort -VMName freebsd -Number 1 \\.\pipe\freebsd
