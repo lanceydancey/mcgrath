@@ -11,7 +11,7 @@ These protocols form the backbone of the modern Internet. But what are they?
 
 The internet protocol is the underlying protocol of the Internet. One of the fun aspects of IP is that it guarantees nothing. It simply provides an identification scheme for nodes on the Internet. It does not guarantee delivery, it does not guarantee order, it does not guarantee anything. It is a best-effort protocol, and that's it.
 
-There are two main variants of IP in use today: IPv4 and IPv6. IPv6 was created to accommodate the rising number of devices on the Internet -- some estimates put the number of interconnected digital devices at well over 10 billion, with Cisco estimating 5.3 billion individual users. IPv4 only allows for 4.3 billion unique addresses, which is clearly insufficient (pigeon hole principle!!!). IPv6 allows for three hundred and forty undecillion, two hundred and eighty-two decillion, three hundred and sixty-six nonillion, nine hundred and twenty octillion, nine hundred and thirty-eight septillion, four hundred and sixty-three sextillion, four hundred and sixty-three quintillion, three hundred and seventy-four quadrillion, six hundred and seven trillion, four hundred and thirty-one billion, seven hundred and sixty-eight million, two hundred and eleven thousand, four hundred and fifty-six unique addresses, which should be enough for a while ($\approx 3.4e^{38}$). IPv4, by contrast, supports *only* 4.3 billion unique addresses ($\approx 4.3e^9$). 
+There are two main variants of IP in use today: IPv4 and IPv6. IPv6 was created to accommodate the rising number of devices on the Internet -- some estimates put the number of interconnected digital devices at well over 10 billion, with Cisco estimating 5.3 billion individual users. IPv4 only allows for 4.3 billion unique addresses, which is clearly insufficient (pigeon hole principle!!!). IPv6 allows for three hundred and forty undecillion, two hundred and eighty-two decillion, three hundred and sixty-six nonillion, nine hundred and twenty octillion, nine hundred and thirty-eight septillion, four hundred and sixty-three sextillion, four hundred and sixty-three quintillion, three hundred and seventy-four quadrillion, six hundred and seven trillion, four hundred and thirty-one billion, seven hundred and sixty-eight million, two hundred and eleven thousand, four hundred and fifty-six unique addresses, which should be enough for a while ($\approx 3.4e^{38}$). IPv4, by contrast, supports *only* 4.3 billion unique addresses ($\approx 4.3e^9$).
 
 To compare, IPv6 has enough address to give roughly 100 addresses to *each atom on the surface of the Earth*. IPv4 barely has enough addresses to share one address per two people on Earth. IPv6 is a *lot* of addresses.
 
@@ -26,15 +26,15 @@ While the above is mostly for amusement value, we won't be discussing IPv6 much.
 
 ### IPv4
 
-IPv4 addresses are 32 bits in length, and are typically represented in dotted decimal notation. Each segment is one octet (8 bits) of the address: $a.b.c.x$. The first three octets are the network address, and the last octet is the host address. The network address is used to identify the network, and the host address is used to identify the host on the network. 
+IPv4 addresses are 32 bits in length, and are typically represented in dotted decimal notation. Each segment is one octet (8 bits) of the address: $a.b.c.x$. The first three octets are the network address, and the last octet is the host address. The network address is used to identify the network, and the host address is used to identify the host on the network.
 
-Each subnet, or collection of addresses contained within the network address, can be classified based on size. 
+Each subnet, or collection of addresses contained within the network address, can be classified based on size.
 
 * Class A: addresses of the form $a.x.y.z$, where $a$ is the network address and $x.y.z$ is the host address. Technically $a < 127$, but in practice, any value of $a$ was considered a class A address. These were for large networks, consisting of $2^{24}$ hosts.
 * Class B: addresses of the form $a.b.x.y$, where $a.b$ is the network address. Contains $2^{16}$ hosts.
 * Class C: addresses of the form $a.b.c.x$, where $a.b.c$ is the network address. Contains $2^8$ hosts.
 
-This is great, as far as it goes, but it turned out this was simply too inflexible. Classless inter-domain routing, or CIDR (pronounced like cider), was created to increase flexibility in IP address block purchasing. CIDR notation is of the form $a.b.c.d/y$, where $a.b.c.d$ is the network address and $y$ is the number of bits in the network address. This allows for arbitrary network sizes, and is the standard notation used today. 
+This is great, as far as it goes, but it turned out this was simply too inflexible. Classless inter-domain routing, or CIDR (pronounced like cider), was created to increase flexibility in IP address block purchasing. CIDR notation is of the form $a.b.c.d/y$, where $a.b.c.d$ is the network address and $y$ is the number of bits in the network address. This allows for arbitrary network sizes, and is the standard notation used today.
 
 How CIDR actually works is by defining a fixed portion (the network address) and a mask. For instance, a common private range in use is 10.0.0.0/8. This means that the first 8 bits of the address are fixed, and the remaining 24 bits are variable. "But wait", you say, "this looks just like a Class A network from above!" And it does. But CIDR is much more flexible than the class system. For instance, another private range is 172.16.0.0/12. This means the first 12 bits are fixed, and all other bits are variable. This is midway between a Class A and a Class B network, containing $2^{20}$ hosts.
 
@@ -54,7 +54,7 @@ The way NAT works is to translate from the global IP range outside your router t
 
 ### ICMP: Internet Control Message Protocol
 
-Weird stuff here. While ICMP is typically considered part of the Internet layer, it's encapsulated within an IP packet...but it isn't really the same type of protocol as TCP or UDP. It's a control protocol rather than a transport protocol, and so is rightfully considered part of the 
+Weird stuff here. While ICMP is typically considered part of the Internet layer, it's encapsulated within an IP packet...but it isn't really the same type of protocol as TCP or UDP. It's a control protocol rather than a transport protocol, and so is rightfully considered part of the
 
 ### TCP: Transmission Control Protocol
 
@@ -82,9 +82,9 @@ Probably the least useful but weirdly pervasive models of the network is the 7-l
 
 1. Physical
 
-   The physical layer is the electrical, mechanical, and procedural view of the network. This layer is concerned with number of wires, physical connectors used, voltage levels, transmission mode (simplex, half- or full-duplex), etc. of the networking technology in use. Other considerations include data encoding and modulation, frequency within the EM spectrum, and more. 
+   The physical layer is the electrical, mechanical, and procedural view of the network. This layer is concerned with number of wires, physical connectors used, voltage levels, transmission mode (simplex, half- or full-duplex), etc. of the networking technology in use. Other considerations include data encoding and modulation, frequency within the EM spectrum, and more.
 
-   This layer, in concrete terms, is the combination of the logic implemented on an ASIC and the PHY/transceiver where you can connect a cable. For ethernet, the PHY is the RJ-45 socket combined with the ethernet controller chip on the circuit board. 
+   This layer, in concrete terms, is the combination of the logic implemented on an ASIC and the PHY/transceiver where you can connect a cable. For ethernet, the PHY is the RJ-45 socket combined with the ethernet controller chip on the circuit board.
 
 1. Data Link
 
@@ -96,7 +96,7 @@ Probably the least useful but weirdly pervasive models of the network is the 7-l
 
 1. Network
 
-   The network layer is where IP comes into play. 
+   The network layer is where IP comes into play.
 
    Level 3 switches switch on IP addresses, and can operate across multiple networks. They perform routing, and are aware of IP addresses. Level 3 switches are technically routers, but in common usage routers exist on the network boundary, rather than within the network. Level 3 switches are also known as multilayer switches. Notice any terminology conflation yet?
 
@@ -104,7 +104,7 @@ Probably the least useful but weirdly pervasive models of the network is the 7-l
 
 1. Transport
 
-   TCP and UDP are the primary protocols of the transport layer. This layer is concerned with the reliable delivery of data between two nodes on a network. This is the layer where ports come into play. Ports are used to identify services on a node, and are used to multiplex multiple services on a single node. 
+   TCP and UDP are the primary protocols of the transport layer. This layer is concerned with the reliable delivery of data between two nodes on a network. This is the layer where ports come into play. Ports are used to identify services on a node, and are used to multiplex multiple services on a single node.
 
    The 4-tuple of $(IP_{src}, port_{src}, IP_{dest}, port_{dest})$ is the unique identifier of a network conversation. The ports in question can be either UDP or TCP (both the same), depending on the application in use. Certain applications are so well known that they have defined names (`/etc/services`) that are used interchangeably with the port number. For example, port 80 is the standard HTTP port, and port 443 is the standard HTTPS port. Other services are equally well-defined.
 
@@ -190,7 +190,7 @@ Each physical layer used is a different *fabric*, or the physical object that pr
 
 Then there are the more "exotic" networks, such as those based on RS-485, RS-232, or other serial protocols. BACnet -- the building automation and control network -- connects industrial systems such as HVAC and access control and runs over a variety of physical network media.
 
-Oh, and then we have mesh networks operating over wireless (not WiFi) signals, such as LoRaWAN, Zigbee, Zwave, Thread, etc. These are typically used for IoT devices, and are often proprietary. 
+Oh, and then we have mesh networks operating over wireless (not WiFi) signals, such as LoRaWAN, Zigbee, Zwave, Thread, etc. These are typically used for IoT devices, and are often proprietary.
 
 And let's not forget the really unusual stuff, like digital modes over HAM radio. In many cases, these are based on the same precursors as the Internet, but are not the Internet. Some connect to the Internet. Most don't. People often ignore this aspect of networking, but in an emergency, it might be the only thing we have left for area-wide communication.
 
@@ -315,16 +315,16 @@ The primary replacement for `netstat`, `ss` is a more modern tool which can disp
 
 Some useful flags include:
 
-- `-l, --listening`: list listening sockets
-- `-t, --tcp`: list TCP sockets
-- `-u, --udp`: list UDP sockets
-- `-x, --unix`: list Unix sockets
-- `-p, --processes`: show process information for each socket (requires admin privileges)
-- `-n, --numeric`: don't resolve hostnames or ports/services
-- `-r, --resolve`: try to resolve hostnames
-- `-a, --all`: show all sockets (including those not listening)
-- `-i, --info`: show internal TCP information
-- `-e, --extended`: show extended socket information
+* `-l, --listening`: list listening sockets
+* `-t, --tcp`: list TCP sockets
+* `-u, --udp`: list UDP sockets
+* `-x, --unix`: list Unix sockets
+* `-p, --processes`: show process information for each socket (requires admin privileges)
+* `-n, --numeric`: don't resolve hostnames or ports/services
+* `-r, --resolve`: try to resolve hostnames
+* `-a, --all`: show all sockets (including those not listening)
+* `-i, --info`: show internal TCP information
+* `-e, --extended`: show extended socket information
 
 For example, to show the processes with open TCP listen sockets, resolved hostnames and ports, and extended information, you could run:
 
