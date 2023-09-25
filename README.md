@@ -6,6 +6,8 @@
 
 ## Pages
 
+Not all of these pages are complete or useful yet.  I'm working on it.
+
 * [Automation](automation.md)
 * [Azure](azure.md)
 * [CI/CD and other Topics](ci_cd.md)
@@ -15,19 +17,19 @@
 * [Networking Fundamentals](networking.md)
 * [Other Secure Programming languages](secure_other.md)
 * [PowerShell](powershell.md)
-* [Powershell profile](powershell_profile.md) 
+* [Powershell profile](powershell_profile.md)
 * [Secure C Programming](secure_c.md)
-* [Software configuration](software.md) 
-* [Technical Writing](technical_writing.md) 
+* [Software configuration](software.md)
+* [Technical Writing](technical_writing.md)
 * [Ubuntu configuration](ubuntu.md)
 * [VM Setup on Windows](hyper-v.md)
-* [VM Setup on macOS](vms_on_macos.md) 
+* [VM Setup on macOS](vms_on_macos.md)
 * [Virtualization](virtualization.md)
 * [Windows Administration](windows_admin.md)
 * [Windows File Sharing from Linux](samba.md)
-* [tmux config](.tmux.conf.md) 
+* [tmux config](.tmux.conf.md)
 
-## Useful links for learning:
+## Useful links for learning
 
 * [tmux cheatsheet](https://tmuxcheatsheet.com/)
 * [Linux Handbook on tmux](https://linuxhandbook.com/tmux/)
@@ -139,4 +141,3 @@ wget -q -O setup.tar.bz2 http://web.cecs.pdx.edu/~dmcgrath/setup.tar.bz2
 #wget -q -O setup.tar.bz2 http://web.cecs.pdx.edu/~dmcgrath/setup_496.tar.bz2
 tar xavf setup.tar.bz2 -C ~/
 ```
-

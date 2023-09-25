@@ -9,7 +9,7 @@
 * Office hours:
     * Location: FAB 120-15 and Zoom
     * Times: TBD
- 
+
 **TA**: Cera Oh
 
 * PDX username: ceoh
