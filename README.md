@@ -1,7 +1,7 @@
 
 ## Courses
 
-* [Introduction to Computer Science](introsec/readme.md)
+* [Introduction to Computer Security](introsec/readme.md)
 * [System Administration and DevOps](secdevops/readme.md)
 
 ## Pages
