@@ -69,11 +69,11 @@ While we could use PowerShell to do this, we'll start with Hyper-V Manager. We'l
 
 ![Hyper-V Manager](img/hyper-v1.0.png)
 
-Then, select "New virtual network switch" and "Internal" as the type. Click "Create Virtual Switch".
+Then, select "New virtual network switch" and "Private" as the type. Click "Create Virtual Switch".
 
 ![virtual switch manager](img/hyper-v1.1.png)
 
-Give your switch a name, then hit "OK." You now have your internal network switch!
+Give your switch a name, then hit "OK." You now have your private network switch! This switch will only be usable by the VMs themselves. No direct host connection. If we want to access anything on this switch from our host system, we'll need to hop through a bastion host. We'll get to that later.
 
 ## VM Installation, Step by Step
 
