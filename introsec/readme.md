@@ -1,5 +1,25 @@
 # CS 491/591: Introduction to Security
 
+**Location**: EB 92 (TR 16:40-18:30)
+
+**Instructor**: D. Kevin McGrath
+
+* PDX username: dmcgrath
+* Gitlab username: dkmcgrath
+* Office hours:
+    * Location: FAB 120-15 and Zoom
+    * Times: TBD
+ 
+**TA**: Cera Oh
+
+* PDX username: ceoh
+* Gitlab username: ceoh1
+* Office hours:
+    * Location: TBD
+    * Times: TBD
+
+**Recorded Lectures**: These will be made available via [MediaSpace](https://mediaspace.pdx.edu/). Login required.
+
 ## Course Description
 
 This class provides an overview of computer security intended for a broad audience. Topics covered include basic security principles, access control, cryptography, authentication, network security, host security, application security, and privacy and anonymity with a focus on how they are embodied in actual systems.
@@ -60,7 +80,7 @@ We will not be meeting the week of finals, and I will not be holding office hour
 
 Lab assignments will be given each class covering the course material. You will perform each one, while maintaining a lab notebook in markdown that documents your progress via screenshots with your OdinID in them. The notebook should also include answers to any questions in the labs. Notebooks should be done in Markdown in their respective folders. Submission will be done via adding, committing and pushing the files to your private GitLab repository.
 
-Please add myself (dkmcgrath) and your TA as collaborators to your private repo. You can do this by going to the settings page for your repo, clicking on the "Manage access" tab, and then clicking on the "Invite a collaborator" button. You will need to add both myself and your TA as collaborators.
+Please add myself (dkmcgrath) and your TA (ceoh1) as collaborators to your private repo. You can do this by going to the settings page for your repo, clicking on the "Manage access" tab, and then clicking on the "Invite a collaborator" button. You will need to add both myself and your TA as collaborators.
 
 Always turn in what you have done on-time. Late work throughout the quarter may be compiled into a single submission that will be graded at the end of the last week of class in a file named notebooks/LateLabs.pdf. The notebook will be graded based upon the following rubric:
 
