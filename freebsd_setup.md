@@ -80,7 +80,7 @@ pass in on \$int_if from \$int_if:network to any
 
 pass in quick on \$int_if inet proto udp from any port = bootpc to 255.255.255.255 port = bootps keep state label \"allow access to DHCP server\"
 pass in quick on \$int_if inet proto udp from any port = bootpc to \$int_if:network port = bootps keep state label \"allow access to DHCP server\"
-pass out quick on igb1 inet proto udp from \$int_if:network port = bootps to any port = bootpc keep state label \"allow access to DHCP server\"
+pass out quick on \$int_if inet proto udp from \$int_if:network port = bootps to any port = bootpc keep state label \"allow access to DHCP server\"
 " >> /etc/pf.conf
 
 # Start dnsmasq

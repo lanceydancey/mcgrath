@@ -128,4 +128,24 @@ Once you have the ISO downloaded, create a new VM and install Ubuntu. The only s
 
 ![VM settings for Ubuntu VM](img/VM_settings.png)
 
-As for the installer itself, you're welcome to just accept the defaults, or change to your liking. Beyond timezone settings, I'd mostly leave it alone. You can always change things later.
+As for the installer itself, you're welcome to just accept the defaults, or change to your liking. Beyond timezone settings, I'd mostly leave it alone. You can always change things later. 
+
+## Quality of Life improvement
+
+The default terminal interface in FreeBSD is truly terrible. It isn't the worst, but it's within spitting distance. So, let's fix that.
+
+1. Power down the freeBSD VM.
+1. Go to the settings for the VM, and click on the "New..." button in the hardware section, then select "Serial". It will create a new serial entry for you.
+1. Click on the new serial entry, and ensure the "Mode" is set to "Built-in Terminal". Select a font to use. Click Save.
+1. Remove the Display device from the VM. You won't need it anymore. You can do this by right-clicking on the Display device, and selecting "Remove Device".
+1. Now, run the VM, at the boot menu type 5 until you get to "Dual (Serial Primary)". This will direct the console output to the serial port. Hit enter to continue booting.
+
+* This interface will allow you to copy/paste in both directions. 
+* You can resize the window, then resize the terminal itself by clicking this button:
+
+  ![resize button](img/utm_serial.png)
+
+  And then hitting enter with the `stty` command. For some reason changing the window size doesn't send `SIGWINCH` like it should, so we have to do it manually. That's a small price to pay here, I think.
+
+* The keyboard is actually mapped properly, by macOS standards.
+* You can even scroll! Just a reminder, if you decide to install tmux on the VM, scrolling interacts weirdly here. You can scroll, but it's not the same as scrolling in a normal terminal. You'll see what I mean if you try it.
