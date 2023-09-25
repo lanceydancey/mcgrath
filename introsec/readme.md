@@ -33,7 +33,7 @@ This class provides an overview of computer security intended for a broad audien
 | 8 | Host attacks (Internal recon, Lateral movement, Persistence, Impact)<br>Host defenses (IDS/IPS/EDR, signature detection, anomaly detection, blocklisting and allowlisting, Software signing, Virtualization and isolation techniques, File system backup and encryption)<br>Application security: DevSecOps| [Labs #6](https://codelabs.cs.pdx.edu/cs491/?cat=Nb06)| Labs #5 |
 | 9 | Programming language and CPU security, Memory corruption, Return-oriented Programming, Canaries, ASLR, Control-Flow Integrity | [Labs #7](https://codelabs.cs.pdx.edu/cs491/?cat=Nb07)| Labs #6 |
 | 10 | Supply-chain security <br> Privacy and anonymity security| | |
-| Finals week | | | |
+| Finals week | | | Labs #7 |
 | | | | |
 
 We will not be meeting the week of finals, and I will not be holding office hours. I will be available via email, but may not reply immediately, or even the same day.
