@@ -57,30 +57,33 @@ table <rfc6890> { 0.0.0.0/8 10.0.0.0/8 100.64.0.0/10 127.0.0.0/8 169.254.0.0/16 
 table <bruteforce> persist
 
 
-#options                                                                                                                                             
+#options                                                                                                                         
 set skip on lo0
 
-#normalization                                                                                                                                       
+#normalization
 scrub in all fragment reassemble max-mss 1440
 
-#NAT rules                                                                                                                                           
+#NAT rules
 nat on \$ext_if from \$int_if:network to any -> (\$ext_if)
 
-#blocking rules                                                                                                                                      
+#blocking rules
 antispoof quick for \$ext_if
 block in quick on egress from <rfc6890>
 block return out quick on egress to <rfc6890>
 block log all
 
-#pass rules                                                                                                                                          
+#pass rules
+pass in quick on \$int_if inet proto udp from any port = bootpc to 255.255.255.255 port = bootps keep state label \"allow access to DHCP server\"
+pass in quick on \$int_if inet proto udp from any port = bootpc to \$int_if:network port = bootps keep state label \"allow access to DHCP server\"
+pass out quick on \$int_if inet proto udp from \$int_if:0 port = bootps to any port = bootpc keep state label \"allow access to DHCP server\"
+
+pass in quick on \$ext_if inet proto udp from any port = bootpc to \$ext_if:0 port = bootps keep state label "allow access to DHCP client"
+pass out quick on \$ext_if inet proto udp from \$ext_if:0 port = bootps to any port = bootpc keep state label "allow access to DHCP client"
+
 pass in on \$ext_if proto tcp to port { ssh } keep state (max-src-conn 15, max-src-conn-rate 3/1, overload <bruteforce> flush global)
 pass out on \$ext_if proto { tcp, udp } to port \$services
 pass out on \$ext_if inet proto icmp icmp-type \$icmp_types
 pass in on \$int_if from \$int_if:network to any
-
-pass in quick on \$int_if inet proto udp from any port = bootpc to 255.255.255.255 port = bootps keep state label \"allow access to DHCP server\"
-pass in quick on \$int_if inet proto udp from any port = bootpc to \$int_if:network port = bootps keep state label \"allow access to DHCP server\"
-pass out quick on \$int_if inet proto udp from \$int_if:network port = bootps to any port = bootpc keep state label \"allow access to DHCP server\"
 " >> /etc/pf.conf
 
 # Start dnsmasq
