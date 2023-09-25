@@ -13,20 +13,30 @@ This class provides an overview of computer security intended for a broad audien
 1. Explain security issues in networks, hosts, and applications and how they can be addressed
 1. Identify privacy issues in computing systems and how they can be addressed
 
-https://cat.pdx.edu/users/getting-help/for-new-students/
-
 ### Policies
 
-|-|-|
-| Attendance	| 5% |
-|Lab notebooks	| 75%| 
+|-|-|-|-|
+|Grading||Attendance and participation|Academic Misconduct|
+|<table><tbody><tr><td>Attendance</td><td>5%</td></tr><tr><td>Lab notebooks</td><td>65%</td></tr><tr><td>Final</td><td>30%</td></tr></tbody></table>|Attendance is required and will be taken each class. If you miss class, extra credit will be given back for participation in the Slack channel. You are expected to follow this [code of conduct](https://www.mozilla.org/en-US/about/governance/policies/participation/) when communicating.|| <ol><li>Includes allowing another student to copy your work unless specifically allowed by the instructor.</li><li>Results in a grade of 0 for the assignment or exam.</li><li>Results in the initiation of disciplinary action at the [university level](https://www.pdx.edu/dos/academic-misconduct).</li></ol>
 
+## Schedule
 
-Final exam	20%Attendance and participation
-Attendance is required and will be taken each class. If you miss class, extra credit will be given back for participation in the Slack channel. You are expected to follow this code of conduct when communicating.Academic misconduct
-Includes allowing another student to copy your work unless specifically allowed by the instructor.
-Results in a grade of 0 for the assignment or exam.
-Results in the initiation of disciplinary action at the university level.
+| Week | Topic | Labs | Due on Monday |
+| ---- | ----- | ---- | ------------- |
+| 1 | Introduction<br>Careers and Roles in Cybersecurity (CyberPDX)<br>Principles and Approaches<br>Access Control and Authorization<br>Linux Basics (files, commands)| [Labs #1](https://codelabs.cs.pdx.edu/cs491/?cat=Nb01)| |
+| 2 | Linux basics (command I/O, shell navigation, advanced files)<br>Basics (regex, file utilities, network commands, processes) | [Labs #2](https://codelabs.cs.pdx.edu/cs491/?cat=Nb02)|Labs #1|
+| 3 | Linux Access Control (permissions, setuid, sudo)<br>Applied cryptography: Encoding, Hash functions, Message Authentication Codes<br>Applied Cryptography: Symmetric, Asymmetric (Public-Key) encryption | | |
+| 4 | Applied Cryptography: Digital signatures, Certificates, Key exchange protocols, Perfect Forward Secrecy, Future Secrecy, Signal protocol<br>Authentication: Password security, Multi-factor authentication | [Labs #3](https://codelabs.cs.pdx.edu/cs491/?cat=Nb03)| Lab #2|
+| 5 | Authentication: FIDO/Passkeys (Passwordless authentication), Zero-trust and continuous authentication<br>Social engineering (Spam, Phishing, Business Email Compromise, Scams, Fraud)<br>Network security: Data-link layer (802.11, WPA2)| [Labs #4](https://codelabs.cs.pdx.edu/cs491/?cat=Nb04) | Labs #3 |
+| 6 | Network Security: Data-link layer (ARP), Network layer (IP, CIDR, Sniffing, Spoofing, Hijacking)<br>Network Security: Network layer (DDoS, IPSec/VPNs, firewalls and filtering, network segmentation, network intelligence, ICMP) | [Labs #5](https://codelabs.cs.pdx.edu/cs491/?cat=Nb05) | Labs #4 |
+| 7 | Network Security: Transport layer (TCP, TLS, certificate authorities and transparency, certificate revocation), Application layer: DNS security (DNS, DNSSEC) <br> Network Security: Application layer - DNS security (DoH, DoT, Oblivious DNS), E-mail security (SMTP/IMAP/POP over TLS, DKIM, SPF, DMARC)<br>Host Security: Host attacks (Initial access, Privilege escalation)| | |
+| 8 | Host attacks (Internal recon, Lateral movement, Persistence, Impact)<br>Host defenses (IDS/IPS/EDR, signature detection, anomaly detection, blocklisting and allowlisting, Software signing, Virtualization and isolation techniques, File system backup and encryption)<br>Application security: DevSecOps| [Labs #6](https://codelabs.cs.pdx.edu/cs491/?cat=Nb06)| Labs #5 |
+| 9 | Programming language and CPU security, Memory corruption, Return-oriented Programming, Canaries, ASLR, Control-Flow Integrity | [Labs #7](https://codelabs.cs.pdx.edu/cs491/?cat=Nb07)| Labs #6 |
+| 10 | Supply-chain security <br> Privacy and anonymity security| | |
+| Finals week | | | |
+| | | | |
+
+We will not be meeting the week of finals, and I will not be holding office hours. I will be available via email, but may not reply immediately, or even the same day.
 
 ## Assignments
 
