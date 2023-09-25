@@ -16,8 +16,8 @@ This class provides an overview of computer security intended for a broad audien
 ### Policies
 
 |-|-|-|-|
-|Grading||Attendance and participation|Academic Misconduct|
-|<table><tbody><tr><td>Attendance</td><td>5%</td></tr><tr><td>Lab notebooks</td><td>65%</td></tr><tr><td>Final</td><td>30%</td></tr></tbody></table>|Attendance is required and will be taken each class. If you miss class, extra credit will be given back for participation in the Slack channel. You are expected to follow this [code of conduct](https://www.mozilla.org/en-US/about/governance/policies/participation/) when communicating.|| <ol><li>Includes allowing another student to copy your work unless specifically allowed by the instructor.</li><li>Results in a grade of 0 for the assignment or exam.</li><li>Results in the initiation of disciplinary action at the [university level](https://www.pdx.edu/dos/academic-misconduct).</li></ol>
+|Grading|Attendance and participation|Academic Misconduct|
+|Attendance&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5%<br>Lab&nbsp;notebooks&nbsp;&nbsp;&nbsp;65%<br>Final&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;30%|Attendance is required and will be taken each class. If you miss class, extra credit will be given back for outside communication that indicates you are keeping up with the material. You are expected to follow this [code of conduct](https://www.mozilla.org/en-US/about/governance/policies/participation/) when communicating.| Includes allowing another student to copy your work unless specifically allowed by the instructor.<br>Results in a grade of 0 for the assignment or exam.<br>Results in the initiation of disciplinary action at the [university level](https://www.pdx.edu/dos/academic-misconduct).
 
 ## Schedule
 
