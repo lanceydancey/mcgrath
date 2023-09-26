@@ -5,6 +5,8 @@ VM Setup on Windows without paying for virtualization software
 
 ## Requirements
 
+You will need at least 100GB or so of free space on your hard drive for this class. We won't likely use it all, but it needs to be there.
+
 In order to use Hyper-V, you need to be running Windows 10 or Windows 11 in Pro, Enterprise, or Education forms. If you are using Windows Home (10 or 11), you need to upgrade your license to one of the higher tiers. "But that costs money!" you say? Normally. But not for you!
 
 Go to the [Microsoft Software for Students](https://cat.pdx.edu/services/software/users/microsoft-software/) page, and follow the instructions for obtaining an account on the Azure Portal. Once you have access, you can obtain a new license key for Windows 10 or 11 Education, allowing you to use Hyper-V.

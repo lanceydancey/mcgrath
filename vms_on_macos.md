@@ -3,6 +3,10 @@ VM Setup on macOS without paying for virtualization software
 * auto-gen TOC:
 {:toc}
 
+## Requirements
+
+You will need at least 100GB or so of free space on your hard drive for this class. We won't likely use it all, but it needs to be there.
+
 ## Common tools
 
 Setting up a VM on macOS is relatively straightforward. While you could spend lots of money to get a commercial hypervisor like Parallels Desktop or VMware Fusion, that's...ridiculous. Sure, they can do some fancy stuff, but we are sticking with open source solutions! Plus, they cost lots of money, and that's just wrong.
