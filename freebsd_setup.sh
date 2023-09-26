@@ -83,6 +83,7 @@ pass in on \$ext_if proto tcp to port { ssh } keep state (max-src-conn 15, max-s
 pass out on \$ext_if proto { tcp, udp } to port \$services
 pass out on \$ext_if inet proto icmp icmp-type \$icmp_types
 pass in on \$int_if from \$int_if:network to any
+pass out on \$int_if from \$int_if:network to any
 " >> /etc/pf.conf
 
 # Start dnsmasq
