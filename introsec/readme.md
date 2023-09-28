@@ -7,16 +7,21 @@
 * PDX username: dmcgrath
 * Gitlab username: dkmcgrath
 * Office hours:
-    * Location: FAB 120-15 and Zoom
-    * Times: TBD
+    * Location: FAB 120-15 and [Zoom](https://pdx.zoom.us/j/84716901228) (PW: PSUSecure)
+    * Times:
+        * Monday: 13:30-15:30
+        * Tuesday: 14:15-16:00
+        * Thursday: 14:15-16:00
 
 **TA**: Cera Oh
 
 * PDX username: ceoh
 * Gitlab username: ceoh1
 * Office hours:
-    * Location: TBD
-    * Times: TBD
+    * Location: FAB Fishbowl and Zoom
+    * Times:
+        * Wednesday: 13:30-15:30
+        * Friday: 14:00 - 16:00
 
 **Recorded Lectures**: These will be made available via [MediaSpace](https://mediaspace.pdx.edu/). Login required.
 
