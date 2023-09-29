@@ -24,7 +24,7 @@
         * Wednesday: 13:30-15:30
         * Friday: 14:00 - 16:00
 
-**Recorded Lectures**: These will be made available via [MediaSpace](https://mediaspace.pdx.edu/). Login required.
+**Recorded Lectures**: These will be made available via [MediaSpace](https://media.pdx.edu/). Login required.
 
 ## Course Description
 
