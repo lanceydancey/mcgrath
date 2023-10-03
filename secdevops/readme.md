@@ -1,6 +1,6 @@
-# CS 491/591: Introduction to Security
+# CS 410/510: System Administration and DevOps
 
-**Location**: FAB 10 (TR 16:40-18:30)
+**Location**: FAB 150 (TR 16:40-18:30)
 
 **Instructor**: D. Kevin McGrath
 
