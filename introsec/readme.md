@@ -10,7 +10,7 @@
     * Location: FAB 120-15 and [Zoom](https://pdx.zoom.us/j/84716901228) (PW: PSUSecure)
     * Times:
         * Monday: 13:30 - 15:30 (Zoom only)
-        * Tuesday: 14:15 - 16:00
+        * Tuesday: Code Party 19:00 - 22:00 (FAB 86-01)
         * Thursday: 14:15 - 16:00
         * Friday 10:00 - 11:30 (Zoom only)
 
