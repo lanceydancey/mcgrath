@@ -1,7 +1,33 @@
+# CS 491/591: Introduction to Security
+
+**Location**: FAB 10 (TR 16:40-18:30)
+
+**Instructor**: D. Kevin McGrath
+
+* PDX username: dmcgrath
+* Office hours:
+    * Location: FAB 120-15 and [Zoom](https://pdx.zoom.us/j/84716901228) (PW: PSUSecure)
+    * Times:
+        * Monday: 13:30 - 15:30 (Zoom only)
+        * Thursday: 14:15 - 16:00
+        * Friday 10:00 - 11:30 (Zoom only)
+        * Whenever you see me in my office with the door open
+        * By appointment
+
+**TA**: Syam Prasad Chitluri
+
+* PDX username: syam3
+* Office hours:
+    * Location: FAB Fishbowl and Zoom
+    * Times:
+        * Tuesday: 15:00 - 16:00
+        * Wednesday: 09:30 - 11:00 (Zoom only)
+        * Thursday, 15:00 - 16:00
+
+**Recorded Lectures**: These will be made available via [MediaSpace](https://media.pdx.edu/). Login required.
+
 
 ## Pages
-
-Ready:
 
 - [Software configuration](../software.md)
 - [tmux config](../.tmux.conf.md)
@@ -11,21 +37,21 @@ Ready:
 - [FreeBSD Setup Script](../freebsd_setup.md)
 - [Ubuntu configuration](../ubuntu.md)
 - [Powershell profile](../powershell_profile.md)
+- [Networking Fundamentals](../networking.md)
 
-Unfinished:
+<!-- Unfinished:
 
 - [Automation](../automation.md)
 - [Azure](../azure.md)
 - [CI/CD and other Topics](../ci_cd.md)
 - [Containers](../containers.md)
 - [Infrastructure as Code](../sdi.md)
-- [Networking Fundamentals](../networking.md)
 - [Other Secure Programming languages](../secure_other.md)
 - [PowerShell](../powershell.md)
 - [Secure C Programming](../secure_c.md)
 - [Virtualization](../virtualization.md)
 - [Windows Administration](../windows_admin.md)
-- [Windows File Sharing from Linux](../samba.md)
+- [Windows File Sharing from Linux](../samba.md) -->
 
 ## Useful links for learning
 
