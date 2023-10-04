@@ -13,7 +13,7 @@ All work will be submitted via MarkDown documents within a gitlab repo. You will
 
 ## Tasks
 
-1. Create a [GitLab repo](https://gitlab.cecs.pdx.edu/) called `secdevops-<ODIN>` and clone it to your local machine. You will be using this repo for the rest of the term. This repo exists on the CECS intranet.
+1. Create a [GitLab repo](https://gitlab.cecs.pdx.edu/) called `secdevops-<CECS>` (replace <CECS> with your actual MCECS username) and clone it to your local machine. You will be using this repo for the rest of the term. This repo exists on the CECS intranet, and uses your CECS credentials for authentication.
 1. Create a folder within the repo called `hw1`. This is where you will add documentation regarding this assignment.
 1. Now that you have your repo set up, we'll be turning to the VMs. Follow one of the [macOS](../vms_on_macos.md) or [Windows](../hyper-v.md) instructions to get a pair of VMs setup and configured. I would suggest you document everything you did in a markdown file in your repo called `hw1.md`.
    1. Take a screenshot of the FreeBSD VM with the output of the command `ifconfig` showing. Add this to your repo and include it in your `hw1.md` file.
