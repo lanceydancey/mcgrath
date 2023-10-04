@@ -6,7 +6,7 @@ from folium.plugins import FastMarkerCluster
 from geopy.extra.rate_limiter import RateLimiter
 from geopy.geocoders import Nominatim
 
-filenames = glob.glob("*.jpg")
+filenames = glob.glob("*.jpeg")
 
 TAGS = 'GPS GPSLatitudeRef,GPS GPSLatitude,GPS GPSLongitudeRef,GPS GPSLongitude'.split(',')
 
@@ -33,8 +33,10 @@ for filename in filenames:
             print(filename, lat, lon)
 df = pd.DataFrame(ls, columns=['latitude', 'longitude','filename'])
 
+lat, lon, f = df[["latitude", "longitude","filename"]].values.tolist()[0]
+
 folium_map = folium.Map(
-    location=[41.84933055555556, -87.95478055555556], zoom_start=12, tiles="cartodbpositron"
+    location=[lat, lon], zoom_start=12, tiles="cartodbpositron"
 )
 
 callback = (
