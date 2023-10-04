@@ -18,7 +18,7 @@
 
 * PDX username: syam3
 * Office hours:
-    * Location: FAB Fishbowl and Zoom
+    * Location: FAB Fishbowl and [Zoom](https://pdx.zoom.us/j/5680680141) (PW: SysAdmin)
     * Times:
         * Tuesday: 15:00 - 16:00
         * Wednesday: 09:30 - 11:00 (Zoom only)
