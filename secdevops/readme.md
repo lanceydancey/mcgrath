@@ -38,6 +38,8 @@
 - [Ubuntu configuration](../ubuntu.md)
 - [Powershell profile](../powershell_profile.md)
 - [Networking Fundamentals](../networking.md)
+- [tcpdump](../tcpdump.md)
+- [Wireshark](../wireshark.md)
 
 <!-- Unfinished:
 
