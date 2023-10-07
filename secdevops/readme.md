@@ -24,7 +24,7 @@
         * Wednesday: 09:30 - 11:00 (Zoom only)
         * Thursday, 15:00 - 16:00
 
-**Recorded Lectures**: These will be made available via [MediaSpace](https://media.pdx.edu/). Login required.
+**Recorded Lectures**: These will be made available via [MediaSpace](https://media.pdx.edu/channel/CS410_510%2BSystem%2BAdministration%2Band%2BDevops/319613112). Login required.
 
 
 ## Pages
