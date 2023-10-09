@@ -15,7 +15,7 @@ Below is the same configuration file we constructed in class. It makes a few ass
 * This keypair is in the `authorized_keys` on both `squidbsd05` and `raspi01`.
 * Your usernames on the remote machines are distinct from one another, *and* from your local username.
 
-```ini
+```sh
 Host squidbsd05
     #In this case, squidbsd05 is actually behind a firewall
     Hostname mcgrath-data.cs.pdx.edu
