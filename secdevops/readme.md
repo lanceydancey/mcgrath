@@ -40,6 +40,7 @@
 * [Networking Fundamentals](../networking.md)
 * [tcpdump](../tcpdump.md)
 * [Wireshark](../wireshark.md)
+* [SSH Setup from class](SSH_setup.md)
 
 ## Homework
 
