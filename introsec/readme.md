@@ -26,6 +26,8 @@
 
 **Recorded Lectures**: These will be made available via [MediaSpace](https://media.pdx.edu/). Login required.
 
+[Slides from Sam Quinn](Research_Process.pdf)
+
 **Unofficial Slack Channel**:
 [#cs491\_591\_introsec](https://pdx-cs.slack.com/archives/C03CRD5G916). The professor is not involved in this channel.
 
