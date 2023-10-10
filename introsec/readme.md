@@ -19,7 +19,7 @@
 * PDX username: ceoh
 * Gitlab username: ceoh1
 * Office hours:
-    * Location: FAB Fishbowl and Zoom
+    * Location: FAB Fishbowl and [Zoom](https://pdx.zoom.us/j/9244476182)
     * Times:
         * Wednesday: 13:30-15:30
         * Friday: 14:00 - 16:00
