@@ -24,7 +24,7 @@
         * Wednesday: 13:30-15:30
         * Friday: 14:00 - 16:00
 
-**Zulip Org**: [https://introsec.zulip.cs.pdx.edu](https://introsec.zulip.cs.pdx.edu/join/jye3ashrrd3axc4wrf7rtrev/)
+**Zulip Org**: [Zulip](https://introsec.zulip.cs.pdx.edu/)
 
 **Recorded Lectures**: These will be made available via [MediaSpace](https://media.pdx.edu/). Login required.
 
