@@ -18,6 +18,8 @@ This homework is intended to give you some experience modifying firewall rules b
 
 In the end, you should have documentation that will allow you to recreate your environment from scratch, including all firewall rules and snort configuration. This will come in handy later...
 
+A shell script that handles much of the above is also required. This script should be in your repo, and should be called `hw2.sh`. This script should be able to be run on a fresh install of FreeBSD, and should be able to configure the system to match your environment. You should ensure this script can run multiple times without error.
+
 ## Submission
 
 Once you have completed the above, you should have a markdown file in your repo called `hw2/hw2.md` that contains all the requested information above. Commit and push this to your repo. Also commit and include the requested screenshots. Once you have done this, you can consider the assignment submitted.
