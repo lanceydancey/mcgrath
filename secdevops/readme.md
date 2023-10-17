@@ -50,6 +50,7 @@
 Each homework will build on the previous assignment. These aren't your typical "write answers to questions" type assignments, but rather are intended to be more hands-on. We will be adding to, modifying, or otherwise doing something to the VM environment to enable us to do something else. The first assignment will be to get the VM environment set up and configured. Subsequent assignments will build on this.
 
 * [Homework 1](hw1.md)
+* [Homework 2](hw2.md)
 
 <!-- Unfinished:
 
