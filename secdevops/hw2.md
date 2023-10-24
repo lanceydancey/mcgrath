@@ -12,9 +12,9 @@ This homework is intended to give you some experience modifying firewall rules b
 ## Tasks
 
 1. Create a firewall rule that will forward `ssh` traffic from bastion host port 22 to your Ubuntu system port 22. Document your entire ruleset in your `hw2.md` file.
-1. Modify the local ssh server to move it to a different port for management purposes. Document the changes in your `hw2.md` file.
-1. Install `snort` on your bastion host. Have it load at boot time so that it's actively protecting your network. Document installation, configuration, and testing in your `hw2.md` file.
-1. Ensure `snort` can protect against [SMBGhost](https://github.com/jamf/CVE-2020-0796-RCE-POC) attacks. Document this in your `hw2.md` file.
+2. Modify the local ssh server on the firewall to move it to a different port for management purposes. Document the changes in your `hw2.md` file.
+3. Install `snort` on your bastion host. Have it load at boot time so that it's actively protecting your network. Document installation, configuration, and testing in your `hw2.md` file.
+4. Ensure `snort` can protect against [SMBGhost](https://github.com/jamf/CVE-2020-0796-RCE-POC) attacks. Document this in your `hw2.md` file.
 
 In the end, you should have documentation that will allow you to recreate your environment from scratch, including all firewall rules and snort configuration. This will come in handy later...
 
