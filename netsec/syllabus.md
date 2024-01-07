@@ -22,11 +22,34 @@
 **Zulip Org**: [Zulip](https://netsec.zulip.cs.pdx.edu/)
 
 
-## Course Description
+## Catalog Description
 
 Introduction to the skills and tools necessary to investigate network security. Packet capture, fuzzing, protocol analysis. Introduction to firewalls and intrusion prevention/detection systems.
 
 Prerequisites: CS 201.
+
+## Course Overview
+
+### Network scanning
+
+The first step in any attempt to find a vulnerability in a network device is answering the question "What's on the network?" We begin the course with a discussion of network mapping. Within this portion of the course we look at the utility `nmap`, and look into the details of how it works and what we can do with it.
+
+### Packet capture
+
+Once we know where things are, we need to start listening in. As Kali Linux claims, "the quieter you become, the more you are able to hear" -- listening to packets as they go across the wire is one of the foundation stones upon which network security vulnerability research is based. In this section of the course (which lasts 3-4 weeks, depending on how you count) we look at multiple ways to tap a network, as well as multiple ways to capture the packets once we have tapped the network.
+
+`tcpdump`, `wireshark`, and `scapy` are, for me at least, the holy trinity of packet capture. While `tcpdump` is very focused on capture, `wireshark` on visualization and dissection, and `scapy` on packet crafting, which tool you use will depend more on personal preference than need, in my experience. `Scapy` gets its own pair of modules due to the complexity involved and sheer breadth of capability we will be leveraging.
+
+Homeworks in this portion of the course involve complex packet capture, binary firmware extraction, as well as building a network scanner.
+
+### Protocols
+
+Once we have a nice quantity of captured packets, we can begin the actual vulnerability hunting. This involves either reversing the protocol to determine where to focus your fuzzing efforts or just going full random fuzzing with your packets. In the end, you need to understand what is happening and where it is happening -- once you get a crash, you'll need to be able to recreate it many, *many* times before you're done.
+
+### Defenses
+
+We round out the content of the course with a look at defensive technologies. Focusing primarily on firewalls (header based) and intrusion prevention/detection systems (content based), we also look briefly at some modern machine learning approaches to detecting malicious activity (anomaly based).
+
 
 ## Communication
 
