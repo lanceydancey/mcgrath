@@ -9,7 +9,7 @@ Markdown is a newer alternative, with an emphasis on eliminating as much markup 
 
 ## LaTeX
 
-<video width="1280" height="720" controls autoplay muted loop>
+<video width="640" height="360" controls>
 <source src="https://media.pdx.edu/media/t/1_f8vnqloo" type="video/mp4">
  Your browser does not support the video tag.
 </video>
