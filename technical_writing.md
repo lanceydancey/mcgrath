@@ -9,7 +9,10 @@ Markdown is a newer alternative, with an emphasis on eliminating as much markup 
 
 ## LaTeX
 
-![](https://media.pdx.edu/media/t/1_f8vnqloo)
+<video width="1280" height="720" controls autoplay muted loop>
+<source src="[videos/WebIntroG.mp4](https://media.pdx.edu/media/t/1_f8vnqloo)" type="video/mp4">
+ Your browser does not support the video tag.
+</video>
 
 TeX (tau epsilon chi, pronounced like tek) was originally developed by Donald Knuth, supposedly because he was displeased with how his first book in the Art of Computer Programming series was typeset by the publisher. LaTeX was developed by Leslie Lamport as a set of macros and extensions to TeX. You may notice that a lot of HTML tags feel similar or have the same names as LaTeX formatting commands -- this is because the developer of HTML, Sir Tim Berners-Lee (TimBL), was a physicist with a lot of familiarity with LaTeX.
 
