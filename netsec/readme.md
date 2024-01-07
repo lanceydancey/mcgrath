@@ -42,10 +42,6 @@ All work will be submitted via MarkDown documents within a private [gitlab](http
 * [VM Setup on macOS](../vms_on_macos.md)
 * [Ubuntu configuration](../ubuntu.md)
 * [Powershell profile](../powershell_profile.md) 
-<!-- * [Networking Fundamentals](../networking.md)
-* [tcpdump](../tcpdump.md)
-* [Wireshark](../wireshark.md)
-* [SSH Setup from class](SSH_setup.md) -->
 * [SSH Tunnel for Windows RDP](../SSH_Tunnel_XRDP.md)
 
 ## Useful links for learning
