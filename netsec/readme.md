@@ -21,8 +21,32 @@
 
 **Zulip Org**: [Zulip](https://netsec.zulip.cs.pdx.edu/)
 
+## Homework
+
+Each homework will build in some fashion on the previous homework. These aren't your typical "write answers to questions" type assignments, but rather are intended to be more hands-on. Nearly all the work I'm asking you to do is taken from tasks I had to perform professionally as a security vulnerability engineer. The first assignment will be to get the VM environment set up and configured. Subsequent assignments will build on this.
+
+### Submission
+
+All work will be submitted via MarkDown documents within a private [gitlab](https://gitlab.cecs.pdx.edu) repo. You will be using this repo for the rest of the term. This repo exists on the CECS intranet. You will need to add myself and the TA to this repo as Developers. Grades and feedback will be done via a merge request from the TA.
+
+### Assignments
+
+
 
 ## Pages
+
+* [Software configuration](../software.md)
+* [tmux config](../.tmux.conf.md)
+* [Technical Writing](../technical_writing.md)
+* [VM Setup on Windows](../hyper-v.md)
+* [VM Setup on macOS](../vms_on_macos.md)
+* [Ubuntu configuration](../ubuntu.md)
+* [Powershell profile](../powershell_profile.md) 
+<!-- * [Networking Fundamentals](../networking.md)
+* [tcpdump](../tcpdump.md)
+* [Wireshark](../wireshark.md)
+* [SSH Setup from class](SSH_setup.md) -->
+* [SSH Tunnel for Windows RDP](../SSH_Tunnel_XRDP.md)
 
 ## Useful links for learning
 
