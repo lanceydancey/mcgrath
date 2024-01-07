@@ -9,10 +9,7 @@ Markdown is a newer alternative, with an emphasis on eliminating as much markup 
 
 ## LaTeX
 
-<video width="640" height="360" controls>
-<source src="https://media.pdx.edu/media/t/1_f8vnqloo" type="video/mp4">
- Your browser does not support the video tag.
-</video>
+<iframe id="kaltura_player" src="https://cdnapisec.kaltura.com/p/1829851/sp/182985100/embedIframeJs/uiconf_id/44585072/partner_id/1829851?iframeembed=true&playerId=kaltura_player&entry_id=1_zdbccxo9&flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[hotspots.plugin]=1&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=1_c1ertrum" width="400" height="285" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="Intro to Markdown"></iframe>
 
 TeX (tau epsilon chi, pronounced like tek) was originally developed by Donald Knuth, supposedly because he was displeased with how his first book in the Art of Computer Programming series was typeset by the publisher. LaTeX was developed by Leslie Lamport as a set of macros and extensions to TeX. You may notice that a lot of HTML tags feel similar or have the same names as LaTeX formatting commands -- this is because the developer of HTML, Sir Tim Berners-Lee (TimBL), was a physicist with a lot of familiarity with LaTeX.
 
