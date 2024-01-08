@@ -1,11 +1,5 @@
 #!/usr/bin/env zsh
 
-sudo apt install -y curl git > /dev/null
-
-echo "Setting up repos..."
-echo 'deb http://download.opensuse.org/repositories/home:/RizinOrg/Debian_Testing/ /' | sudo tee /etc/apt/sources.list.d/home:RizinOrg.list > /dev/null
-curl -fsSL https://download.opensuse.org/repositories/home:RizinOrg/Debian_Testing/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/home_RizinOrg.gpg > /dev/null
-
 echo "Updating software..."
 sudo apt update
 sudo apt upgrade
@@ -14,6 +8,8 @@ echo "Installing software..."
 
 #install necessary tools
 sudo apt -y install autojump\
+    curl\
+    git\
     bat\
     zsh\
     tmux\
@@ -30,6 +26,9 @@ sudo apt -y install autojump\
     dos2unix\
     asciinema\
     python3-pyx\
+    rustc\
+    exa\
+    cargo\
     squashfs-tools\
     squashfs-tools-ng\
     zlib1g-dev\
@@ -54,6 +53,8 @@ sudo apt -y install autojump\
     lldb\
     gawk\
     tmuxinator\
+    python3-scapy\
+    wireshark\
     voltron\
     chafa\
     forensics-full\
@@ -61,13 +62,13 @@ sudo apt -y install autojump\
     forensics-extra-gui\
     forensics-samples-all
     
-sudo gem install colorls
+sudo gem install colorls mdless
 mkdir -p $HOME/bin
 mkdir -p $HOME/clones
 
 #install gef
 bash -c "$(curl -fsSL https://gef.blah.cat/sh)"
-#create the virtual environment for running gdb
+#create the virtual environment for running gdb, because debian 12
 virtualenv -p python3 ~/.gef
 #activate it
 source ~/.gef/bin/activate
@@ -80,6 +81,8 @@ if [ ! -d $HOME/.config/gef-extras ]; then
 fi
 #deactivate the virtual environment
 deactivate
+
+bash <(curl https://raw.githubusercontent.com/atuinsh/atuin/main/install.sh)
 
 if [ ! -d $HOME/clones/fastfetch ]; then
     git clone https://github.com/fastfetch-cli/fastfetch.git $HOME/clones/fastfetch
@@ -156,10 +159,15 @@ git config --global color.diff.old        "red bold"
 git config --global color.diff.new        "green bold"
 git config --global color.diff.whitespace "red reverse"
 
-sudo chsh -s $(which zsh) $USER
+
+echo "Changing shell to zsh..."
+chsh -s $(which zsh)
 
 #for all classes except 496:
 #wget -q -O setup.tar.bz2 http://web.cecs.pdx.edu/~dmcgrath/setup.tar.bz2
 #for cs496:
 wget -q -O setup.tar.bz2 http://web.cecs.pdx.edu/~dmcgrath/setup_496.tar.bz2
-tar xavf setup.tar.bz2 -C ~/
+#tar xavf setup.tar.bz2 -C ~/
+
+echo "Please log out and log back, then uncompress the setup_496.tar.bz2 with 'tar xjvf ~/setup_496.tar.bz2 -C ~/' to complete setup."
+
