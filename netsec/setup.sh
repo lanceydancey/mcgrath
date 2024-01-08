@@ -45,10 +45,6 @@ sudo apt -y install autojump\
     python3-numpy\
     graphviz\
     ruby-dev\
-    curl\
-    lxde\
-    x2goserver\
-    x2goserver-xsession\
     autojump\
     fzf\
     gdbserver\
@@ -56,10 +52,10 @@ sudo apt -y install autojump\
     python3-full\
     virtualenv\
     lldb\
+    gawk\
     tmuxinator\
     voltron\
     chafa\
-    cutter-re\
     forensics-full\
     forensics-extra\
     forensics-extra-gui\
@@ -78,7 +74,7 @@ source ~/.gef/bin/activate
 if [ ! -d $HOME/.config/gef-extras ]; then
     curl -o - https://github.com/hugsy/gef/raw/main/scripts/gef-extras.sh | sh
     #we need to run gdb in a virtual environment to use gef, so we have to wrap it in a simple shell script
-    echo -e '#!/usr/bin/env zsh\n\nsource $HOME/.debug/bin/activate\n/usr/bin/gdb "$@"\ndeactivate\n' > $HOME/bin/gdb
+    echo '#!/usr/bin/env zsh\n\nsource $HOME/.debug/bin/activate\n/usr/bin/gdb "$@"\ndeactivate\n' > $HOME/bin/gdb
     chmod +x $HOME/bin/gdb
     pip3 install -r $HOME/.config/gef-extras/requirements.txt
 fi
@@ -133,7 +129,7 @@ if [ ! -d $HOME/.oh-my-zsh ]; then
 fi
 
 if [ ! -d $HOME/clones/nerd-fonts ]; then
-    git clone git clone --filter=blob:none --sparse git@github.com:ryanoasis/nerd-fonts $HOME/clones/nerd-fonts
+    git clone --filter=blob:none --sparse https://github.com/ryanoasis/nerd-fonts.git $HOME/clones/nerd-fonts
     cd $HOME/clones/nerd-fonts
     git sparse-checkout add patched-fonts/Hack
     ./install.sh
