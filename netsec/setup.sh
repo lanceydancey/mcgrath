@@ -60,6 +60,7 @@ sudo apt -y install autojump\
     lldb\
     tmuxinator\
     voltron\
+    chafa\
     cutter-re\
     forensics-full\
     forensics-extra\
@@ -87,7 +88,7 @@ fi
 deactivate
 
 if [ ! -d $HOME/clones/fastfetch ]; then
-    
+    git clone https://github.com/fastfetch-cli/fastfetch.git $HOME/clones/fastfetch
     cd $HOME/clones/fastfetch
     mkdir -p build
     cd build
@@ -133,10 +134,19 @@ if [ ! -d $HOME/.oh-my-zsh ]; then
     git clone https://github.com/ohmyzsh/ohmyzsh.git $HOME/.oh-my-zsh
 fi
 
+if [ ! -d $HOME/clones/nerd-fonts ]; then
+    git clone git clone --filter=blob:none --sparse git@github.com:ryanoasis/nerd-fonts $HOME/clones/nerd-fonts
+    cd $HOME/clones/nerd-fonts
+    git sparse-checkout add patched-fonts/Hack
+    ./install.sh
+    cd $HOME
+fi
+
 ln -s $HOME/clones/diff-so-fancy/diff-so-fancy $HOME/bin/diff-so-fancy
 
-#git config --global user.name "" #fill me in!
-#git config --global user.email "" #fill me in!
+#fill in and uncomment the first two lines!
+#git config --global user.name ""
+#git config --global user.email ""
 git config --global core.pager "diff-so-fancy | less --tabs=4 -RFX"
 git config --global interactive.diffFilter "diff-so-fancy --patch"
 git config --global color.ui true
