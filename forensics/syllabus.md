@@ -1,6 +1,6 @@
-# CS496/596: Network Security
+# CS493/593: Digital Forensics
 
-**Location**: FAB 10 (MW 14:00-15:50)
+**Location**: FAB 46 (MW 14:00-15:50)
 
 **Instructor**: D. Kevin McGrath
 
@@ -19,36 +19,17 @@
 
 **Recorded Lectures**: These will be made available via [MediaSpace](https://media.pdx.edu/channel/channelid/328503742). Login required.
 
-**Zulip Org**: [Zulip](https://netsec.zulip.cs.pdx.edu/)
+<!-- **Zulip Org**: [Zulip](https://netsec.zulip.cs.pdx.edu/) -->
 
 
 ## Catalog Description
 
-Introduction to the skills and tools necessary to investigate network security. Packet capture, fuzzing, protocol analysis. Introduction to firewalls and intrusion prevention/detection systems.
+Detailed, hands-on approach to the investigation of criminal incidents in which computers or computer technology play a significant or interesting role. Familiarization with the core computer science theory and practical skills necessary to perform rudimentary computer forensic investigations, understanding the role of technology in investigating computer-based crime, and preparation to deal with investigative bodies. 
+
+Recommended: CS 333 or CS 533. No prior background in criminal justice or law is assumed.
 
 Prerequisites: CS 201.
 
-## Course Overview
-
-### Network scanning
-
-The first step in any attempt to find a vulnerability in a network device is answering the question "What's on the network?" We begin the course with a discussion of network mapping. Within this portion of the course we look at the utility `nmap`, and look into the details of how it works and what we can do with it.
-
-### Packet capture
-
-Once we know where things are, we need to start listening in. As Kali Linux claims, "the quieter you become, the more you are able to hear" -- listening to packets as they go across the wire is one of the foundation stones upon which network security vulnerability research is based. In this section of the course (which lasts 3-4 weeks, depending on how you count) we look at multiple ways to tap a network, as well as multiple ways to capture the packets once we have tapped the network.
-
-`tcpdump`, `wireshark`, and `scapy` are, for me at least, the holy trinity of packet capture. While `tcpdump` is very focused on capture, `wireshark` on visualization and dissection, and `scapy` on packet crafting, which tool you use will depend more on personal preference than need, in my experience. `Scapy` gets its own pair of modules due to the complexity involved and sheer breadth of capability we will be leveraging.
-
-Homeworks in this portion of the course involve complex packet capture, binary firmware extraction, as well as building a network scanner.
-
-### Protocols
-
-Once we have a nice quantity of captured packets, we can begin the actual vulnerability hunting. This involves either reversing the protocol to determine where to focus your fuzzing efforts or just going full random fuzzing with your packets. In the end, you need to understand what is happening and where it is happening -- once you get a crash, you'll need to be able to recreate it many, *many* times before you're done.
-
-### Defenses
-
-We round out the content of the course with a look at defensive technologies. Focusing primarily on firewalls (header based) and intrusion prevention/detection systems (content based), we also look briefly at some modern machine learning approaches to detecting malicious activity (anomaly based).
 
 
 ## Communication
@@ -67,7 +48,7 @@ Upon successful completion of this course, students will be able to:
 # Evaluation of Student Performance
 This course uses a weighted average of assignments. All assignments will be graded out of 100 points, with the following weights towards the final grade:
 
-+ Final Project: 40%
++ Final Exam: 40%
 + Homework Assignments: 60%
 + While attendance will not be explicitly graded, it is expected that you will be involved in the classes.
 
@@ -85,19 +66,18 @@ Letter grades will be assigned based on standard ranges with (optionally) +/- st
 
 ## Course Content
 
-| Week   | Topic                                      | Learning Activities                |
-| ------ | ------------------------------------------ | ---------------------------------- |
-| 1      | Introduction, policy, legal aspects, audit | Module summary, explorations*      |
-| 2      | Network Reconnaissance                     | Module summary, explorations*      |
-| 3      | Capturing packets with tcpdump             | Module summary, explorations*, HW1 |
-| 4      | Packet capture with wireshark              | explorations*, module summary      |
-| 5      | Packet processing with scapy               | HW2, explorations*, module summary |
-| 6      | Advanced scapy                             | HW3, explorations*, module summary |
-| 7      | Protocol reversing                         | explorations*, module summary      |
-| 8      | Protocol fuzzing                           | HW4, explorations*, module summary |
-| 9      | Firewalls                                  | Explorations*, module summary      |
-| 10     | IPS/IDS                                    | Explorations*, module summary      |
-| Finals |                                            | Final paper                        |
+| Week	| Topics                                    |
+| ----- | -------------------------------------     |
+| 1     |Introduction to Forensics<br>Sociological Aspects of Digital Forensics |
+| 2     | Legal Aspects of Digital Forensics        |
+| 3     | Computer Forensics                        |
+| 4     | Computer Forensics                        |
+| 5     | Computer and Network Forensics            |
+| 6	    | Network Forensics                         |
+| 7     | Mobile Forensics                          |
+| 8     | Mobile Forensics<br>Malware               |
+| 9     | Malware<br>Digital Archives               |
+| 10    | Digital Archives                          |
 
 *Explorations are ungraded learning activities that typically involve a hands-on activity related to the current topic. These include usages of tools, looking at packet captures, etc.
 

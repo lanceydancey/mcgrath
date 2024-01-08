@@ -54,13 +54,14 @@ sudo apt -y install autojump\
     gawk\
     tmuxinator\
     python3-scapy\
+    python3-ifaces\
     wireshark\
     voltron\
-    chafa\
-    forensics-full\
-    forensics-extra\
-    forensics-extra-gui\
-    forensics-samples-all
+    chafa
+    # forensics-full\
+    # forensics-extra\
+    # forensics-extra-gui\
+    # forensics-samples-all
     
 sudo gem install colorls mdless
 mkdir -p $HOME/bin
@@ -160,7 +161,7 @@ git config --global color.diff.new        "green bold"
 git config --global color.diff.whitespace "red reverse"
 
 
-echo "Changing shell to zsh..."
+echo "Changing shell to zsh...will ask for password..."
 chsh -s $(which zsh)
 
 #for all classes except 496:
