@@ -6,8 +6,6 @@ echo "Setting up repos..."
 echo 'deb http://download.opensuse.org/repositories/home:/RizinOrg/Debian_Testing/ /' | sudo tee /etc/apt/sources.list.d/home:RizinOrg.list > /dev/null
 curl -fsSL https://download.opensuse.org/repositories/home:RizinOrg/Debian_Testing/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/home_RizinOrg.gpg > /dev/null
 
-echo -n '# X2Go Repository (release builds)\ndeb [trusted=yes] http://packages.x2go.org/debian bookworm extras main\n# X2Go Repository (sources of release builds)\ndeb-src [trusted=yes] http://packages.x2go.org/debian bookworm extras main\n' | sudo tee /etc/apt/sources.list.d/x2go.list > /dev/null
-
 echo "Updating software..."
 sudo apt update
 sudo apt upgrade
