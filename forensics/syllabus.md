@@ -1,6 +1,6 @@
 # CS493/593: Digital Forensics
 
-**Location**: FAB 46 (MW 14:00-15:50)
+**Location**: FAB 46 (MW 16:40-18:30)
 
 **Instructor**: D. Kevin McGrath
 
@@ -17,7 +17,8 @@
     * Location: TBD
     * Times: TBD
 
-**Recorded Lectures**: These will be made available via [MediaSpace](https://media.pdx.edu/channel/channelid/328503742). Login required.
+<!-- incorrect link, could not find correct one via mediaspace search -->
+<!-- **Recorded Lectures**: These will be made available via [MediaSpace](https://media.pdx.edu/channel/channelid/328503742). Login required. -->
 
 <!-- **Zulip Org**: [Zulip](https://netsec.zulip.cs.pdx.edu/) -->
 

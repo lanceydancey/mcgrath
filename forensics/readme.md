@@ -1,6 +1,6 @@
-# CS 410/510: System Administration and DevOps
+# CS 493/593: Digital Forensics
 
-**Location**: FAB 150 (TR 16:40-18:30)
+**Location**: FAB 46 (MW 16:40-18:30)
 
 **Instructor**: D. Kevin McGrath
 
@@ -13,7 +13,8 @@
 
 **[Syllabus](syllabus.md)**
 
-**Recorded Lectures**: These will be made available via [MediaSpace](https://media.pdx.edu/channel/CS410_510%2BSystem%2BAdministration%2Band%2BDevops/319613112). Login required.
+<!-- incorrect link, could not find correct one via mediaspace search -->
+<!-- **Recorded Lectures**: These will be made available via [MediaSpace](https://media.pdx.edu/channel/CS410_510%2BSystem%2BAdministration%2Band%2BDevops/319613112). Login required. --> 
 
 <!-- **Zulip Org**: [Zulip](https://netsec.zulip.cs.pdx.edu/) -->
 
