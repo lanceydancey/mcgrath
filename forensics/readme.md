@@ -1,6 +1,6 @@
-# CS 410/510: System Administration and DevOps
+# CS493/593: Digital Forensics
 
-**Location**: FAB 150 (TR 16:40-18:30)
+**Location**: FAB 46 (MW 16:40-18:30)
 
 **Instructor**: D. Kevin McGrath
 

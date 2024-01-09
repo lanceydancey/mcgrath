@@ -1,6 +1,6 @@
 # CS493/593: Digital Forensics
 
-**Location**: FAB 46 (MW 14:00-15:50)
+**Location**: FAB 46 (MW 16:40-18:30)
 
 **Instructor**: D. Kevin McGrath
 
