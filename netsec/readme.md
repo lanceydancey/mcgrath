@@ -29,8 +29,12 @@ All work will be submitted via MarkDown documents within an internal [gitlab](ht
 
 
 
+wsl -d kali-linux --install
+
+
 ## Pages
 
+* [Kali setup script](setup.sh) -- this is the script we will be using to set up our Kali VMs
 * [Software configuration](../software.md) -- not required, but possibly useful information on environment setup
 * [tmux config](../.tmux.conf.md) -- configuration file for tmux from the Software Configuration page
 * [Powershell profile](../powershell_profile.md) -- powershell profile from the Software Configuration page
