@@ -30,14 +30,19 @@ All work will be submitted via MarkDown documents within an internal [gitlab](ht
 
 
 ### To install kali linux through wsl:
+```
 wsl --install -d kali-linux
-
+```
 ### A nice gui
+```
 sudo apt install && apt upgrade
 sudo apt install -y kali-win-kex
+```
 
 ### to launch gui
-kex --win -s 
+```
+kex --win -s
+``` 
 (f8 will exit fullscreen mode)
 
 
