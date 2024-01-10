@@ -61,6 +61,7 @@ sudo apt -y install autojump\
     ruby-dev\
     autojump\
     fzf\
+    gdb-multiarch\
     gdbserver\
     gawk\
     python3-full\
