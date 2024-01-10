@@ -11,7 +11,7 @@ In order to use Hyper-V, you need to be running Windows 10 or Windows 11 in Pro,
 
 Go to the [Microsoft Software for Students](https://cat.pdx.edu/services/software/users/microsoft-software/) page, and follow the instructions for obtaining an account on the Azure Portal. Once you have access, you can obtain a new license key for Windows 10 or 11 Education, allowing you to use Hyper-V.
 
-![azure portal](img/azure_portal.png)
+![azure portal](../img/azure_portal.png)
 
 I would strongly encourage you to move to Windows 11, but that's ultimately your decision.
 
@@ -69,19 +69,21 @@ if (!((Get-WindowsOptionalFeature -online -FeatureName HypervisorPlatform).State
 
    ```powershell
    ❯ # xz for windows is a cluster, so just pull down the ISO directly. It's not that big.
-   ❯ Invoke-WebRequest -Uri "https://download.freebsd.org/ftp/releases/ISO-IMAGES/13.2/FreeBSD-13.2-RELEASE-amd64-dvd1.iso" -OutFile "FreeBSD-13.2-RELEASE-amd64-dvd1.iso"
+   ❯ Invoke-WebRequest -Uri "https://kali.darklab.sh/kali-images/kali-2023.4/kali-linux-2023.4-installer-amd64.iso" -OutFile "kali-linux-2023.4-installer-amd64.iso"
    ```
 
 1. Checksum your image:
 
    ```powershell
-   ❯ Get-FileHash -Algorithm SHA512 -Path .\FreeBSD-13.2-RELEASE-amd64-dvd1.iso | Format-List
+   ❯ Get-FileHash -Algorithm SHA512 -Path .kali-linux-2023.4-installer-amd64.iso | Format-List
    
       Algorithm : SHA512
-      Hash      : 7C5473B9BBC5CB235329B8FA17FFB690ABBAE67FE5E4BB30260BAA034501D3F23EBA82679A9871AF2F42E9600AFF7E9E810A0B03005AFC24962ED03945171AE1
-      Path      : D:\FreeBSD-13.2-RELEASE-amd64-dvd1.iso
+      Hash      : 0b9bb5b2121533ad37e4e35c17012c89634fb66f45e5b268ea69d85cd6ea6f685c19d9c2b11ae0d6125bc66ad63be76d6b7ad3f7f26770bad392003366690fae
+      Path      : D:\kali-linux-2023.4-installer-amd64.iso
 
    ```
+
+In the instructions below, ignore the mentions of freebsd. I simply don't have a system handy with which to take new screenshots. The process is the same, regardless.
 
 1. Create a new VM in Hyper-V by selection "New" and "Virtual Machine" from the right side of the Hyper-V Manager window.
 
@@ -126,7 +128,7 @@ if (!((Get-WindowsOptionalFeature -online -FeatureName HypervisorPlatform).State
    + When asked to use a mirror, select yes. The choice is yours, but the osuosl.org mirror is a good choice.
    + You want to pick a desktop environment when given the chance. I would suggest KDE, but it's up to you.
 
-### Hyper-V Enhanced Session Mode for Debian VM
+### Hyper-V Enhanced Session Mode for Kali VM
 
 Hyper-V has two modes for interacting with VMs. The default for a Linux guest is the standard console mode, which is what you get when you run a VM. The second is Enhanced Session Mode, which allows you to use RDP to connect to the VM. This is useful if you want to use a GUI on the VM, or if you want to copy/paste between the VM and your host system, or share resources in some other fashion. So how do we enable this on our Ubuntu VM?
 

@@ -7,6 +7,8 @@ sudo apt upgrade
 echo "Installing software..."
 
 #install necessary tools
+#install necessary tools
+
 sudo apt -y install autojump\
     curl\
     git\
@@ -16,6 +18,20 @@ sudo apt -y install autojump\
     emacs\
     gdb\
     python3-pip\
+    kali-defaults\
+    kali-root-login\
+    kali-tools-gpu\
+    kali-tools-hardware\
+    kali-tools-fuzzing\
+    kali-tools-sdr\
+    kali-tools-rfid\
+    kali-tools-information-gathering\
+    kali-tools-vulnerability\
+    kali-tools-passwords\
+    kali-tools-wireless\
+    kali-tools-reverse-engineering\
+    kali-tools-exploitation\
+    kali-tools-forensics\
     cmake\
     lolcat\
     cowsay\
@@ -36,12 +52,12 @@ sudo apt -y install autojump\
     liblzo2-dev\
     docker.io\
     xfsprogs\
-    wl-clipboard\
     libboost-all-dev\
     fontforge\
     doxygen\
     python3-scipy\
     python3-numpy\
+    bpython\
     graphviz\
     ruby-dev\
     autojump\
@@ -66,6 +82,16 @@ sudo apt -y install autojump\
 sudo gem install colorls mdless
 mkdir -p $HOME/bin
 mkdir -p $HOME/clones
+
+#enable i386 and amd64 binary support (ONLY RUN ON ARM HOSTS!)
+#uncomment if you desire this functionality
+# sudo apt install -y qemu-user-static binfmt-support
+# sudo dpkg --add-architecture amd64
+# sudo dpkg --add-architecture i386
+# sudo apt update
+# sudo apt install libc6:amd64
+# sudo apt install libc6:i386
+
 
 #install gef
 bash -c "$(curl -fsSL https://gef.blah.cat/sh)"
