@@ -36,6 +36,11 @@
 * [SSH Setup from class](SSH_setup.md)
 * [SSH Tunnel for Windows RDP](../SSH_Tunnel_XRDP.md) -->
 
+## Slides
+
+* [Introduction](lecture1.pdf)
+* [Concepts](lecture2.pdf)
+* [Case Studies](lecture3.pdf)
 
 ## Homework
 
