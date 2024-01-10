@@ -43,7 +43,6 @@ sudo apt -y install autojump\
     asciinema\
     python3-pyx\
     rustc\
-    exa\
     cargo\
     squashfs-tools\
     squashfs-tools-ng\
@@ -70,7 +69,7 @@ sudo apt -y install autojump\
     gawk\
     tmuxinator\
     python3-scapy\
-    python3-ifaces\
+    python3-netifaces\
     wireshark\
     voltron\
     chafa
