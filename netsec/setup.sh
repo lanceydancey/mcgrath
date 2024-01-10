@@ -100,7 +100,7 @@ virtualenv -p python3 ~/.gef
 #activate it
 source ~/.gef/bin/activate
 if [ ! -d $HOME/.config/gef-extras ]; then
-    curl -o - https://github.com/hugsy/gef/raw/main/scripts/gef-extras.sh | sh
+    curl -L -o - https://github.com/hugsy/gef/raw/main/scripts/gef-extras.sh | sh
     #we need to run gdb in a virtual environment to use gef, so we have to wrap it in a simple shell script
     echo '#!/usr/bin/env zsh\n\nsource $HOME/.debug/bin/activate\n/usr/bin/gdb "$@"\ndeactivate\n' > $HOME/bin/gdb
     chmod +x $HOME/bin/gdb
