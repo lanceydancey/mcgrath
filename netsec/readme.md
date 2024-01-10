@@ -35,9 +35,9 @@ All work will be submitted via MarkDown documents within an internal [gitlab](ht
 * [tmux config](../.tmux.conf.md) -- configuration file for tmux from the Software Configuration page
 * [Powershell profile](../powershell_profile.md) -- powershell profile from the Software Configuration page
 * [Technical Writing](../technical_writing.md) -- if unfamiliar with markdown or LaTeX, this page will help
-* [VM Setup on Windows](../hyper-v.md)
-* [VM Setup on macOS](../vms_on_macos.md)
-* [Ubuntu configuration](../ubuntu.md)
+* [VM Setup on Windows](hyper-v.md)
+* [VM Setup on macOS](vms_on_macos.md)
+* [Ubuntu configuration](ubuntu.md)
 * [SSH Tunnel for Windows RDP](../SSH_Tunnel_XRDP.md) -- SSH tunneling trick we will be using in various places through the term
 
 ## Useful links for learning

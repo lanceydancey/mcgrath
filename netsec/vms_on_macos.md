@@ -34,13 +34,6 @@ OK, you have UTM installed, and you're ready to create your VM. How? Time for a 
    $ curl -LO https://kali.darklab.sh/kali-images/kali-2023.4/kali-linux-2023.4-installer-amd64.iso
    ```
 
-1. Uncompress your image:
-
-   ```sh
-   $ xz --decompress --verbose kali-linux-2023.4-installer-arm64.iso
-   $ xz --decompress --verbose kali-linux-2023.4-installer-amd64.iso
-   ```
-
 1. Checksum your image:
 
    ```sh
