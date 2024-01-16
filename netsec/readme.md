@@ -8,8 +8,11 @@
 * Office hours:
     * Location: FAB 120-15 and [Zoom](https://pdx.zoom.us/j/84716901228) (PW: PSUSecure)
     * Times:
-        * TBD
-        <!-- * Code Party! Tuesdays, 18:300 - 22:00 (FAB 86-01/88-03) -->
+        * Monday: 10:00 - 11:30 (FAB 120-15 only)
+        * Tuesday: 11:00 - 12:00 (Zoom only)
+        * Tuesday: Code Party! 18:30 - 22:00 (FAB 86-01/88-03)
+        * Wednesday: 10:00 - 11:30 (FAB 120-15 only) -- except first and third Wednesdays of the month due to faculty meetings.
+        * Thursday: 09:30 - 11:30 (Zoom only)
 
 **[Syllabus](syllabus.md)**
 
