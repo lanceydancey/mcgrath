@@ -23,21 +23,16 @@
 
 ## Pages
 
-
-
-<!-- * [Software configuration](../software.md)
 * [tmux config](../.tmux.conf.md)
 * [Technical Writing](../technical_writing.md)
-* [VM Setup on Windows](../hyper-v.md)
-* [VM Setup on macOS](../vms_on_macos.md)
-* [FreeBSD Setup Script](../freebsd_setup.md)
-* [Ubuntu configuration](../ubuntu.md)
+* [VM Setup on Windows](../netsec/hyper-v.md)
+* [VM Setup on macOS](../netsec/vms_on_macos.md)
+* [Ubuntu configuration](../netsec/linux_setup.md)
 * [Powershell profile](../powershell_profile.md)
 * [Networking Fundamentals](../networking.md)
 * [tcpdump](../tcpdump.md)
 * [Wireshark](../wireshark.md)
-* [SSH Setup from class](SSH_setup.md)
-* [SSH Tunnel for Windows RDP](../SSH_Tunnel_XRDP.md) -->
+* [SSH Tunnel for Windows RDP](../SSH_Tunnel_XRDP.md)
 
 ## Slides
 

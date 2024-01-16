@@ -32,34 +32,36 @@ All work will be submitted via MarkDown documents within an internal [gitlab](ht
 ### Assignments
 
 
-## To install kali linux through wsl:
+## To install Kali Linux through WSL:
+
 ```
 wsl --install -d kali-linux
 ```
-### A nice gui
-```
-sudo apt install && apt upgrade
-sudo apt install -y kali-win-kex
+
+### A nice GUI
+Should you want a GUI for any reason, you can get a nice one with the following commands run from within the Kali session:
+
+```sh
+$ sudo apt install 
+$ sudo apt upgrade
+$ sudo apt install -y kali-win-kex
 ```
 
-### to launch gui
+Then, to start the GUI, run (f8 will exit fullscreen mode):
+
+```sh
+$ kex --win -s
 ```
-kex --win -s
-``` 
-(f8 will exit fullscreen mode)
-
-
 
 ## Pages
 
-* [Kali setup script](setup.md) -- this is the script we will be using to set up our Kali VMs
 * [Software configuration](../software.md) -- not required, but possibly useful information on environment setup
 * [tmux config](../.tmux.conf.md) -- configuration file for tmux from the Software Configuration page
 * [Powershell profile](../powershell_profile.md) -- powershell profile from the Software Configuration page
 * [Technical Writing](../technical_writing.md) -- if unfamiliar with markdown or LaTeX, this page will help
 * [VM Setup on Windows](hyper-v.md)
 * [VM Setup on macOS](vms_on_macos.md)
-* [Ubuntu configuration](linux_setup.md)
+* [Kali configuration](linux_setup.md)
 * [SSH Tunnel for Windows RDP](../SSH_Tunnel_XRDP.md) -- SSH tunneling trick we will be using in various places through the term
 
 ## Useful links for learning

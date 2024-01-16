@@ -20,8 +20,11 @@ You may have seen these commands before, but if you haven't, here is what's happ
 
 OK, so we're likely still sitting on a barebones kali install. We should fix that.
 
-There is a script in this repo that will install a bunch of useful tools. You can run it with:
+There is a [script](setup.sh) in this repo that will install a bunch of useful tools. You can run it with:
 
 ```zsh
-$ curl 
+$ curl -LO https://raw.githubusercontent.com/dkmcgrath/courses/main/netsec/setup.sh
+$ chmod +x setup.sh
+$ ./setup.sh
 ```
+

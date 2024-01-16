@@ -21,6 +21,21 @@ If this does not work, try the following:
 1. Reboot your computer
 1. Once back, open an admin powershell and run the command from above.
 
+### A nice GUI
+Should you want a GUI for any reason, you can get a nice one with the following commands run from within the Kali session:
+
+```sh
+$ sudo apt install 
+$ sudo apt upgrade
+$ sudo apt install -y kali-win-kex
+```
+
+Then, to start the GUI, run (f8 will exit fullscreen mode):
+
+```sh
+$ kex --win -s
+```
+
 ## Requirements for Hyper-V
 
 You will need at least 60GB or so of free space on your hard drive for this class. We won't likely use it all, but it needs to be there.
