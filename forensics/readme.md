@@ -38,9 +38,9 @@
 
 ## Slides
 
-* [Introduction](lecture1.pdf)
+* [Introduction](Lecture1.pdf)
 * [Concepts](lecture2.pdf)
-* [Case Studies](lecture3.pdf)
+* [Case Studies](lecture2a.pdf)
 
 ## Homework
 

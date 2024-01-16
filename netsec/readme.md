@@ -29,7 +29,7 @@ All work will be submitted via MarkDown documents within an internal [gitlab](ht
 ### Assignments
 
 
-### To install kali linux through wsl:
+## To install kali linux through wsl:
 ```
 wsl --install -d kali-linux
 ```
