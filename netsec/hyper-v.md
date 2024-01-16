@@ -3,11 +3,29 @@ VM Setup on Windows without paying for virtualization software
 * auto-gen TOC:
 {:toc}
 
-## Requirements
+## Requirements for WSL
+
+WSL is an optional component of Windows 10 (2004 and up) and Windows 11. It is not installed by default, but you can do it quickly and easily. Open a PowerShell prompt as an Administrator and run the following command:
+
+```powershell
+❯ wsl --install -d kali-linux
+```
+
+If this does not work, try the following:
+
+1. Open PowerShell as an Administrator
+1. Run 
+```powershell 
+❯ Enable-WindowsOptionalFeature -online -FeatureName Microsoft-Windows-Subsystem-Linux -All
+```
+1. Reboot your computer
+1. Once back, open an admin powershell and run the command from above.
+
+## Requirements for Hyper-V
 
 You will need at least 60GB or so of free space on your hard drive for this class. We won't likely use it all, but it needs to be there.
 
-In order to use Hyper-V, you need to be running Windows 10 or Windows 11 in Pro, Enterprise, or Education forms. If you are using Windows Home (10 or 11), you need to upgrade your license to one of the higher tiers. "But that costs money!" you say? Normally. But not for you!
+In order to use Hyper-V, you need to be running Windows 10 or Windows 11 in Pro, Enterprise, or Education form. If you are using Windows Home (10 or 11), you need to upgrade your license to one of the higher tiers. "But that costs money!" you say? Normally. But not for you!
 
 Go to the [Microsoft Software for Students](https://cat.pdx.edu/services/software/users/microsoft-software/) page, and follow the instructions for obtaining an account on the Azure Portal. Once you have access, you can obtain a new license key for Windows 10 or 11 Education, allowing you to use Hyper-V.
 
@@ -132,7 +150,7 @@ In the instructions below, ignore the mentions of freebsd. I simply don't have a
 
 Hyper-V has two modes for interacting with VMs. The default for a Linux guest is the standard console mode, which is what you get when you run a VM. The second is Enhanced Session Mode, which allows you to use RDP to connect to the VM. This is useful if you want to use a GUI on the VM, or if you want to copy/paste between the VM and your host system, or share resources in some other fashion. So how do we enable this on our Ubuntu VM?
 
-There's a setup script that I use to configure my VMs. It's not perfect, but it works: [setup.sh](setup.sh). You may or may not have copy/paste working at this point, but you can just use `wget` to download the script from github. Then run this script. It will install the packages we need in this class.
+There's a setup script that I use to configure my VMs. It's not perfect, but it works: [setup.sh](setup.md). You may or may not have copy/paste working at this point, but you can just use `wget` to download the script from github. Then run this script. It will install the packages we need in this class.
 
 Once you have a DE in place and running, run the below script to enable Enhanced Session Mode from the VM side. You'll need to reboot the VM after running it.
 
