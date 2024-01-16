@@ -17,6 +17,7 @@
 
 **Zulip Org**: [Zulip](https://netsec.zulip.cs.pdx.edu/)
 
+
 ## Homework
 
 Each homework will build in some fashion on the previous homework. This may be conceptually, but may be directly. These aren't your typical "write answers to questions" type assignments, but rather are intended to be more hands-on. Nearly all the work I'm asking you to do is taken from tasks I had to perform professionally as a security vulnerability engineer. The first assignment will be to get the VM environment set up and configured. Subsequent assignments will build on this.
@@ -28,8 +29,22 @@ All work will be submitted via MarkDown documents within an internal [gitlab](ht
 ### Assignments
 
 
+### To install kali linux through wsl:
+```
+wsl --install -d kali-linux
+```
+### A nice gui
+```
+sudo apt install && apt upgrade
+sudo apt install -y kali-win-kex
+```
 
-wsl -d kali-linux --install
+### to launch gui
+```
+kex --win -s
+``` 
+(f8 will exit fullscreen mode)
+
 
 
 ## Pages
