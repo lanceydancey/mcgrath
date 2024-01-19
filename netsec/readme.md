@@ -8,14 +8,18 @@
 * Office hours:
     * Location: FAB 120-15 and [Zoom](https://pdx.zoom.us/j/84716901228) (PW: PSUSecure)
     * Times:
-        * TBD
-        <!-- * Code Party! Tuesdays, 18:300 - 22:00 (FAB 86-01/88-03) -->
+        * Monday: 10:00 - 11:30 (FAB 120-15 only)
+        * Tuesday: 11:00 - 12:00 (Zoom only)
+        * Tuesday: Code Party! 18:30 - 22:00 (FAB 86-01/88-03)
+        * Wednesday: 10:00 - 11:30 (FAB 120-15 only) -- except first and third Wednesdays of the month due to faculty meetings.
+        * Thursday: 09:30 - 11:30 (Zoom only)
 
 **[Syllabus](syllabus.md)**
 
 **Recorded Lectures**: These will be made available via [MediaSpace](https://media.pdx.edu/channel/channelid/328503742). Login required.
 
 **Zulip Org**: [Zulip](https://netsec.zulip.cs.pdx.edu/)
+
 
 ## Homework
 
@@ -28,6 +32,26 @@ All work will be submitted via MarkDown documents within an internal [gitlab](ht
 ### Assignments
 
 
+## To install Kali Linux through WSL:
+
+```
+wsl --install -d kali-linux
+```
+
+### A nice GUI
+Should you want a GUI for any reason, you can get a nice one with the following commands run from within the Kali session:
+
+```sh
+$ sudo apt install 
+$ sudo apt upgrade
+$ sudo apt install -y kali-win-kex
+```
+
+Then, to start the GUI, run (f8 will exit fullscreen mode):
+
+```sh
+$ kex --win -s
+```
 
 ## Pages
 
@@ -35,9 +59,9 @@ All work will be submitted via MarkDown documents within an internal [gitlab](ht
 * [tmux config](../.tmux.conf.md) -- configuration file for tmux from the Software Configuration page
 * [Powershell profile](../powershell_profile.md) -- powershell profile from the Software Configuration page
 * [Technical Writing](../technical_writing.md) -- if unfamiliar with markdown or LaTeX, this page will help
-* [VM Setup on Windows](../hyper-v.md)
-* [VM Setup on macOS](../vms_on_macos.md)
-* [Ubuntu configuration](../ubuntu.md)
+* [VM Setup on Windows](hyper-v.md)
+* [VM Setup on macOS](vms_on_macos.md)
+* [Kali configuration](linux_setup.md)
 * [SSH Tunnel for Windows RDP](../SSH_Tunnel_XRDP.md) -- SSH tunneling trick we will be using in various places through the term
 
 ## Useful links for learning

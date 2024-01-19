@@ -1,4 +1,4 @@
-# CS493/593: Digital Forensics
+# CS 493/593: Digital Forensics
 
 **Location**: FAB 46 (MW 16:40-18:30)
 
@@ -8,35 +8,49 @@
 * Office hours:
     * Location: FAB 120-15 and [Zoom](https://pdx.zoom.us/j/84716901228) (PW: PSUSecure)
     * Times:
-        * TBD
-        <!-- * Tuesday: Code Party! 19:00 - 22:00 (FMH 204) -->
+        * Monday: 10:00 - 11:30 (FAB 120-15 only)
+        * Tuesday: 11:00 - 12:00 (Zoom only)
+        * Tuesday: Code Party! 18:30 - 22:00 (FAB 86-01/88-03)
+        * Wednesday: 10:00 - 11:30 (FAB 120-15 only) -- except first and third Wednesdays of the month due to faculty meetings.
+        * Thursday: 09:30 - 11:30 (Zoom only)
 
 **[Syllabus](syllabus.md)**
 
-**Recorded Lectures**: These will be made available via [MediaSpace](https://media.pdx.edu/channel/CS410_510%2BSystem%2BAdministration%2Band%2BDevops/319613112). Login required.
+<!-- incorrect link, could not find correct one via mediaspace search -->
+<!-- **Recorded Lectures**: These will be made available via [MediaSpace](https://media.pdx.edu/channel/CS410_510%2BSystem%2BAdministration%2Band%2BDevops/319613112). Login required. --> 
 
 <!-- **Zulip Org**: [Zulip](https://netsec.zulip.cs.pdx.edu/) -->
 
 ## Pages
 
-<!-- * [Software configuration](../software.md)
 * [tmux config](../.tmux.conf.md)
 * [Technical Writing](../technical_writing.md)
-* [VM Setup on Windows](../hyper-v.md)
-* [VM Setup on macOS](../vms_on_macos.md)
-* [FreeBSD Setup Script](../freebsd_setup.md)
-* [Ubuntu configuration](../ubuntu.md)
+* [VM Setup on Windows](../netsec/hyper-v.md)
+* [VM Setup on macOS](../netsec/vms_on_macos.md)
+* [Ubuntu configuration](../netsec/linux_setup.md)
 * [Powershell profile](../powershell_profile.md)
 * [Networking Fundamentals](../networking.md)
 * [tcpdump](../tcpdump.md)
 * [Wireshark](../wireshark.md)
-* [SSH Setup from class](SSH_setup.md)
-* [SSH Tunnel for Windows RDP](../SSH_Tunnel_XRDP.md) -->
+* [SSH Tunnel for Windows RDP](../SSH_Tunnel_XRDP.md)
 
+## Slides
+
+* [Introduction](Lecture1.pdf)
+* [Concepts](lecture2.pdf)
+* [Case Studies](lecture2a.pdf)
 
 ## Homework
 
 Each homework will build on the previous assignment. These aren't your typical "write answers to questions" type assignments, but rather are intended to be more hands-on. We will be adding to, modifying, or otherwise doing something to the VM environment to enable us to do something else. The first assignment will be to get the VM environment set up and configured. Subsequent assignments will build on this.
+
+
+### Submission
+
+All work will be submitted via MarkDown documents within an internal [gitlab](https://gitlab.cecs.pdx.edu) repo. You will be using this repo for the rest of the term. This repo exists on the CECS intranet. You will need to add myself and the TA to this repo as Developers. Grades and feedback will be done via a merge request from the TA.
+
+### Assignments
+
 
 <!-- * [Homework 1](hw1.md)
 * [Homework 2](hw2.md)

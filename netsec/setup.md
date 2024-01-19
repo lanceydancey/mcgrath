@@ -1,3 +1,4 @@
+```sh
 #!/usr/bin/env zsh
 
 echo "Updating software..."
@@ -206,3 +207,5 @@ wget -q -O setup.tar.bz2 http://web.cecs.pdx.edu/~dmcgrath/setup_496.tar.bz2
 #tar xavf setup.tar.bz2 -C ~/
 
 echo "Please log out and log back, then uncompress the setup_496.tar.bz2 with 'tar xjvf ~/setup_496.tar.bz2 -C ~/' to complete setup."
+
+```
