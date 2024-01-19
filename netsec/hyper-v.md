@@ -25,7 +25,7 @@ If this does not work, try the following:
 Should you want a GUI for any reason, you can get a nice one with the following commands run from within the Kali session:
 
 ```sh
-$ sudo apt install 
+$ sudo apt update 
 $ sudo apt upgrade
 $ sudo apt install -y kali-win-kex
 ```
