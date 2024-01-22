@@ -20,6 +20,7 @@
 
 **Zulip Org**: [Zulip](https://netsec.zulip.cs.pdx.edu/)
 
+---
 
 ## Homework
 
@@ -31,7 +32,9 @@ All work will be submitted via MarkDown documents within an internal [gitlab](ht
 
 ### Assignments
 
+[HW1](hw1.md)
 
+---
 ## To install Kali Linux through WSL:
 
 ```
