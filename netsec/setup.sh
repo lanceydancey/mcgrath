@@ -204,7 +204,7 @@ git config --global color.diff.whitespace "red reverse"
 #for all classes except 496:
 #wget -q -O setup.tar.bz2 http://web.cecs.pdx.edu/~dmcgrath/setup.tar.bz2
 #for cs496:
-wget -q -O setup.tar.bz2 http://web.cecs.pdx.edu/~dmcgrath/setup_496.tar.bz2
+wget -q -O setup_496.tar.bz2 http://web.cecs.pdx.edu/~dmcgrath/setup_496.tar.bz2
 #tar xavf setup.tar.bz2 -C ~/
 
 echo "Please open a new shell session, then uncompress the setup_496.tar.bz2 with 'tar xjvf ~/setup_496.tar.bz2 -C ~/' to complete setup."
