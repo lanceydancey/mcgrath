@@ -51,6 +51,7 @@ All work will be submitted via MarkDown documents within an internal [gitlab](ht
 
 ### Assignments
 
+[Homework 1](hw1.md)
 
 <!-- * [Homework 1](hw1.md)
 * [Homework 2](hw2.md)
