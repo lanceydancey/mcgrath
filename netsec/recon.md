@@ -22,9 +22,3 @@ in depth scanning a network
 Because of the sheer scope of capability, some of the functionality requires root privileges. Because we are running as root on our Kali VMs, this isn't something that you will need to worry too much about.
 
 A simple example, taken from the manpage (man nmap) can be see below.
-
-<div id="nmap"></div>
-<script src="/assets/asciinema-player.min.js"></script>
-<script>
-    AsciinemaPlayer.create('nmap.cast', document.getElementById('nmap'));
-</script>
