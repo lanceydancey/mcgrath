@@ -64,7 +64,7 @@ $ kex --win -s
 * [Kali configuration](linux_setup.md)
 * [SSH Tunnel for Windows RDP](../SSH_Tunnel_XRDP.md) -- SSH tunneling trick we will be using in various places through the term
 * [Introduction to Networking](../networking.md) -- a brief introduction to networking concepts
-* 
+* [Introduction to network reconnaissance](recon.md) -- a brief introduction to network reconnaissance and using nmap
 
 ## Useful links for learning
 
