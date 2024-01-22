@@ -28,3 +28,4 @@ $ chmod +x setup.sh
 $ ./setup.sh
 ```
 
+This will take a while, so go get a coffee or something. When it's done, you should have a bunch of useful tools installed.

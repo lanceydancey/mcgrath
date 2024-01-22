@@ -63,6 +63,8 @@ $ kex --win -s
 * [VM Setup on macOS](vms_on_macos.md)
 * [Kali configuration](linux_setup.md)
 * [SSH Tunnel for Windows RDP](../SSH_Tunnel_XRDP.md) -- SSH tunneling trick we will be using in various places through the term
+* [Introduction to Networking](../networking.md) -- a brief introduction to networking concepts
+* 
 
 ## Useful links for learning
 
