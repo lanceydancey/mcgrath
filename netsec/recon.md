@@ -23,3 +23,6 @@ Because of the sheer scope of capability, some of the functionality requires roo
 
 A simple example, taken from the manpage (man nmap) can be see below.
 
+<script>
+    AsciinemaPlayer.create('nmap.cast', document.getElementById('demo'));
+</script>
