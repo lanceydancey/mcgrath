@@ -17,7 +17,7 @@
 **[Syllabus](syllabus.md)**
 
 <!-- incorrect link, could not find correct one via mediaspace search -->
-<!-- **Recorded Lectures**: These will be made available via [MediaSpace](https://media.pdx.edu/channel/CS410_510%2BSystem%2BAdministration%2Band%2BDevops/319613112). Login required. --> 
+**Recorded Lectures**: These will be made available via [MediaSpace](https://media.pdx.edu/channel/chanellid/331806232). Login required. 
 
 <!-- **Zulip Org**: [Zulip](https://netsec.zulip.cs.pdx.edu/) -->
 

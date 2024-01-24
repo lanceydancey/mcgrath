@@ -18,7 +18,7 @@
 
 **Recorded Lectures**: These will be made available via [MediaSpace](https://media.pdx.edu/channel/channelid/328503742). Login required.
 
-**Zulip Org**: [Zulip](https://netsec.zulip.cs.pdx.edu/)
+<!-- **Zulip Org**: [Zulip](https://netsec.zulip.cs.pdx.edu/) -->
 
 ---
 
