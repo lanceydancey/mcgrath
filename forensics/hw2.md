@@ -1,5 +1,12 @@
 # Digital Evidence
 
+Homework 2
+Due Date: 2024-02-12 23:59:59
+Submission: via GitLab repo
+
+* auto-gen TOC:
+{:toc}
+
 ## Introduction
 
 You've been hired by Booring Soft to investigate an employee named Kevin Tunes. Kevin's supervisor is fed up with him for not getting work done. His coworkers report that he browses websites all day and streams music. Both of these actions are explicitly against company policy. One coworker even alleges that Kevin has been traveling on the company money to conferences, but hasn't been attending the conferences.
