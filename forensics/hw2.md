@@ -24,10 +24,11 @@ The company authorized travel for Kevin to attend conferences on these dates:
 ## Part 1: Creating a forensic image
 The first task will be to create a forensic image of the drive. This is an exact bit-for-bit copy of all sectors of the drive. Additionally, we will create digital fingerprint of the drive using the SHA-256 hash algorithm. We will accomplish both of these tasks with a program called dc3dd, which is a specialized forensic imaging program developed at the DoD Cyber Crime Center.
 
+
 First, snag the [`del.dd.bz2` image](https://web.mcecs.pdx.edu/~dmcgrath/del.dd.bz2) and decompress it:
 
 ```sh
-$ curl -LO https://web.mcecs.pdx.edu/~dmcgrath/del.dd.bz2
+$ curl -LO https://web.cecs.pdx.edu/~dmcgrath/del.dd.bz2
 $ bzip2 -dc del.dd.bz2 > del.dd
 ```
 
