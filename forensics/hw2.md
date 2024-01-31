@@ -24,7 +24,8 @@ The company authorized travel for Kevin to attend conferences on these dates:
 ## Part 1: Creating a forensic image
 The first task will be to create a forensic image of the drive. This is an exact bit-for-bit copy of all sectors of the drive. Additionally, we will create digital fingerprint of the drive using the SHA-256 hash algorithm. We will accomplish both of these tasks with a program called dc3dd, which is a specialized forensic imaging program developed at the DoD Cyber Crime Center.
 
-First, snag the [`del.dd.bz2` image](https://web.cecs.pdx.edu/~dmcgrath/del.dd.bz2). and decopmress it:
+
+First, snag the [`del.dd.bz2` image](https://web.mcecs.pdx.edu/~dmcgrath/del.dd.bz2) and decompress it:
 
 ```sh
 $ curl -LO https://web.cecs.pdx.edu/~dmcgrath/del.dd.bz2
@@ -143,11 +144,11 @@ With the right queries against this database, you can now determine which websit
 
 ## Report
 
-A report format may be found here: http://www.testifyingtraining.com/the-ideal-expert-witness-report-format/Links to an external site..
+A report format may be found here: https://www.testifyingtraining.com/the-ideal-expert-witness-report-format/
 
 Please read this short summary of how to write an effective expert witness report:
 
-James J. Mangraviti, Steven Babitsky, and Nadine Nasser Donovan, “How to Draft a Powerful, Persuasive, and Understandable Expert Witness Report,” SEAK, Inc., 2014. [Online](http://www.testifyingtraining.com/wp-content/uploads/2014/07/How-to-Draft-a-Powerful-Expert-Witness-Report-6-30-2014.pdf)
+James J. Mangraviti, Steven Babitsky, and Nadine Nasser Donovan, “How to Draft a Powerful, Persuasive, and Understandable Expert Witness Report,” SEAK, Inc., 2014. [Online](https://www.testifyingtraining.com/wp-content/uploads/2014/07/How-to-Draft-a-Powerful-Expert-Witness-Report-6-30-2014.pdf)
 
 Write a 1-2 page comprehensive forensic report of your findings with the following sections:
 
