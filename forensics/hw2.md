@@ -1,5 +1,12 @@
 # Digital Evidence
 
+Homework 2
+Due Date: 2024-02-12 23:59:59
+Submission: via GitLab repo
+
+* auto-gen TOC:
+{:toc}
+
 ## Introduction
 
 You've been hired by Booring Soft to investigate an employee named Kevin Tunes. Kevin's supervisor is fed up with him for not getting work done. His coworkers report that he browses websites all day and streams music. Both of these actions are explicitly against company policy. One coworker even alleges that Kevin has been traveling on the company money to conferences, but hasn't been attending the conferences.
@@ -24,10 +31,11 @@ The company authorized travel for Kevin to attend conferences on these dates:
 ## Part 1: Creating a forensic image
 The first task will be to create a forensic image of the drive. This is an exact bit-for-bit copy of all sectors of the drive. Additionally, we will create digital fingerprint of the drive using the SHA-256 hash algorithm. We will accomplish both of these tasks with a program called dc3dd, which is a specialized forensic imaging program developed at the DoD Cyber Crime Center.
 
-First, snag the [`del.dd.bz2` image](https://web.mcecs.pdx.edu/~dmcgrath/del.dd.bz2). and decompress it:
+
+First, snag the [`del.dd.bz2` image](https://web.cecs.pdx.edu/~dmcgrath/del.dd.bz2) and decompress it:
 
 ```sh
-$ curl -LO https://web.mcecs.pdx.edu/~dmcgrath/del.dd.bz2
+$ curl -LO https://web.cecs.pdx.edu/~dmcgrath/del.dd.bz2
 $ bzip2 -dc del.dd.bz2 > del.dd
 ```
 
@@ -144,11 +152,11 @@ With the right queries against this database, you can now determine which websit
 
 ## Report
 
-A report format may be found here: https://www.testifyingtraining.com/tips-and-tricks-for-formatting-your-expert-witness-report/Links to an external site..
+A report format may be found here: https://www.testifyingtraining.com/the-ideal-expert-witness-report-format/
 
 Please read this short summary of how to write an effective expert witness report:
 
-James J. Mangraviti, Steven Babitsky, and Nadine Nasser Donovan, “How to Draft a Powerful, Persuasive, and Understandable Expert Witness Report,” SEAK, Inc., 2014. [Online](http://www.testifyingtraining.com/wp-content/uploads/2014/07/How-to-Draft-a-Powerful-Expert-Witness-Report-6-30-2014.pdf)
+James J. Mangraviti, Steven Babitsky, and Nadine Nasser Donovan, “How to Draft a Powerful, Persuasive, and Understandable Expert Witness Report,” SEAK, Inc., 2014. [Online](https://www.testifyingtraining.com/wp-content/uploads/2014/07/How-to-Draft-a-Powerful-Expert-Witness-Report-6-30-2014.pdf)
 
 Write a 1-2 page comprehensive forensic report of your findings with the following sections:
 
