@@ -49,6 +49,8 @@ Each homework will build on the previous assignment. These aren't your typical "
 
 All work will be submitted via MarkDown documents within an internal [gitlab](https://gitlab.cecs.pdx.edu) repo. You will be using this repo for the rest of the term. This repo exists on the CECS intranet. You will need to add myself and the TA to this repo as Developers. Grades and feedback will be done via a merge request from the TA.
 
+The grader for this class is Teo Coffman. His PDX username is `theodos`.
+
 ### Assignments
 
 * [Homework 1](hw1.md)

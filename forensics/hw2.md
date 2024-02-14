@@ -128,7 +128,8 @@ $ wvSummary yourDocument.doc
 As you might guess, browsing the web generates a wealth of interesting artifacts. While different browsers store history using different methods, both Chrome and Firefox use SQLite databases. Though we will examine a Firefox profile, the general principles we use can be extrapolated to other browsers. First, we’ll copy the database and start up SQLite. Then we’ll look at the tables in the database and issue a few queries from the command line. Alternatively, you could use a tool like [DataGrip](https://www.jetbrains.com/datagrip/) to view the database.
 
 ```sh
-cp -r ~/del/Users/Kevin Tunes/Application Data/Mozilla/Firefox/Profiles/obaosuzs.default ~/
+cp -r ~/out/Users/Kevin Tunes/Application Data/Mozilla/Firefox/Profiles/obaosuzs.default ~/
+
 cd obaosuzs.default
 sqlite3 places.sqlite
 ```
