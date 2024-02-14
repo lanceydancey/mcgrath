@@ -15,9 +15,9 @@ Using the tools you've learned in this module, dissect the provided packet captu
 
 Some useful information regarding the firmware you're after:
 
-```sh
-┌─(dmcgrath@kali:pts/3)──────────────────────────────────────────────────────────────────(~)─┐
-└─(14:43:%)── binwalk download.bin 		                                        ──(Wed,Sep23)─┘
+```
+┌─(dmcgrath@kali:pts/3)─────────────────────────────────────────────────────────────────────────(~)─┐
+└─(14:43:%)── binwalk download.bin #what it should look like                          ──(Wed,Sep23)─┘
 
 DECIMAL       HEXADECIMAL     DESCRIPTION
 --------------------------------------------------------------------------------
@@ -26,14 +26,14 @@ DECIMAL       HEXADECIMAL     DESCRIPTION
 302958        0x49F6E         MySQL MISAM index file Version 4
 1441888       0x160060        Squashfs filesystem, little endian, version 4.0, compression:xz, size: 2208988 bytes, 1159 inodes, blocksize: 262144 bytes, created: 2019-08-06 21:20:37
 
-┌─(dmcgrath@kali:pts/3)──────────────────────────────────────────────────────────────────(~)─┐
-└─(14:43:%)── md5sum download.bin                                                 ──(Wed,Sep23)─┘
+┌─(dmcgrath@kali:pts/3)─────────────────────────────────────────────────────────────────────────(~)─┐
+└─(14:43:%)── md5sum download.bin                                                     ──(Wed,Sep23)─┘
 7aa6a7ebcbd98ce19539b668ff790655  download.bin
-┌─(dmcgrath@kali:pts/3)──────────────────────────────────────────────────────────────────(~)─┐
-└─(14:44:%)── sha512sum download.bin                                              ──(Wed,Sep23)─┘
+┌─(dmcgrath@kali:pts/3)─────────────────────────────────────────────────────────────────────────(~)─┐
+└─(14:44:%)── sha512sum download.bin                                                  ──(Wed,Sep23)─┘
 2a7719719aa4f869586a7043f532e01ed4985e5c25b9a54979ac7d50c67820ec61c2805d6169b9c95a98104b8fb1d4f9ec698d23881360e99f5232a4f3cf12d4  download.bin
-┌─(dmcgrath@kali:pts/3)──────────────────────────────────────────────────────────────────(~)─┐
-└─(14:44:%)──                                                                     ──(Wed,Sep23)─┘
+┌─(dmcgrath@kali:pts/3)─────────────────────────────────────────────────────────────────────────(~)─┐
+└─(14:44:%)──                                                                         ──(Wed,Sep23)─┘
 ```
 
 Once you have a firmware extracted that matches the above, use a tool called binwalk to extract the contents (this isn't a reverse engineering class, use the -M and -e options), then answer a few questions:
