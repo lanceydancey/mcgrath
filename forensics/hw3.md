@@ -9,6 +9,8 @@ Due Date: 2024-02-26 23:59:59
 
 In this lab, we'll be investigating a forensic image of thumb drive taken from a woman named Jenny Card, who was arrested in Chicago selling fraudulent gift cards from several retail stores. The SHA-256 hash of the image is: ba4a638911e1824c5a84ea4dfb870bcbcff36a6775eaf8108e48b2ceee0c7335. You should be able to find evidence linking her to the crime in the image. This will take a lot of careful sifting of data, but you got this!
 
+Get the image via scp from `ada.cs.pdx.edu:/disk/scratch/forensics/fsf.dd`.
+
 ## Mount the image
 You have been supplied with a forensic image of a thumb drive. As in the previous lab, we'll need to mount the forensic image. Use mmls to view the partitions and calculate the offset.
 
