@@ -93,6 +93,20 @@ phohotorec is a file carving tool that tries to discern some data about the file
 
 Use the interactive menu to choose the image you'd like to carve. This should produce digital evidence in file formats you are familiar with from the previous lab. With the combined output of foremost and photorec, you should be able to conduct your investigation.
 
+## Visualization
+
+You should now have a collection of images and other files that you can use to conduct your investigation. You should be able to find evidence linking Jenny Card to the crime in the images. One way to look at the data is spatially: you can plot the GPS coordinates of each image (that has them) on a map.
+
+Write a program that does the following:
+
+* Given a directory of images, extract the GPS coordinates from the EXIF data of each image, taking care to handle images that don't have GPS data. Keep track of which image contains which coordinates.
+* Plot the coordinates on some form of HTML map. You can use whatever mapping API you desire.
+    * Python has folium, which makes plotting on a map fairly easy.
+    * You can also use Google Maps or OpenStreetMap, as you desire.
+    * I'm told this is doable in Rust, but YMMV.
+* While I would recommend doing this in python, you can use whatever language you like, as long as you include any instructions necessary to run your code.
+* Save the HTML generated map file to your gitlab repo.
+
 ## Report
 Write a 1-2 page comprehensive forensic report of your findings with the following sections:
 
