@@ -104,6 +104,8 @@ Write a program that does the following:
     * Python has folium, which makes plotting on a map fairly easy.
     * You can also use Google Maps or OpenStreetMap, as you desire.
     * I'm told this is doable in Rust, but YMMV.
+* There should be tooltips that display, at minimum, the name of the file that the coordinates came from.
+    * Extra credit will be given if you include the actual image in the tooltip.
 * While I would recommend doing this in python, you can use whatever language you like, as long as you include any instructions necessary to run your code.
 * Save the HTML generated map file to your gitlab repo.
 
