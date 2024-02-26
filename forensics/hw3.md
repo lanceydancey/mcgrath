@@ -84,7 +84,7 @@ Foremost and scalpel are two common file carving tools. They completely ignore t
 What images are returned? Can you find anything of interest to our investigation?
 
 ### photorec
-phohotorec is a file carving tool that tries to discern some data about the file system (e.g. block size) to carve more effectively. This means it has some assumptions baked in about file systems, so it won't work with all images.
+photorec is a file carving tool that tries to discern some data about the file system (e.g. block size) to carve more effectively. This means it has some assumptions baked in about file systems, so it won't work with all images.
 
 ```sh
 ❯ sudo apt-get install testdisk
