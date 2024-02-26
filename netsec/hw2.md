@@ -1,6 +1,6 @@
-Homework 2
+# Homework 2
+
 Due Date: 2024-02-12 23:59:59
-Submission: via GitLab repo
 
 * auto-gen TOC:
 {:toc}

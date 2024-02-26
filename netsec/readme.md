@@ -30,10 +30,13 @@ Each homework will build in some fashion on the previous homework. This may be c
 
 All work will be submitted via MarkDown documents within an internal [gitlab](https://gitlab.cecs.pdx.edu) repo. You will be using this repo for the rest of the term. This repo exists on the CECS intranet. You will need to add myself and the TA to this repo as Developers. Grades and feedback will be done via a merge request from the TA.
 
+The grader for this class is Teo Coffman. His PDX username is `theodos`.
+
 ### Assignments
 
 * [Homework 1](hw1.md)
 * [Homework 2](hw2.md)
+* [Homework 3](hw3.md)
 
 ---
 ## To install Kali Linux through WSL:
@@ -69,6 +72,7 @@ $ kex --win -s
 * [SSH Tunnel for Windows RDP](../SSH_Tunnel_XRDP.md) -- SSH tunneling trick we will be using in various places through the term
 * [Introduction to Networking](../networking.md) -- a brief introduction to networking concepts
 * [Introduction to network reconnaissance](recon.md) -- a brief introduction to network reconnaissance and using nmap
+* [Cracking WiFi](crack_wifi.md) -- a brief introduction to cracking WiFi
 
 ## Useful links for learning
 
