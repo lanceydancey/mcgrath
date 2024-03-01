@@ -1,7 +1,7 @@
 
 # HW4: Fuzzing
 
-Due Date: 2024-03-13 23:59:59
+Due Date: 2024-03-17 23:59:59
 
 * auto-gen TOC:
 {:toc}
@@ -16,9 +16,9 @@ This is adapted from the AFLnet tutorial. And by adapted, I mean I'm making use 
 
 ```bash
 # Install clang (as required by AFL/AFLNet to enable llvm_mode)
-sudo apt-get install clang
+❯ sudo apt-get install clang
 # Install graphviz development
-sudo apt-get install graphviz-dev libcap-dev
+❯ sudo apt-get install graphviz-dev libcap-dev
 ```
 
 ### AFLNet
@@ -27,26 +27,26 @@ Download AFLNet and compile it. We have tested AFLNet on Ubuntu 18.04 and Ubuntu
 
 ```bash
 # First, clone this AFLNet repository to a folder named aflnet
-git clone <links to the repository> aflnet
+❯ git clone <links to the repository> aflnet
 # Then move to the source code folder
-cd aflnet
-make clean all
-cd llvm_mode
+❯ cd aflnet
+❯ make clean all
+❯ cd llvm_mode
 # The following make command may not work if llvm-config cannot be found
 # To fix this issue, just set the LLVM_CONFIG env. variable to the specific llvm-config version on your machine
 # On Ubuntu 18.04, it could be llvm-config-6.0 if you have installed clang using apt-get
-make
+❯ make
 # Move to AFLNet's parent folder
-cd ../..
-export AFLNET=$(pwd)/aflnet
-export WORKDIR=$(pwd)
+❯ cd ../..
+❯ export AFLNET=$(pwd)/aflnet
+❯ export WORKDIR=$(pwd)
 ```
 
 ### Setup PATH environment variables
 
 ```bash
-export PATH=$PATH:$AFLNET
-export AFL_PATH=$AFLNET
+❯ export PATH=$PATH:$AFLNET
+❯ export AFL_PATH=$AFLNET
 ```
 
 ## Usage
@@ -78,7 +78,7 @@ AFLNet adds the following options to AFL. Run ```afl-fuzz --help``` to see all o
 
 Example command: 
 ```bash
-afl-fuzz -d -i in -o out -N <server info> -x <dictionary file> -P <protocol> -D 10000 -q 3 -s 3 -E -K -R <executable binary and its arguments (e.g., port number)>
+❯ afl-fuzz -d -i in -o out -N <server info> -x <dictionary file> -P <protocol> -D 10000 -q 3 -s 3 -E -K -R <executable binary and its arguments (e.g., port number)>
 ```
 
 ## Tutorial - Fuzzing Live555 media streaming server
@@ -92,19 +92,19 @@ If you want to run some experiments quickly, please take a look at [ProFuzzBench
 The newest source code of Live555 can be downloaded as a tarball at [Live555 public page](http://live555.com/liveMedia/public/). There is also [a mirror of the library](https://github.com/rgaufman/live555) on GitHub. In this example, we choose to fuzz an [old version of Live555](https://github.com/rgaufman/live555/commit/ceeb4f462709695b145852de309d8cd25e2dca01) which was commited to the repository on August 28th, 2018. While fuzzing this specific version of Live555, AFLNet exposed four vulnerabilites in Live555, two of which were zero-day. To compile and setup Live555, please use the following commands.
 
 ```bash
-cd $WORKDIR
+❯ cd $WORKDIR
 # Clone live555 repository
-git clone https://github.com/rgaufman/live555.git
+❯ git clone https://github.com/rgaufman/live555.git
 # Move to the folder
-cd live555
+❯ cd live555
 # Checkout the buggy version of Live555
-git checkout ceeb4f4
+❯ git checkout ceeb4f4
 # Apply a patch. See the detailed explanation for the patch below
-patch -p1 < $AFLNET/tutorials/live555/ceeb4f4.patch
+❯ patch -p1 < $AFLNET/tutorials/live555/ceeb4f4.patch
 # Generate Makefile
-./genMakefiles linux
+❯ ./genMakefiles linux
 # Compile the source
-make clean all
+❯ make clean all
 ```
 
 As you can see from the commands, we apply a patch to make the server effectively fuzzable. In addition to the changes for generating a Makefile which uses afl-clang-fast++ to do the coverage feedback-enabled instrumentation, we make a small change to disable random session ID generation in Live555. In the unmodified version of Live555, it generates a session ID for each connection and the session ID should be included in subsequent requests sent from the connected client. Otherwise, the requests are quickly rejected by the server and this leads to undeterministic paths while fuzzing. Specifically, the same message sequence could exercise different server paths because the session ID is changing. We handle this specific issue by modifing Live555 in such a way that it always generates the same session ID.
@@ -113,13 +113,13 @@ Once Live555 source code has been successfully compiled, we should see the serve
 
 ```bash
 # Move to the folder keeping the RTSP server and client
-cd $WORKDIR/live555/testProgs
+❯ cd $WORKDIR/live555/testProgs
 # Copy sample media source files to the server folder
-cp $AFLNET/tutorials/live555/sample_media_sources/*.* ./
+❯ cp $AFLNET/tutorials/live555/sample_media_sources/*.* ./
 # Run the RTSP server on port 8554
-./testOnDemandRTSPServer 8554
+❯ ./testOnDemandRTSPServer 8554
 # Run the sample client on another screen/terminal
-./testRTSPClient rtsp://127.0.0.1:8554/wavAudioTest
+❯ ./testRTSPClient rtsp://127.0.0.1:8554/wavAudioTest
 ```
 
 We should see the outputs from the sample client showing that it successfully connects to the server, sends requests and receives responses including streaming data from the server.
@@ -131,21 +131,21 @@ AFLNet takes message sequences as seed inputs so we first capture some sample us
 We first start the server under test
 
 ```bash
-cd $WORKDIR/live555/testProgs
-./testOnDemandRTSPServer 8554
+❯ cd $WORKDIR/live555/testProgs
+❯ ./testOnDemandRTSPServer 8554
 ```
 
 After that, we ask [tcpdump data-network packet analyzer](https://www.tcpdump.org) to capture all traffics through the port opened by the server, which is 8554 in this case. Note that you may need to change the network interface that works for your setup using the ```-i``` option.
 
 ```bash
-sudo tcpdump -w rtsp.pcap -i lo port 8554
+❯ sudo tcpdump -w rtsp.pcap -i lo port 8554
 ```
 
 Once both the server and tcpdump have been started, we run the sample client
 
 ```bash
-cd $WORKDIR/live555/testProgs
-./testRTSPClient rtsp://127.0.0.1:8554/wavAudioTest
+❯ cd $WORKDIR/live555/testProgs
+❯ ./testRTSPClient rtsp://127.0.0.1:8554/wavAudioTest
 ```
 
 When the client completes its execution, we stop tcpdump. All the requests and responses in the communication between the client and the server should be stored in the specified rtsp.pcap file. Now we use [Wireshark network analyzer](https://wireshark.org) to extract only the requests and use the request sequence as a seed input for AFLNet. Please install Wireshark if you haven't done so.
@@ -153,7 +153,7 @@ When the client completes its execution, we stop tcpdump. All the requests and r
 We first open the PCAP file with Wireshark.
 
 ```bash
-wireshark rtsp.pcap
+❯ wireshark rtsp.pcap
 ```
 
 This is a screenshot of Wireshark. It shows packets (requests and responses) in multiple rows, one row for one packet.
@@ -185,8 +185,8 @@ Fuzzing network servers is challenging and in several cases, we may need to slig
 ### Step-3. Fuzzing
 
 ```bash
-cd $WORKDIR/live555/testProgs
-afl-fuzz -d -i $AFLNET/tutorials/live555/in-rtsp -o out-live555 -N tcp://127.0.0.1/8554 -x $AFLNET/tutorials/live555/rtsp.dict -P RTSP -D 10000 -q 3 -s 3 -E -K -R ./testOnDemandRTSPServer 8554
+❯ cd $WORKDIR/live555/testProgs
+❯ afl-fuzz -d -i $AFLNET/tutorials/live555/in-rtsp -o out-live555 -N tcp://127.0.0.1/8554 -x $AFLNET/tutorials/live555/rtsp.dict -P RTSP -D 10000 -q 3 -s 3 -E -K -R ./testOnDemandRTSPServer 8554
 ```
 
 Once AFLNet discovers a bug (e.g., a crash or a hang), a test case containing the message sequence that triggers the bug will be stored in ```replayable-crashes``` or ```replayable-hangs``` folder. In the fuzzing process, AFLNet State Machine Learning component keeps inferring the implmented state machine of the SUT and a .dot file (ipsm.dot) is updated accordingly so that the user can view that file (using a .dot viewer like xdot) to monitor the current progress of AFLNet in terms of protocol inferencing. Please read the AFLNet paper for more information.
@@ -196,17 +196,14 @@ Once AFLNet discovers a bug (e.g., a crash or a hang), a test case containing th
 AFLNet has an utility (aflnet-replay) which can replay message sequences stored in crash and hang-triggering files (in ```replayable-crashes``` and ```replayable-hangs``` folders). Each file is structured in such a way that aflnet-replay can extract messages based on their size. aflnet-replay takes three parameters which are 1) the path to the test case generated by AFLNet, 2) the network protocol under test, and 3) the server port number. The following commands reproduce a PoC for [CVE-2019-7314](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-7314).
 
 ```bash
-cd $WORKDIR/live555/testProgs
+❯ cd $WORKDIR/live555/testProgs
 # Start the server
-./testOnDemandRTSPServer 8554
+❯ ./testOnDemandRTSPServer 8554
 # Run aflnet-replay
-aflnet-replay $AFLNET/tutorials/live555/CVE_2019_7314.poc RTSP 8554
+❯ aflnet-replay $AFLNET/tutorials/live555/CVE_2019_7314.poc RTSP 8554
 ```
 
 To get more information about the discovered bug (e.g., crash call stack), you can run the buggy server with [GDB](https://gnu.org/software/gdb) or you can apply the Address Sanitizer-Enabled patch ($AFLNET/tutorials/live555/ceeb4f4_ASAN.patch) and recompile the server before running it. 
-
-
-
 
 ## What to turn in
 
