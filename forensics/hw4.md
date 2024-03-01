@@ -79,9 +79,12 @@ Write a 1-2 page comprehensive forensic report of your findings with the followi
 * Findings - clearly state the facts you uncovered from your investigation in an unbiased way
 * Conclusions - summarize your findings and describe how they relate to the overall case.
 
-Reference Material
-http://blog.kiddaland.net
-http://plaso.kiddaland.net
+### Reference Material
+
+* http://blog.kiddaland.net
+* http://plaso.kiddaland.net
+
+### Submission
 
 This report should go in your repo in a file called `hw4/hw4_1.md`.
 
@@ -107,5 +110,7 @@ You can use any of the commonly available tools/scripting languages (e.g. grep, 
 * What is the MAC address of the iPhone?
 * What evidence shows that the user ‘jerk’ stole the MBP?
 * There are quite a few login failures from jschmo’s side. Will it be reasonable to think that these are attempts to break into jschmo’s account?
+
+### Submission
 
 Please answer all the above questions in a file called `hw4/hw4_2.md` in your repo. Please list the questions and then provide the answers in the same order. It will just make my life easier.
