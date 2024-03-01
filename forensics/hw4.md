@@ -9,7 +9,7 @@ Due Date: 2024-03-17 23:59:59
 
 ### Introduction
 
-Kelly Copy is a researcher at the University of Illinois studying water tables. She submitted a proposal to a federal funding agency. Allison Origin is a graduate student in another lab at the university. Allison claims that Kelly stole her data and writing and used the results to produce the proposal. Allison submitted the USB drive she kept her research on, which was imaged (obtain `tim.dd` via `scp <ODIN username>@linux.cs.pdx.edu:/disk/scratch/dmcgrath/tim.dd .`,) though all the data has been deleted. Kelly's computer was also imaged as a part of the investigation (obtain `tim2.dd` via `scp <ODIN username>@linux.cs.pdx.edu:/disk/scratch/dmcgrath/tim2.dd .` from your VM). You’ve been hired by the university to investigate Allison’s claims.
+Kelly Copy is a researcher at the University of Illinois studying water tables. She submitted a proposal to a federal funding agency. Allison Origin is a graduate student in another lab at the university. Allison claims that Kelly stole her data and writing and used the results to produce the proposal. Allison submitted the USB drive she kept her research on, which was imaged (obtain `tim.dd` via `scp <ODIN username>@linux.cs.pdx.edu:/disk/scratch/dmcgrath/tim.dd .` from your VM) though all the data has been deleted. Kelly's computer was also imaged as a part of the investigation (obtain `tim2.dd` via `scp <ODIN username>@linux.cs.pdx.edu:/disk/scratch/dmcgrath/tim2.dd .` from your VM). You’ve been hired by the university to investigate Allison’s claims.
 
 ### File system forensics
 Let's begin by looking at the file system of the thumb drive (tim.dd.)
