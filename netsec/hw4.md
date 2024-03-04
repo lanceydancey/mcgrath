@@ -10,6 +10,66 @@ Due Date: 2024-03-17 23:59:59
 
 This is adapted from the AFLnet tutorial. And by adapted, I mean I'm making use of their tutorial.
 
+## Update
+
+This requires the use of an x86 machine. I don't have a lot of spare x86 machines lying around, but I do have some. Please reach out individually via email if you need access to an x86 machine to complete this assignment.
+
+If you are running into trouble getting this to run on your x86 machine, you can use this Dockerfile to build a working image:
+    
+```Dockerfile
+# syntax=docker/dockerfile-upstream:master-labs
+FROM ubuntu:18.04
+
+RUN apt-get -y update && \
+    apt-get -y install sudo \ 
+    apt-utils \
+    build-essential \
+    openssl \
+    clang \
+    graphviz-dev \
+    git \ 
+    libcap-dev
+
+# Download and compile AFLNet
+ENV LLVM_CONFIG="llvm-config-6.0"
+
+
+RUN git clone https://github.com/aflnet/aflnet.git /opt/aflnet && cd /opt/aflnet && make clean all && cd llvm_mode && make
+#WORKDIR /opt/aflnet
+
+# Set up environment variables for AFLNet
+ENV AFLNET="/opt/aflnet"
+ENV PATH="${PATH}:${AFLNET}"
+ENV AFL_PATH="${AFLNET}"
+ENV AFL_I_DONT_CARE_ABOUT_MISSING_CRASHES=1 \
+    AFL_SKIP_CPUFREQ=1
+ENV WORKDIR="/home/testing"
+
+RUN mkdir -p /home/testing/
+RUN cd $WORKDIR && \
+	git clone https://github.com/rgaufman/live555.git && \
+	cd live555 && \
+	git checkout ceeb4f4 && \
+	patch -p1 < $AFLNET/tutorials/live555/ceeb4f4_states_decomposed.patch && \
+	./genMakefiles linux && \
+	make clean all
+```
+
+Then you can get ready to run the tests on Live555 with the following command:
+
+```bash
+❯ docker build --tag aflnet .
+❯ docker run -it aflnet
+```
+
+`$WORKDIR` is set to `/home/testing`, so you can run the commands from the tutorial from there.
+
+Running via docker on two different machines, I was able to get the following output:
+
+![aflnet run](aflnet.png)
+
+Notice the different runtimes and total crashes found. Yay for stochastic processes!
+
 ## Installation
 
 ### Prerequisites
