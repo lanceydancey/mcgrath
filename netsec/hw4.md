@@ -26,10 +26,11 @@ Steps to recreate:
 1. Follow the AFLnet instructions as normal -- don't use Docker!
 
 ### Original update
+
 This requires the use of an x86 machine. I don't have a lot of spare x86 machines lying around, but I do have some. Please reach out individually via email if you need access to an x86 machine to complete this assignment.
 
 If you are running into trouble getting this to run on your x86 machine, you can use this Dockerfile to build a working image:
-    
+
 ```Dockerfile
 # syntax=docker/dockerfile-upstream:master-labs
 FROM ubuntu:18.04
@@ -127,30 +128,30 @@ Download AFLNet and compile it. We have tested AFLNet on Ubuntu 18.04 and Ubuntu
 
 AFLNet adds the following options to AFL. Run ```afl-fuzz --help``` to see all options. Please also see the FAQs section for common questions about these AFLNet's options.
 
-- ***-N netinfo***: server information (e.g., tcp://127.0.0.1/8554)
+* ***-N netinfo***: server information (e.g., tcp://127.0.0.1/8554)
 
-- ***-P protocol***: application protocol to be tested (e.g., RTSP, FTP, DTLS12, DNS, DICOM, SMTP, SSH, TLS, DAAP-HTTP, SIP)
+* ***-P protocol***: application protocol to be tested (e.g., RTSP, FTP, DTLS12, DNS, DICOM, SMTP, SSH, TLS, DAAP-HTTP, SIP)
 
-- ***-D usec***: (optional) waiting time (in microseconds) for the server to complete its initialization 
+* ***-D usec***: (optional) waiting time (in microseconds) for the server to complete its initialization
 
-- ***-e netnsname***: (optional) network namespace name to run the server in
+* ***-e netnsname***: (optional) network namespace name to run the server in
 
-- ***-K*** : (optional) send SIGTERM signal to gracefully terminate the server after consuming all request messages
+* ***-K*** : (optional) send SIGTERM signal to gracefully terminate the server after consuming all request messages
 
-- ***-E*** : (optional) enable state aware mode
+* ***-E*** : (optional) enable state aware mode
 
-- ***-R*** : (optional) enable region-level mutation operators
+* ***-R*** : (optional) enable region-level mutation operators
 
-- ***-F*** : (optional) enable false negative reduction mode
+* ***-F*** : (optional) enable false negative reduction mode
 
-- ***-c script*** : (optional) name or full path to a script for server cleanup
+* ***-c script*** : (optional) name or full path to a script for server cleanup
 
-- ***-q algo***: (optional) state selection algorithm (e.g., 1. RANDOM_SELECTION, 2. ROUND_ROBIN, 3. FAVOR)
+* ***-q algo***: (optional) state selection algorithm (e.g., 1. RANDOM_SELECTION, 2. ROUND_ROBIN, 3. FAVOR)
 
-- ***-s algo***: (optional) seed selection algorithm (e.g., 1. RANDOM_SELECTION, 2. ROUND_ROBIN, 3. FAVOR)
+* ***-s algo***: (optional) seed selection algorithm (e.g., 1. RANDOM_SELECTION, 2. ROUND_ROBIN, 3. FAVOR)
 
+Example command:
 
-Example command: 
 ```bash
 ❯ afl-fuzz -d -i in -o out -N <server info> -x <dictionary file> -P <protocol> -D 10000 -q 3 -s 3 -E -K -R <executable binary and its arguments (e.g., port number)>
 ```
@@ -277,7 +278,7 @@ AFLNet has an utility (aflnet-replay) which can replay message sequences stored 
 ❯ aflnet-replay $AFLNET/tutorials/live555/CVE_2019_7314.poc RTSP 8554
 ```
 
-To get more information about the discovered bug (e.g., crash call stack), you can run the buggy server with [GDB](https://gnu.org/software/gdb) or you can apply the Address Sanitizer-Enabled patch ($AFLNET/tutorials/live555/ceeb4f4_ASAN.patch) and recompile the server before running it. 
+To get more information about the discovered bug (e.g., crash call stack), you can run the buggy server with [GDB](https://gnu.org/software/gdb) or you can apply the Address Sanitizer-Enabled patch ($AFLNET/tutorials/live555/ceeb4f4_ASAN.patch) and recompile the server before running it.
 
 ## What to turn in
 
