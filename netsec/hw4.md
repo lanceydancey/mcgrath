@@ -12,6 +12,20 @@ This is adapted from the AFLnet tutorial. And by adapted, I mean I'm making use 
 
 ## Update
 
+### Update to the update
+
+OK, so what do you do if you don't have access to an x86 machine? I'm assuming this is only relevant to the Apple M1/2/3 crowd, but I could be wrong. Turns out you can do this via Qemu emulation within UTM.
+
+Steps to recreate:
+
+1. Download [the Ubuntu 18.04 Server ISO](https://releases.ubuntu.com/18.04/ubuntu-18.04.6-live-server-amd64.iso).
+1. Create a new VM in UTM, selecting Emulation.
+1. Point this new VM at the Ubuntu ISO you downloaded previously.
+1. Within the VM settings, you'll want to specify at least 2 cores, and at least 4GB of RAM. Please check the "Force multi-core" box.
+1. Boot the VM and install Ubuntu.
+1. Follow the AFLnet instructions as normal -- don't use Docker!
+
+### Original update
 This requires the use of an x86 machine. I don't have a lot of spare x86 machines lying around, but I do have some. Please reach out individually via email if you need access to an x86 machine to complete this assignment.
 
 If you are running into trouble getting this to run on your x86 machine, you can use this Dockerfile to build a working image:
