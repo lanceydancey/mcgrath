@@ -6,6 +6,7 @@
    - Knowledge of a stegonography tool like steghide
    - Ability to interact with a DB like sqlite
    - File structure knowledge as it relates to finding browser history
+   - Ability to read metadata from photos
  
 ## Step 1
  - Obtain the files that you will need off the babbage server, located at @babbage.cs.pdx.edu:/disk/scratch/dmcgrath
