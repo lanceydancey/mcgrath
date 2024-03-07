@@ -14,6 +14,19 @@
  - Unzip the files
  - Create the vm using the .vhdx image from the windows 11 folder
  - attach the extra_dive to it using the .vhdx from the extra_drive folder
+#### Take a screenshot showing the successful complettion of this task
 
 ## Step 2
 - Look around on the vm. See if there is anything that looks interesting, use the tools mentioned above
+- Image the drive with FTK and see if you can recover a deleted file with a clue
+#### Take a screenshot of the recovered file
+
+#### What is the name of the earliest photo?
+
+#### Take a screenshot of the base64 encoded password
+
+#### Take a screenshot showing the secret flag inside the excel spreadsheet
+
+#### What is the url of the site that the user visited?
+
+#### Take a screenshot of the flag at the end of the challenge
